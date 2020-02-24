@@ -8,6 +8,7 @@ public class PersonalAccidentInsuranceGroup4Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(PersonalAccidentInsuranceGroup4Application.class, args);
+		System.out.println("Hello");
 	}
 
 }
