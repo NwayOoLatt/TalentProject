@@ -1,0 +1,440 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<h:head>
+	<meta charset="utf-8" />
+	<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    Tell the browser to be responsive to screen width
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/> -->
+	<!-- Favicon icon -->
+	<link rel="icon" type="image/png" sizes="16x16"
+		href="../assets/images/favicon.png" />
+	<title>Elegant Admin Template - The Ultimate Multipurpose admin
+		template</title>
+	<!-- Custom CSS -->
+	<link href="dist/css/style.css" rel="stylesheet" />
+
+	<style>
+.card {
+	margin: 0 auto; /* Added */
+	float: none; /* Added */
+	margin-bottom: 10px; /* Added */
+}
+
+.table tr {
+	cursor: pointer;
+}
+
+.hiddenRow {
+	padding: 0 4px !important;
+	background-color: #eeeeee;
+	font-size: 13px;
+}
+.topbar .top-navbar {
+    min-height: 10px;
+    padding: 0px;
+    height: 48px;
+}
+</style>
+</h:head>
+<h:body class="skin-default-dark fixed-layout">
+	<!-- ============================================================== -->
+	<!-- Preloader - style you can find in spinners.css -->
+	<!-- ============================================================== -->
+	<div class="preloader">
+		<div class="loader">
+			<div class="loader__figure"></div>
+			<p class="loader__label">Elegant admin</p>
+		</div>
+	</div>
+	<!-- ============================================================== -->
+	<!-- Main wrapper - style you can find in pages.scss -->
+	<!-- ============================================================== -->
+	<div id="main-wrapper">
+		<!-- ============================================================== -->
+		<!-- Topbar header - style you can find in pages.scss -->
+		<!-- ============================================================== -->
+		<header class="topbar"> <nav
+			class="navbar top-navbar navbar-expand-md navbar-dark"> <!-- ============================================================== -->
+		<!-- Logo --> <!-- ============================================================== -->
+		<div class="navbar-header">
+			
+		</div>
+		<!-- ============================================================== -->
+		<!-- End Logo --> <!-- ============================================================== -->
+		<div class="navbar-collapse">
+			<!-- ============================================================== -->
+			<!-- toggle and nav items -->
+			<!-- ============================================================== -->
+			<ul class="navbar-nav mr-auto">
+				<!-- This is  -->
+				
+			</ul>
+			<ul class="navbar-nav my-lg-0">
+				<!-- ============================================================== -->
+				<!-- User profile and search -->
+				<!-- ============================================================== -->
+				
+                          <li class="nav-item dropdown">
+                            <p style="color:blue;margin-right: 30px;margin-left:500px;margin-top:10px;font-size:20px"><i class="fa fa-user-circle"  style="font-size:30px"></i> #{user}</p>
+                        </li>
+				<!-- ============================================================== -->
+				<!-- User profile and search -->
+				<!-- ============================================================== -->
+			</ul>
+		</div>
+		</nav> </header>
+		<!-- ============================================================== -->
+		<!-- End Topbar header -->
+		<!-- ============================================================== -->
+		<!-- ============================================================== -->
+		<!-- Left Sidebar - style you can find in sidebar.scss  -->
+		<!-- ============================================================== -->
+		<aside class="left-sidebar">
+		<div class="d-flex no-block nav-text-box align-items-center">
+			<span><img src="images/"
+				alt="elegant admin template" /></span> <a
+				class="waves-effect waves-dark ml-auto hidden-sm-down"
+				href="javascript:void(0)"></a> <a
+				class="nav-toggler waves-effect waves-dark ml-auto hidden-sm-up"
+				href="javascript:void(0)"></a>
+		</div>
+		<!-- Sidebar scroll-->
+		<div class="scroll-sidebar">
+			<!-- Sidebar navigation-->
+			<nav class="sidebar-nav"> <h:form>
+				<ul id="sidebarnav">
+						<li><p:commandLink
+							action="#{proposalController.idGenerate()}" ajax="false"
+							class="waves-effect waves-dark" aria-expanded="false">
+							<i class="fa fa-file-text" aria-hidden="true"></i>
+							<span class="hide-menu"></span>Online Proposal</p:commandLink></li>
+							
+					<li><p:commandLink
+							action="#{proposalController.statusCheck()}" ajax="false"
+							class="waves-effect waves-dark" aria-expanded="false">
+							 <i class="fa fa-eye" aria-hidden="true"></i>
+							<span class="hide-menu"></span>Status Checking</p:commandLink></li>
+					<li><p:commandLink
+							action="paymentform.xhtml" ajax="false"
+							class="waves-effect waves-dark" aria-expanded="false">
+								<i class="fa fa-dollar" aria-hidden="true"></i>
+							<span class="hide-menu"></span>Add Payment</p:commandLink></li>
+					
+					<li><a class="waves-effect waves-dark" href="claimform.xhtml"
+						aria-expanded="false"><i class="fa fa-wheelchair"></i><span
+							class="hide-menu"></span>Claim</a></li>
+					<li><p:commandLink
+							action="#{policyController.policylisting()}" ajax="false"
+							class="waves-effect waves-dark" aria-expanded="false">
+							<i class="fa fa-list" aria-hidden="true"></i>
+							<span class="hide-menu"></span>Policy Listing</p:commandLink></li>
+					
+					<li><p:commandLink
+							action="#{userController.userLogout()}" ajax="false"
+							class="btn waves-effect waves-light btn-success hidden-md-down">
+							
+							Log Out</p:commandLink></li>
+				</ul>
+			</h:form> </nav>
+			<!-- End Sidebar navigation -->
+		</div>
+		<!-- End Sidebar scroll--> </aside>
+		<!-- ============================================================== -->
+		<!-- End Left Sidebar - style you can find in sidebar.scss  -->
+		<!-- ============================================================== -->
+		<!-- ============================================================== -->
+		<!-- Page wrapper  -->
+		<!-- ============================================================== -->
+		<div class="page-wrapper">
+			<!-- ============================================================== -->
+			<!-- Container fluid  -->
+			<!-- ============================================================== -->
+			<div class="container-fluid">
+				<!-- ============================================================== -->
+				<!-- Bread crumb and right sidebar toggle -->
+				<!-- ============================================================== -->
+				<div class="row page-titles">
+					<div class="col-md-5 align-self-center">
+						
+					</div>
+					<div class="col-md-7 align-self-center text-right">
+						<div class="d-flex justify-content-end align-items-center">
+							
+						</div>
+					</div>
+				</div>
+				<!-- ============================================================== -->
+				<!-- End Bread crumb and right sidebar toggle -->
+				<!-- ============================================================== -->
+				<!-- ============================================================== -->
+				<!-- Start Page Content -->
+				<!-- ============================================================== -->
+				<div class="row">
+					<div class="col-12">
+						<div class="card" style="height: 700px;">
+							<div class="card-body" style="height: 500px;">
+								<h:form>
+
+									<div class="table-responsive">
+										<table class="table table-bordered">
+											<tr>
+												<th style="font-weight: bolder; width: 130px;">Policy
+													No.</th>
+												<th style="font-weight: bolder; width: 130px;">Holder
+													Name</th>
+												<th style="font-weight: bolder;">Sum Insured Amount</th>
+												<!--<th style="font-weight: bolder; width: 140px;">Start
+													Date</th>
+												<th style="font-weight: bolder; width: 140px;">End Date</th>
+
+												 <th style="font-weight: bolder;">Beneficiary</th>
+												<th style="font-weight: bolder;">Relationship</th> -->
+												<th style="font-weight: bolder;">Start Date</th>
+												<th style="font-weight: bolder;">End Date</th>
+												<th style="font-weight: bolder;">Claim</th>
+												<!-- <th style="font-weight: bolder;">Claim Type</th>
+												<th style="font-weight: bolder;">Claim Amount</th>
+												<th style="font-weight: bolder; width: 130px;">Claim
+													Date</th> -->
+												<th style="font-weight: bolder;">Pay Amount</th>
+												<th style="font-weight: bolder;">Add Payment</th>
+												<th style="font-weight: bolder;">Detail</th>
+												
+											</tr>
+											<tbody>
+												<c:forEach items="#{policyController.plist}" var="plist">
+													<tr data-toggle="collapse" data-target="##{plist.p_no}"
+														class="accordion-toggle">
+													
+														<td><h:outputText value="#{plist.p_no}"
+																style="color:#20B2AA" /></td>
+														<td><h:outputText value="#{plist.name}"
+																style="color:#20B2AA" /></td>
+														<td><h:outputText value="#{plist.totalamount}"
+																style="color:#800000" /></td>
+														
+														<td><h:outputText value="#{plist.sdate}"
+																style="color:#800000; font-size: 12px;"/></td>
+																
+														<td><h:outputText value="#{plist.edate}"
+																style="color:#800000; font-size: 12px;"/></td>
+																		
+														<td><h:outputText value="#{plist.claimCount} Time"
+																style="color:#800000" /></td>
+															
+														<!-- <td><c:forEach items="#{plist.claim}" var="clist">
+																
+																<h:outputText value="#{clist.type}"
+																	style="color:#800000" />
+																<br></br>
+															</c:forEach></td>
+
+														<td><c:forEach items="#{plist.claim}" var="clist">
+																<h:outputText value="#{clist.amount}"
+																	style="color:#800000" />
+																<br></br>
+															</c:forEach></td>
+
+														<td><c:forEach items="#{plist.claim}" var="clist">
+																<h:outputText value="#{clist.today}"
+																	style="color:#800000;font-size: 12px;" />
+																<br></br>
+															</c:forEach></td> -->
+														<td>
+															<h:outputText value="#{plist.payment}"
+																style="color:#800000" />
+														</td>
+														<td>
+															<p:commandLink action="#{paymentController.addPayment(plist)}"
+												ajax="false" value="Add Payment">
+
+											</p:commandLink>
+														</td>
+														<td><p:commandLink
+												action="#{proposalController.detailPolicy(plist)}"
+												ajax="false" value="Detail" style="color:green">
+												<i class="fa fa-check" aria-hidden="true"></i>
+
+
+											</p:commandLink></td>
+														
+													</tr>
+													<tr>
+														<!-- <td colspan="11" class="hiddenRow text-center" style="padding-left:20px;">
+														<div id="#{plist.p_no}"
+																class="accordian-body collapse"><br></br>
+																
+															<div class="row">
+															<div class="col"></div>
+																<div class="col text-center">
+																		<h4>Personal Info</h4>
+																		<div class="card bg-light text-dark text-center"
+																			style=" width: 250px; height: 150px; background-color: #F8F8FF; box-shadow: 1px 2px 4px rgba(0, 0, 0, .8); font-family: sans-serif;">
+																			<div class="card-body">
+
+																				
+																				<br></br> 
+																				<h:outputLabel value="Phone :"></h:outputLabel>
+																				<h:outputText value="#{plist.phone}"
+																					style="color:#808000"></h:outputText>
+																				<br></br>
+																				
+																				<h:outputLabel value="Email :"></h:outputLabel>
+																				<h:outputText value="#{plist.email}"
+																					style="color:#808000"></h:outputText>
+																				<br></br> 
+																				
+																				<h:outputLabel value=" Address :"></h:outputLabel>
+																				<h:outputText value="#{plist.address}"
+																					style="color:#808000"></h:outputText>
+																				<br></br>
+
+
+																			</div>
+																		</div>
+
+																	</div>
+																<div class="col">
+																<h4>Premium</h4>
+																		<div class="card bg-light text-dark"
+																			style="width: 260px; height: 150px; background-color: #F8F8FF; box-shadow: 1px 2px 4px rgba(0, 0, 0, .8); font-family: sans-serif;">
+																			<div class="card-body">
+
+																				
+																				<br></br> 
+																				<h:outputLabel value="Term :"></h:outputLabel>
+																				<h:outputText value="#{plist.term}"
+																					style="color:#808000"></h:outputText><br></br>
+																				
+																				<h:outputLabel value="PayAmount :"></h:outputLabel>
+																				<h:outputText value="#{plist.payamount}"
+																					style="color:#808000"></h:outputText><br></br>
+																				
+																				<h:outputLabel value="SUM Insured Amount :" style="text-align:right;"></h:outputLabel>
+																				<h:outputText value="#{plist.totalamount}"
+																					style="color:#808000"></h:outputText>
+																				<br></br> 
+																				<br></br>
+
+
+
+																			</div>
+																		</div>
+
+
+																	</div>
+																	
+																	<div class="col text-center">
+																<h4>Beneficiary Info</h4>
+																		<div class="card bg-light text-dark text-center"
+																			style="width: 250px; height: 150px; background-color: #F8F8FF; box-shadow: 1px 2px 4px rgba(0, 0, 0, .8); font-family: sans-serif;">
+																			<div class="card-body">
+
+																				<br></br>
+																				<h:outputLabel value="Name:"></h:outputLabel>
+																				<h:outputText value="#{plist.b_name}" style="color:#808000"></h:outputText><br></br>
+																				<h:outputLabel value="Eamil :"></h:outputLabel>
+																	<h:outputText value="#{plist.b_email}" style="color:#808000"></h:outputText><br></br>
+																				<h:outputLabel value="Relationship:"></h:outputLabel><h:outputText value="#{plist.relationship}"
+																style="color:#808000" /><br></br>
+																
+
+																			</div>
+																		</div>
+
+
+																	</div>
+																<div class="col">
+																
+																
+																</div>
+																
+																
+																
+															</div>
+														</div></td> -->
+													</tr>
+												</c:forEach>
+											</tbody>
+										</table>
+									</div>
+								</h:form>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- ============================================================== -->
+				<!-- End PAge Content -->
+				<!-- ============================================================== -->
+			</div>
+			<!-- ============================================================== -->
+			<!-- End Container fluid  -->
+			<!-- ============================================================== -->
+		</div>
+		<!-- ============================================================== -->
+		<!-- End Page wrapper  -->
+		<!-- ============================================================== -->
+		<!-- ============================================================== -->
+		<!-- footer -->
+		<!-- ============================================================== -->
+		<center><footer class="footer"> © 2020 Personal Accident Insurance
+		Group 4.com </footer></center>
+		<!-- ============================================================== -->
+		<!-- End footer -->
+		<!-- ============================================================== -->
+	</div>
+	<!-- ============================================================== -->
+	<!-- End Wrapper -->
+	<!-- ============================================================== -->
+	<!-- ============================================================== -->
+	<!-- All Jquery -->
+	<!-- ============================================================== -->
+	<script src="assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
+    Bootstrap tether Core JavaScript
+    <script src="assets/node_modules/popper/popper.min.js"></script>
+	<script src="assets/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    slimscrollbar scrollbar JavaScript
+    <script src="dist/js/perfect-scrollbar.jquery.min.js"></script>
+    Wave Effects
+    <script src="dist/js/waves.js"></script>
+    Menu sidebar
+    <script src="dist/js/sidebarmenu.js"></script>
+    stickey kit
+    <script
+		src="assets/node_modules/sticky-kit-master/dist/sticky-kit.min.js"></script>
+	<script src="assets/node_modules/sparkline/jquery.sparkline.min.js"></script>
+	<!--Custom JavaScript -->
+	<script src="dist/js/custom.min.js"></script>
+	<script type="text/javascript"
+		src="https://code.jquery.com/jquery-1.12.4.js" />
+	<script type="text/javascript"
+		src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" />
+	<link rel="stylesheet"
+		href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+	<script>
+    $(document).ready(function() {
+    	   $(".datepicker").datepicker({
+    	      dateFormat: 'dd MM, yy',
+    	      changeMonth: true,
+    	      changeYear: true,
+    	      yearRange: "1960:2017"
+    	   });
+    	});
+   /*  $('.accordian-body').on('show.bs.collapse', function () {
+        $(this).closest("table")
+            .find(".collapse.in")
+            .not(this)
+            //.collapse('toggle')
+    }) */
+    </script>
+</h:body>
+</html>

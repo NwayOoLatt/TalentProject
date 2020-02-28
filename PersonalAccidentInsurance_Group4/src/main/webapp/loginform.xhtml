@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<h:head>
+	<meta charset="utf-8"></meta>
+	<title>Personal Accident</title>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport"></meta>
+	<meta content="" name="keywords"></meta>
+	<meta content="" name="description"></meta>
+
+	<!-- Favicons -->
+	<link href="img/favicon.png" rel="icon"></link>
+	<link href="img/apple-touch-icon.png" rel="apple-touch-icon"></link>
+
+	<!-- Google Fonts -->
+	<link
+		href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700"
+		rel="stylesheet"></link>
+
+	<!-- Bootstrap CSS File -->
+	<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"></link>
+
+	<!-- Libraries CSS Files -->
+	<link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet"></link>
+	<link href="lib/animate/animate.min.css" rel="stylesheet"></link>
+
+	<!-- Main Stylesheet File -->
+	<link href="css/stylehome.css" rel="stylesheet"></link>
+
+</h:head>
+
+<h:body>
+
+	<!--==========================
+  Header
+  ============================-->
+	<header id="header">
+	<div class="container">
+
+		<div id="logo" class="pull-left">
+			<a href="#hero"><img src="img/logo.png" alt="" title="" /></a>
+		</div>
+
+		<nav id="nav-menu-container">
+		 </nav>
+	</div>
+	</header>
+
+
+	<!--==========================
+    Hero Section
+  ============================-->
+	<section id="hero">
+	<div class="hero-container">
+	<div class="row">
+	
+	<c:set var="flag" value="#{userController.infoflag}" />
+									<c:if test="${flag == true}">
+							<div class="col-md-12 align-self-center text-right">
+						<div class="d-flex justify-content-end align-items-center">
+							<div class="alert alert-info alert-dismissible">
+							<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+								<p:outputLabel value="#{userController.info}"></p:outputLabel>
+							</div>
+						</div>
+					</div>
+							</c:if>
+							</div>
+						
+		<h2>Login</h2><br></br>
+		
+		<h:form id="form">
+		
+		<p:messages id="msgs" severity="info" style="width:300px;" />
+			<div class="form-row">
+				<div class="col-2"></div>
+				<div class="col">
+					<i class="fa fa-user" aria-hidden="true"></i>&nbsp;
+					<p:inputText id="name" class="form-input"
+						value="#{userController.userModel.name}" required="true"
+						placeholder="Your Name" requiredMessage="Name is required!" style="width:270px;">
+						<f:validateRegex pattern="^[a-zA-Z]+$" />
+					</p:inputText>
+					<p:message for="name" style="color:red;background-color:rgba(0.0,0.0,0.0,0.0)"></p:message>
+				</div>
+
+			</div><br></br>
+			
+			<div class="form-row">
+				<div class="col-2"></div>
+				<div class="col">
+				<i class="fa fa-lock" aria-hidden="true"></i>&nbsp;
+				<p:password id="password" class="form-input" name="password" placeholder="Password"
+										value="#{userController.userModel.password}" required="true"
+										 requiredMessage="Password require"
+										validatorMessage="Password between 3 and 6 character or number" style="width:270px;">
+										<f:validateRegex pattern="[a-zA-Z0-9]{3,6}+$" />
+									</p:password>
+					<p:message for="password"  style="color:red;background-color:rgba(0.0,0.0,0.0,0.0)"/>
+				</div>
+				
+			</div><br></br>
+			
+	<p:commandButton name="submit" id="submit" ajax="false"
+			value="Login" action="#{userController.userLogin()}"/>
+	&nbsp;&nbsp;
+			<p:commandButton name="cancel" id="cancel" ajax="false"
+			value="Cancel" action="home.xhtml" immediate="true" update="form"/><br></br><br></br>		
+					
+<strong>Create account ? </strong><a href="Registration.xhtml" class="loginhere-link">Sign Up</a>
+</h:form>
+	</div>
+	</section>
+
+	<!--==========================
+    Footer
+  ============================-->
+	<footer>
+	
+	</footer>
+	<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+	<script src="lib/jquery/jquery.min.js"></script>
+	<script src="lib/jquery/jquery-migrate.min.js"></script>
+	<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="lib/easing/easing.min.js"></script>
+	<script src="lib/wow/wow.min.js"></script>
+	<script src="lib/waypoints/waypoints.min.js"></script>
+	<script src="lib/counterup/counterup.min.js"></script>
+	<script src="lib/superfish/hoverIntent.js"></script>
+	<script src="lib/superfish/superfish.min.js"></script>
+	<script src="contactform/contactform.js"></script>
+	<script src="js/main.js"></script>
+
+</h:body>
+</html>

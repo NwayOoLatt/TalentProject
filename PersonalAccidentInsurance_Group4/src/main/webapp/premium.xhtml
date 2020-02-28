@@ -1,0 +1,349 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<h:head>
+	<meta charset="utf-8" />
+	<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    Tell the browser to be responsive to screen width
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/> -->
+	<!-- Favicon icon -->
+	<link rel="icon" type="image/png" sizes="16x16"
+		href="../assets/images/favicon.png" />
+	<title>Personal Accident Insurance Group 4</title>
+	<!-- Custom CSS -->
+	<link href="dist/css/style.css" rel="stylesheet" />
+	<style>
+#ui-message {
+	background-color: #fff;
+	border: 0 none;
+	color: #212121
+}
+
+.ui-state-error {
+	border: 1px solid #fff;
+	background: #fff;
+	color: #212121;
+}
+.card {
+	margin: 0 auto; /* Added */
+	float: none; /* Added */
+	margin-bottom: 10px; /* Added */
+}
+.topbar .top-navbar {
+    min-height: 10px;
+    padding: 0px;
+    height: 48px;
+}
+
+</style>
+</h:head>
+<h:body class="skin-default-dark fixed-layout">
+	<!-- ============================================================== -->
+	<!-- Preloader - style you can find in spinners.css -->
+	<!-- ============================================================== -->
+	<div class="preloader">
+		<div class="loader">
+			<div class="loader__figure"></div>
+			<p class="loader__label">Elegant admin</p>
+		</div>
+	</div>
+	<!-- ============================================================== -->
+	<!-- Main wrapper - style you can find in pages.scss -->
+	<!-- ============================================================== -->
+	<div id="main-wrapper">
+		<!-- ============================================================== -->
+		<!-- Topbar header - style you can find in pages.scss -->
+		<!-- ============================================================== -->
+		<header class="topbar"> <nav
+			class="navbar top-navbar navbar-expand-md navbar-dark"> <!-- ============================================================== -->
+		<!-- Logo --> <!-- ============================================================== -->
+		<div class="navbar-header">
+			
+		</div>
+		<!-- ============================================================== -->
+		<!-- End Logo --> <!-- ============================================================== -->
+		<div class="navbar-collapse">
+			<!-- ============================================================== -->
+			<!-- toggle and nav items -->
+			<!-- ============================================================== -->
+			<ul class="navbar-nav mr-auto">
+				<!-- This is  -->
+				
+			</ul>
+			<ul class="navbar-nav my-lg-0">
+				<!-- ============================================================== -->
+				<!-- User profile and search -->
+				<!-- ============================================================== -->
+				 <li class="nav-item dropdown">
+                           <p style="color:blue;margin-right: 30px;margin-left:500px;margin-top:10px;font-size:20px"><i class="fa fa-user-circle"  style="font-size:30px"></i> #{user}</p>
+                  </li>
+				<!-- ============================================================== -->
+				<!-- User profile and search -->
+				<!-- ============================================================== -->
+			</ul>
+		
+		</div>
+		</nav> </header>
+		<!-- ============================================================== -->
+		<!-- End Topbar header -->
+		<!-- ============================================================== -->
+		<!-- ============================================================== -->
+		<!-- Left Sidebar - style you can find in sidebar.scss  -->
+		<!-- ============================================================== -->
+		<aside class="left-sidebar">
+		<div class="d-flex no-block nav-text-box align-items-center">
+			<span><img src="images/"
+				alt="elegant admin template" /></span> <a
+				class="waves-effect waves-dark ml-auto hidden-sm-down"
+				href="javascript:void(0)"></a> <a
+				class="nav-toggler waves-effect waves-dark ml-auto hidden-sm-up"
+				href="javascript:void(0)"></a>
+		</div>
+		<!-- Sidebar scroll-->
+		<div class="scroll-sidebar">
+			<!-- Sidebar navigation-->
+			<nav class="sidebar-nav"> <h:form>
+				<ul id="sidebarnav">
+					
+					<li><p:commandLink
+							action="#{proposalController.idGenerate()}" ajax="false"
+							class="waves-effect waves-dark" aria-expanded="false">
+							<i class="fa fa-file-text" aria-hidden="true"></i>
+							<span class="hide-menu"></span>Online Proposal</p:commandLink></li>
+							
+					<li><p:commandLink
+							action="#{proposalController.statusCheck()}" ajax="false"
+							class="waves-effect waves-dark" aria-expanded="false">
+							 <i class="fa fa-eye" aria-hidden="true"></i>
+							<span class="hide-menu"></span>Status Checking</p:commandLink></li>
+					<li><p:commandLink
+							action="paymentform.xhtml" ajax="false"
+							class="waves-effect waves-dark" aria-expanded="false">
+							<i class="fa fa-smile-o"></i>
+							<span class="hide-menu"></span>Add Payment</p:commandLink></li>
+					
+					<li><a class="waves-effect waves-dark" href="claimform.xhtml"
+						aria-expanded="false"><i class="fa fa-wheelchair"></i><span
+							class="hide-menu"></span>Claim</a></li>
+					<li><p:commandLink
+							action="#{policyController.policylisting()}" ajax="false"
+							class="waves-effect waves-dark" aria-expanded="false">
+							<i class="fa fa-list" aria-hidden="true"></i>
+							<span class="hide-menu"></span>Policy Listing</p:commandLink></li>
+					
+					<li><p:commandLink
+							action="#{userController.userLogout()}" ajax="false"
+							class="btn waves-effect waves-light btn-success hidden-md-down">
+							
+							Log Out</p:commandLink></li>
+				</ul>
+			</h:form> </nav>
+			<!-- End Sidebar navigation -->
+		</div>
+		<!-- End Sidebar scroll--> </aside>
+		<!-- ============================================================== -->
+		<!-- End Left Sidebar - style you can find in sidebar.scss  -->
+		<!-- ============================================================== -->
+		<!-- ============================================================== -->
+		<!-- Page wrapper  -->
+		<!-- ============================================================== -->
+		<div class="page-wrapper">
+			<!-- ============================================================== -->
+			<!-- Container fluid  -->
+			<!-- ============================================================== -->
+			<div class="container-fluid">
+				<!-- ============================================================== -->
+				<!-- Bread crumb and right sidebar toggle -->
+				<!-- ============================================================== -->
+				<div class="row page-titles">
+					<div class="col-md-5 align-self-center">
+						<h4 class="text-themecolor">Premiun Form</h4>
+					</div>
+					
+				</div>
+				<!-- ============================================================== -->
+				<!-- End Bread crumb and right sidebar toggle -->
+				<!-- ============================================================== -->
+				<!-- ============================================================== -->
+				<!-- Start Page Content -->
+				<!-- ============================================================== -->
+				<div class="row">
+					<div class="col-12">
+						<div class="card">
+							<div class="card-body">
+								<h:form>
+								
+								
+								
+								<!-- 2 -->
+								<div class="form-row">
+											<div class="col-sm-2"></div>
+											<div class="col-sm-5">
+										<p:outputLabel value="Year :"/>&nbsp;<br />
+											<p:inputText class="form-control" id="year"
+													value="#{proposalController.proposal.year}"
+														required="true"  requiredMessage="Please write one year!" validatorMessage="Allow one year!"
+										 style="width:270px;" >
+										</p:inputText>
+										&nbsp;<br/>
+												<p:message for="year" style="color:red;background-color:white;"/>
+											</div>
+											<div class="col-sm-5">
+											
+											
+											
+											<p:outputLabel>SumInsurance:</p:outputLabel><br/>
+												
+													<p:inputText id="total" class="form-control"  
+														value="#{proposalController.proposal.totalamount}"
+														required="true"  style="width:270px;"  requiredMessage="Please write your insurance ammount!"  validatorMessage="must be between 500000 and 20000000!">
+										<f:validateDoubleRange minimum="500000" maximum="200000000" />
+									 
+									  </p:inputText>
+									  
+							
+									       
+                      
+                
+											
+												<p:message for="total" style="color:red;background-color:white;"></p:message>
+											
+											</div>
+										
+								</div><br></br>
+								
+								<!-- 3 -->
+								<div class="form-row">
+											<div class="col-sm-2"></div>
+											<div class="col-sm-5">
+											
+											<p:outputLabel>Term:</p:outputLabel><br/>
+												<p:selectOneRadio id="Term"
+														value="#{proposalController.proposal.term}"
+														unselectable="true" required="true" requiredMessage="Please select one as you wish!">
+														<f:selectItem itemLabel="3 months" itemValue="3" />
+														<f:selectItem itemLabel="6 months" itemValue="6" />
+														<f:selectItem itemLabel="1 year" itemValue="12" />
+													</p:selectOneRadio>&nbsp;<br/>
+												<p:message for="Term" style="color:red;background-color:white;"/>
+											</div>
+											
+											
+										
+								</div><br></br>
+								
+								<!-- 4 -->
+								<div class="form-row">
+											<div class="col-sm-2"></div>
+										
+											
+											<p:commandButton value="Calculate"
+											action="#{proposalController.holderPremium()}" ajax="false"
+											 onclick="myFunction()" />
+										&nbsp;&nbsp;
+										
+										<p:commandButton action="beneficiary.xhtml" value="Next" ajax="false"></p:commandButton>
+										
+											</div>
+											
+											
+											
+								</h:form>
+						<br></br>
+								<c:set var="flag" value="#{proposalController.pflag}" />
+								<c:if test="${flag == true}">
+
+									<div class="row">
+
+										<div class="card bg-light text-dark text-center"
+											style="border: solid 3px #FF8C00; width: 400px; height: 200px; background-color: #F8F8FF; box-shadow: 1px 2px 4px rgba(0, 0, 0, .8); font-family: sans-serif;">
+											<div class="card-body">
+
+												<h3 style="color: blue">Your Premium</h3>
+												<hr></hr>
+												<p>
+
+													Sum Insured : <p:outputLabel value="#{proposalController.total}"></p:outputLabel><br></br>
+									term : <p:outputLabel value="#{proposalController.term}">month</p:outputLabel><br></br>
+													pay amount :
+													<p:outputLabel value="#{proposalController.amount}">&nbsp;</p:outputLabel>
+													<br></br>
+
+												</p>
+
+											</div>
+										</div>
+									</div>
+								</c:if>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- ============================================================== -->
+				<!-- <button onclick="myFunction()">Try it</button> -->
+
+				<!-- End PAge Content -->
+				<!-- ============================================================== -->
+			</div>
+			<!-- ============================================================== -->
+			<!-- End Container fluid  -->
+			<!-- ============================================================== -->
+		</div>
+		<!-- ============================================================== -->
+		<!-- End Page wrapper  -->
+		<!-- ============================================================== -->
+		<!-- ============================================================== -->
+		<!-- footer -->
+		<!-- ============================================================== -->
+		<center><footer class="footer"> © 2020 Personal Accident Insurance
+		Group 4.com </footer></center>
+		<!-- ============================================================== -->
+		<!-- End footer -->
+		<!-- ============================================================== -->
+	</div>
+	<!-- ============================================================== -->
+	<!-- End Wrapper -->
+	<!-- ============================================================== -->
+	<!-- ============================================================== -->
+	<!-- All Jquery -->
+	<!-- ============================================================== -->
+	<!-- <script src="assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
+    Bootstrap tether Core JavaScript
+    <script src="assets/node_modules/popper/popper.min.js"></script>
+    <script src="assets/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    slimscrollbar scrollbar JavaScript
+    <script src="dist/js/perfect-scrollbar.jquery.min.js"></script>
+    Wave Effects
+    <script src="dist/js/waves.js"></script>
+    Menu sidebar
+    <script src="dist/js/sidebarmenu.js"></script>
+    stickey kit
+    <script src="assets/node_modules/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <script src="assets/node_modules/sparkline/jquery.sparkline.min.js"></script> -->
+	<!--Custom JavaScript -->
+	<script src="dist/js/custom.min.js"></script>
+	<script type="text/javascript"
+		src="https://code.jquery.com/jquery-1.12.4.js" />
+	<script type="text/javascript"
+		src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" />
+	<link rel="stylesheet"
+		href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+	<script>
+		$(document).ready(function() {
+			$(".datepicker").datepicker({
+				dateFormat : 'dd MM, yy',
+				changeMonth : true,
+				changeYear : true,
+				yearRange : "1960:2002"
+			});
+		});
+	</script>
+</h:body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<h:head>
+	<meta charset="utf-8"></meta>
+	<title>Personal Accident</title>
+	<meta content="width=device-width, initial-scale=1.0" name="viewport"></meta>
+	<meta content="" name="keywords"></meta>
+	<meta content="" name="description"></meta>
+
+	<!-- Favicons -->
+	<link href="img/favicon.png" rel="icon"></link>
+	<link href="img/apple-touch-icon.png" rel="apple-touch-icon"></link>
+
+	<!-- Google Fonts -->
+	<link
+		href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700"
+		rel="stylesheet"></link>
+
+	<!-- Bootstrap CSS File -->
+	<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet"></link>
+
+	<!-- Libraries CSS Files -->
+	<link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet"></link>
+	<link href="lib/animate/animate.min.css" rel="stylesheet"></link>
+
+	<!-- Main Stylesheet File -->
+	<link href="css/stylehome.css" rel="stylesheet"></link>
+
+</h:head>
+
+<h:body>
+
+	<!--==========================
+  Header
+  ============================-->
+	<header id="header">
+	<div class="container">
+
+		<div id="logo" class="pull-left">
+			<a href="#hero"><img src="img/logo.png" alt="" title="" /></a>
+		</div>
+
+		<!-- <nav id="nav-menu-container">
+		<ul class="nav-menu">
+			<li class="menu-active"><a href="#hero">Home</a></li>
+			<li><a href="#about">ABOUT </a></li>
+			<li><a href="#pol">POLICY</a></li>
+			<li><a href="#faq">FAQ</a></li>
+			<li><a href="#cov">COVERAGE</a></li>
+			<li class="menu-has-children"><a href="">PRODUCT</a>
+				<ul>
+					<li><a href="#pa">Personal accident</a></li>
+					<li><a href="#car">Car</a></li>
+					<li><a href="#house">House</a></li>
+					<li><a href="#travel">Travel</a></li>
+					<li><a href="#business">Business</a></li>
+					<li><a href="#life">Life</a></li>
+				</ul></li>
+			<li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+		</ul>
+		 </nav> -->
+	</div>
+	</header>
+
+
+	<!--==========================
+    Hero Section
+  ============================-->
+	<section id="hero">
+	<div class="hero-container">
+	<div class="row">
+	
+	<c:set var="flag" value="#{userController.infoflag}" />
+									<c:if test="${flag == true}">
+							<div class="col-md-12 align-self-center text-right">
+						<div class="d-flex justify-content-end align-items-center">
+							<div class="alert alert-info alert-dismissible">
+							<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+								<p:outputLabel value="#{userController.info}"></p:outputLabel>
+							</div>
+						</div>
+					</div>
+							</c:if>
+							</div>
+		<h2>Register</h2>
+		
+		<h:form id="form">
+		<!-- <p:growl id="growl" showDetail="true" sticky="true" /> -->
+			<div class="form-row">
+				<!-- <div class="col-2"></div> -->
+				<div class="col">
+					<i class="fa fa-user" aria-hidden="true"></i>&nbsp;
+					<p:inputText id="name" class="form-input"
+						value="#{userController.userModel.name}" required="true"
+						placeholder="Your Name" requiredMessage="Name is required!" style="width:270px;">
+						<f:validateRegex pattern="^[a-zA-Z]+$" />
+					</p:inputText>
+					<div class="col">
+					<p:message for="name" style="color:red;background-color:rgba(0.0,0.0,0.0,0.0)"></p:message>
+				</div></div>
+
+			</div><br></br>
+			<div class="form-row">
+				<!-- <div class="col-2"></div> -->
+				<div class="col">
+				<i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;
+					<p:inputText class="form-input" name="email" id="email" placeholder="Your Email" value="#{userController.userModel.email}" required="true" requiredMessage="Email is required" validatorMessage="Email acount is invalid!" style="width:270px;">
+                            <f:validateRegex pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]" />
+                            </p:inputText>
+                            <div class="col">
+                            <p:message for="email" style="color:red;background-color:rgba(0.0,0.0,0.0,0.0)"></p:message>
+					</div>
+				</div>
+
+			</div><br></br>
+			<div class="form-row">
+				<!-- <div class="col-2"></div> -->
+				<div class="col">
+				<i class="fa fa-lock" aria-hidden="true"></i>&nbsp;
+				<p:password id="password" class="form-input" name="password" placeholder="Password"
+										value="#{userController.userModel.password}" required="true"
+										match="password1" requiredMessage="Password require"
+										validatorMessage="Comfirmpassword must match password" style="width:270px;">
+										<f:validateRegex pattern="[a-zA-Z0-9]{3,6}+$" />
+									</p:password>
+									<div class="col">
+					<p:message for="password" style="color:red;background-color:rgba(0.0,0.0,0.0,0.0)"></p:message>
+								</div>	
+					
+				</div>
+				
+
+			</div><br></br>
+			<div class="form-row">
+				<!-- <div class="col-2"></div> -->
+				<div class="col">
+				<i class="fa fa-lock" aria-hidden="true"></i>&nbsp;
+				<p:password id="password1" class="form-input" name="re_password"
+										value="#{userController.userModel.repassword}" required="true"
+										requiredMessage="Comfirm Password require"
+										validatorMessage="Comfirmpassword must match password" style="width:270px;" placeholder="Confirm Password">
+									</p:password>
+									<div class="col">
+									<p:message for="password1" style="color:red;background-color:rgba(0.0,0.0,0.0,0.0)"></p:message>
+					</div>
+				</div>
+
+			</div><br></br>
+<p:commandButton name="submit" id="submit" ajax="false"
+			value="Sign up" action="#{userController.save()}" update="form"/>
+				&nbsp;&nbsp;
+			<p:commandButton name="cancel" id="cancel" ajax="false"
+			value="Cancel" action="home.xhtml" immediate="true" update="form"/><br></br><br></br>
+			<strong>Have already account ? </strong><a href="loginform.xhtml" class="loginhere-link">Login</a>
+				</h:form>
+	</div>
+	</section>
+
+	<!--==========================
+    Footer
+  ============================-->
+	<footer>
+	
+	</footer>
+	<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+	<script src="lib/jquery/jquery.min.js"></script>
+	<script src="lib/jquery/jquery-migrate.min.js"></script>
+	<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="lib/easing/easing.min.js"></script>
+	<script src="lib/wow/wow.min.js"></script>
+	<script src="lib/waypoints/waypoints.min.js"></script>
+	<script src="lib/counterup/counterup.min.js"></script>
+	<script src="lib/superfish/hoverIntent.js"></script>
+	<script src="lib/superfish/superfish.min.js"></script>
+	<script src="contactform/contactform.js"></script>
+	<script src="js/main.js"></script>
+
+</h:body>
+</html>

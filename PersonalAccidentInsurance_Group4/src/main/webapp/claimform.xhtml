@@ -1,0 +1,560 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<h:head>
+	<meta charset="utf-8" />
+	<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    Tell the browser to be responsive to screen width
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/> -->
+	<!-- Favicon icon -->
+	<link rel="icon" type="image/png" sizes="16x16"
+		href="../assets/images/favicon.png" />
+	<title>Personal Accident Insurance Group 4</title>
+	<!-- Custom CSS -->
+	<link href="dist/css/style.css" rel="stylesheet" />
+	<style>
+.card {
+	margin: 0 auto; /* Added */
+	float: none; /* Added */
+	margin-bottom: 10px; /* Added */
+}
+
+.table {
+	border-radius: 5px;
+	width: 50%;
+	margin: 0px auto;
+	float: none;
+	
+	
+}
+.smallButton.ui-button-text-only .ui-button-text {
+    font-size: 11px;
+}
+.header1{
+height: 100px;
+}
+.noBorders tr, .noBorders td {
+    background: none !important;
+    border: none !important;
+    }
+.topbar .top-navbar {
+    min-height: 10px;
+    padding: 0px;
+    height: 48px;
+}
+</style>
+</h:head>
+<h:body class="skin-default-dark fixed-layout">
+	<!-- ============================================================== -->
+	<!-- Preloader - style you can find in spinners.css -->
+	<!-- ============================================================== -->
+	<div class="preloader">
+		<div class="loader">
+			<div class="loader__figure"></div>
+			<p class="loader__label">Elegant admin</p>
+		</div>
+	</div>
+	<!-- ============================================================== -->
+	<!-- Main wrapper - style you can find in pages.scss -->
+	<!-- ============================================================== -->
+	<div id="main-wrapper">
+		<!-- ============================================================== -->
+		<!-- Topbar header - style you can find in pages.scss -->
+		<!-- ============================================================== -->
+		<header class="topbar"> <nav
+			class="navbar top-navbar navbar-expand-md navbar-dark"> <!-- ============================================================== -->
+		<!-- Logo --> <!-- ============================================================== -->
+		<div class="navbar-header">
+			
+		</div>
+		<!-- ============================================================== -->
+		<!-- End Logo --> <!-- ============================================================== -->
+		<div class="navbar-collapse">
+			<!-- ============================================================== -->
+			<!-- toggle and nav items -->
+			<!-- ============================================================== -->
+			<ul class="navbar-nav mr-auto">
+				<!-- This is  -->
+							
+				
+			</ul>
+			<ul class="navbar-nav my-lg-0">
+				<!-- ============================================================== -->
+				<!-- User profile and search -->
+				<!-- ============================================================== -->
+				
+                          <li class="nav-item dropdown">
+                           
+                            
+                            <p style="color:blue;margin-right: 30px;margin-left:500px;margin-top:10px;font-size:20px"><i class="fa fa-user-circle"  style="font-size:30px"></i> #{user}</p>
+                        </li>
+				<!-- ============================================================== -->
+				<!-- User profile and search -->
+				<!-- ============================================================== -->
+			</ul>
+		</div>
+		</nav> </header>
+		<!-- ============================================================== -->
+		<!-- End Topbar header -->
+		<!-- ============================================================== -->
+		<!-- ============================================================== -->
+		<!-- Left Sidebar - style you can find in sidebar.scss  -->
+		<!-- ============================================================== -->
+		<aside class="left-sidebar">
+		<div class="d-flex no-block nav-text-box align-items-center">
+			<span><img src="images/"
+				alt="elegant admin template" /></span> <a
+				class="waves-effect waves-dark ml-auto hidden-sm-down"
+				href="javascript:void(0)"></a> <a
+				class="nav-toggler waves-effect waves-dark ml-auto hidden-sm-up"
+				href="javascript:void(0)"></a>
+		</div>
+		<!-- Sidebar scroll-->
+		<div class="scroll-sidebar">
+			<!-- Sidebar navigation-->
+			<nav class="sidebar-nav"> <h:form>
+				<ul id="sidebarnav">
+					
+					<li><p:commandLink
+							action="#{proposalController.idGenerate()}" ajax="false"
+							class="waves-effect waves-dark" aria-expanded="false">
+							<i class="fa fa-file-text" aria-hidden="true"></i>
+							<span class="hide-menu"></span>Online Proposal</p:commandLink></li>
+							
+					<li><p:commandLink
+							action="#{proposalController.statusCheck()}" ajax="false"
+							class="waves-effect waves-dark" aria-expanded="false">
+							 <i class="fa fa-eye" aria-hidden="true"></i>
+							<span class="hide-menu"></span>Status Checking</p:commandLink></li>
+					<li><p:commandLink
+							action="paymentform.xhtml" ajax="false"
+							class="waves-effect waves-dark" aria-expanded="false">
+								<i class="fa fa-dollar" aria-hidden="true"></i>
+							<span class="hide-menu"></span>Add Payment</p:commandLink></li>
+					
+					<li><a class="waves-effect waves-dark" href="claimform.xhtml"
+						aria-expanded="false"><i class="fa fa-wheelchair"></i><span
+							class="hide-menu"></span>Claim</a></li>
+					<li><p:commandLink
+							action="#{policyController.policylisting()}" ajax="false"
+							class="waves-effect waves-dark" aria-expanded="false">
+							<i class="fa fa-list" aria-hidden="true"></i>
+							<span class="hide-menu"></span>Policy Listing</p:commandLink></li>
+					<li><p:commandLink
+							action="#{userController.userLogout()}" ajax="false"
+							class="btn waves-effect waves-light btn-success hidden-md-down">
+							
+							Log Out</p:commandLink></li>
+					
+				</ul>
+			</h:form> </nav>
+			<!-- End Sidebar navigation -->
+		</div>
+		<!-- End Sidebar scroll--> </aside>
+		<!-- ============================================================== -->
+		<!-- End Left Sidebar - style you can find in sidebar.scss  -->
+		<!-- ============================================================== -->
+		<!-- ============================================================== -->
+		<!-- Page wrapper  -->
+		<!-- ============================================================== -->
+		<div class="page-wrapper">
+			<!-- ============================================================== -->
+			<!-- Container fluid  -->
+			<!-- ============================================================== -->
+			<div class="container-fluid">
+				<!-- ============================================================== -->
+				<!-- Bread crumb and right sidebar toggle -->
+				<!-- ============================================================== -->
+				<div class="row page-titles">
+					<div class="col-md-5 align-self-center">
+						
+					</div>
+					<div class="col-md-7 align-self-center text-right">
+						<div class="d-flex justify-content-end align-items-center">
+							
+						</div>
+					</div>
+				</div>
+				<!-- ============================================================== -->
+				<!-- End Bread crumb and right sidebar toggle -->
+				<!-- ============================================================== -->
+				<!-- ============================================================== -->
+				<!-- Start Page Content -->
+				<!-- ============================================================== -->
+				<div class="row">
+					<div class="col-12">
+						<div class="card" style="height: 900px;padding-top: 20px;">
+							<div class="card-body">
+
+								<!-- <div class="text-center"> -->
+
+								<h:form>
+								<center>
+								<p:messages id="msgs" severity="info" style="width:300px;" />
+									<!-- <p:growl id="growl" life="3000" /> -->
+									<!-- <p:panelGrid columns="3" styleClass="noBorders">
+									
+									<p:outputLabel for="p_no" value="Policy Number" />
+									 &nbsp;&nbsp;
+														&nbsp;
+														
+									</p:panelGrid> -->
+									
+									<div class="form-row">
+											<!-- <div class="col-2"></div> -->
+											<div class="col">
+											<p:outputLabel for="p_no" value="Policy Number" />&nbsp;
+											
+											
+											<p:inputText id="p_no" class="form-control"
+														value="#{claimController.pmodel.p_no}" required="true"
+														style="width:300px;" requiredMessage="Pls enter your Policy Number"/>&nbsp;
+														<p:message for="p_no" style="background-color:white;color:red"></p:message>
+											
+											<p:commandButton value="Submit" action="#{claimController.claimRequest()}" 
+														ajax="false" id="mySmallButton" styleClass="smallButton"
+													style=" color:#FFD700;width:100px;"/>
+											</div>
+											
+											
+										
+										</div>
+									
+									</center>
+									
+									
+
+									<br></br>
+									<br></br>
+									<hr></hr>
+									<br></br>
+									</h:form>
+									<h:form>
+									<c:set var="flag" value="#{claimController.flag}" />
+									<c:if test="${flag == true}">
+									<center><h3 style="color:blue">Personal Accident Claim Form</h3></center><br></br>
+										<div class="form-row">
+											<div class="col-sm-2"></div>
+											<div class="col-sm-5">
+											<p:outputLabel value="Proposal No" style="font-weight:bold"/>
+											<br></br>
+											<p:inputText class="form-control"
+															value="#{claimController.pmodel.p_no}" required="true"
+															style="width:270px;" />
+											</div>
+											<div class="col-sm-5">
+											<p:outputLabel value="Holder Name" style="font-weight:bold"/>
+											<br></br>
+											<p:inputText class="form-control"
+															value="#{claimController.pmodel.name}" required="true"
+															style="width:270px;" />
+											</div>
+										
+										</div><br></br>
+										
+										<div class="form-row">
+											<div class="col-sm-2"></div>
+											<div class="col-sm-5">
+											<p:outputLabel value="Phone" style="font-weight:bold"/><br></br>
+												<p:inputText class="form-control"
+															value="#{claimController.pmodel.phone}" required="true"
+															style="width:270px;" />
+											</div>
+											<div class="col-sm-5">
+											<p:outputLabel value="Email" style="font-weight:bold"/><br></br>
+											<p:inputText class="form-control"
+															value="#{claimController.pmodel.email}" required="true"
+															style="width:270px;" />
+											</div>
+										
+										</div><br></br>
+										
+										<div class="form-row">
+											<div class="col-sm-2"></div>
+											<div class="col-sm-5">
+											<p:outputLabel value="Date" style="font-weight:bold"/><br></br>
+											<p:inputText class="form-control"
+															value="#{claimController.pmodel.today}" required="true"
+															style="width:270px;" />
+											</div>
+											<div class="col-sm-5">
+											<p:outputLabel value="Sum Insurred" style="font-weight:bold"/><br></br>
+											<p:inputText class="form-control"
+															value="#{claimController.pmodel.totalamount}"
+															required="true" style="width:270px;" />
+											</div>
+										
+										</div><br></br>
+										
+										<div class="form-row">
+											<div class="col-sm-2"></div>
+											<div class="col-sm-5">
+											<p:outputLabel value="Claim Type" style="font-weight:bold"/><br></br>
+											<h:selectOneMenu id="Category"
+															value="#{claimController.pmodel.type}"
+															style="width:270px;height:35px;" required="true" requiredMessage="Pls select Claim Type!">
+															<f:selectItem itemLabel="Select Category" itemValue=""
+																noSelectionOption="true" />
+															<f:selectItems value="#{claimController.category}" />
+														</h:selectOneMenu> &nbsp;&nbsp;
+														<h:message for="Category" style="color:red"></h:message>
+											</div>
+											<div class="col-sm-5">
+											<p:outputLabel value="Location" style="font-weight:bold"/><br></br>
+											<p:inputText class="form-control" id="location"
+															value="#{claimController.pmodel.place}" required="true"
+															style="width:270px;" requiredMessage="Location is required!"/>&nbsp;
+															<p:message for="location" style="color:red; background-color:white"></p:message>
+											</div>
+										
+										</div><br></br>
+										
+										<div class="form-row">
+											<div class="col-sm-2"></div>
+											<div class="col-sm-5">
+											<p:outputLabel value="Reason" style="font-weight:bold"/><br></br>
+											<p:inputTextarea rows="2" cols="92" id="reason" 
+															value="#{claimController.pmodel.reason}" required="true" requiredMessage="Reason is required!"/>
+															&nbsp;
+															<p:message for="reason" style="color:red;background-color:white"></p:message>
+											</div>
+											
+										
+										</div><br></br>
+										<center><p:commandButton value="Submit" id="mySmallButton" styleClass="smallButton"
+															action="#{claimController.getClaim()}" ajax="false"
+															style=" width:200px;" /></center>
+															
+										
+										</c:if>
+										</h:form>
+										
+										
+								<div class="card-wrapper">
+								
+								<c:set var="flag" value="#{claimController.policyflag}" />
+									<c:if test="${flag == true}">
+										<div class="row">
+
+											<div class="card bg-light text-dark text-center"
+												style="border: solid 3px #FF8C00; width: 400px; height: 100px; background-color: #F8F8FF; box-shadow: 1px 2px 4px rgba(0, 0, 0, .8); font-family: sans-serif;">
+												<div class="card-body">
+													<h3 style="color:red">Your Policy Number is wrong!</h3>
+													<hr></hr>
+													
+												</div>
+											</div>
+
+										</div>
+
+
+									</c:if>
+								
+									<c:set var="flag" value="#{claimController.bflag}" />
+									<c:if test="${flag == true}">
+										<div class="row">
+
+											<div class="card bg-light text-dark text-center"
+												style="border: solid 3px #FF8C00; width: 500px; height: 200px; background-color: #F8F8FF; box-shadow: 1px 2px 4px rgba(0, 0, 0, .8); font-family: sans-serif;">
+												<div class="card-body">
+													<h3>Your Death Claim is successful!</h3>
+													<hr></hr>
+													<p>
+														Remain Balance :
+														<p:outputLabel value="#{claimController.remainbalance}"></p:outputLabel>
+														<br></br>
+
+													</p>
+												</div>
+											</div>
+
+										</div>
+
+
+									</c:if>
+
+									<c:set var="flag" value="#{claimController.eflag}" />
+									<c:if test="${flag == true}">
+										<div class="row">
+
+											<div class="card bg-light text-dark text-center"
+												style="border: solid 3px #FF8C00; width: 500px; height: 150px; background-color: #F8F8FF; box-shadow: 1px 2px 4px rgba(0, 0, 0, .8); font-family: sans-serif;">
+												<div class="card-body">
+													<h3 style="color: red">Your Proposal is Expired!</h3>
+
+
+												</div>
+											</div>
+
+										</div>
+
+
+									</c:if>
+
+									<c:set var="flag" value="#{claimController.cflag}" />
+									<c:if test="${flag == true}">
+
+										<div class="row">
+
+											<div class="card bg-light text-dark text-center"
+												style="border: solid 3px #FF8C00; width: 500px; height: 200px; background-color: #F8F8FF; box-shadow: 1px 2px 4px rgba(0, 0, 0, .8); font-family: sans-serif;">
+												<div class="card-body">
+
+													<h3 style="color: green">Your Claim Request is
+														successful</h3>
+													<hr></hr>
+													<p>
+														Remain Balance :
+														<p:outputLabel value="#{claimController.remainbalance}"></p:outputLabel>
+														<br></br> request claim amount :
+														<p:outputLabel value="#{claimController.currentAmount}"></p:outputLabel>
+														<br></br> Previous Total Claim amount :
+														<p:outputLabel
+															value="#{claimController.total_claimAmount}"></p:outputLabel>
+														<br></br>
+
+													</p>
+
+												</div>
+											</div>
+										</div>
+									</c:if>
+
+									<c:set var="flag" value="#{claimController.noflag}" />
+									<c:if test="${flag == true}">
+										<div class="text-align">
+											<div class="row">
+
+												<div class="card bg-light text-dark text-center"
+													style="border: solid 3px #FF8C00; width: 500px; height: 250px; background-color: #F8F8FF; box-shadow: 1px 2px 4px rgba(0, 0, 0, .8); font-family: sans-serif;">
+													<div class="card-body">
+
+														<h3 style="color: green">Your Claim Request is
+															Successful</h3>
+														<hr></hr>
+														<h4>Your remain balance is low!</h4>
+														<p>
+															Remain Balance :
+															<p:outputLabel value="#{claimController.remainbalance}"></p:outputLabel>
+															<br></br>request claim amount :
+															<p:outputLabel value="#{claimController.currentAmount}"></p:outputLabel>
+															<br></br>Previous Total Claim amount :
+															<p:outputLabel
+																value="#{claimController.total_claimAmount}"></p:outputLabel>
+															<br></br>
+
+														</p>
+
+													</div>
+												</div>
+
+
+
+											</div>
+										</div>
+									</c:if>
+
+									<c:set var="flag" value="#{claimController.oflag}" />
+									<c:if test="${flag == true}">
+										<div class="text-align">
+											<div class="row">
+
+												<div class="card bg-light text-dark text-center"
+													style="border: solid 3px #FF8C00; width: 500px; height: 200px; background-color: #F8F8FF; box-shadow: 1px 2px 4px rgba(0, 0, 0, .8); font-family: sans-serif;">
+													<div class="card-body">
+
+														<h3 style="color: red">Out of Balance</h3>
+														<hr></hr>
+														<p>
+															Remain Balance :
+															<p:outputLabel value="#{claimController.remainbalance}"></p:outputLabel>
+															<br></br> Request Claim amount :
+															<p:outputLabel value="#{claimController.currentAmount}"></p:outputLabel>
+															<br></br> Previous Total Claim amount :
+															<p:outputLabel
+																value="#{claimController.total_claimAmount}"></p:outputLabel>
+															<br></br>
+
+														</p>
+
+													</div>
+												</div>
+
+
+
+											</div>
+										</div>
+									</c:if>
+								</div>
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- ============================================================== -->
+				<!-- End PAge Content -->
+				<!-- ============================================================== -->
+			</div>
+			<!-- ============================================================== -->
+			<!-- End Container fluid  -->
+			<!-- ============================================================== -->
+		</div>
+		<!-- ============================================================== -->
+		<!-- End Page wrapper  -->
+		<!-- ============================================================== -->
+		<!-- ============================================================== -->
+		<!-- footer -->
+		<!-- ============================================================== -->
+		<center><footer class="footer"> © 2020 Personal Accident Insurance
+		Group 4.com </footer></center>
+		<!-- ============================================================== -->
+		<!-- End footer -->
+		<!-- ============================================================== -->
+	</div>
+	<!-- ============================================================== -->
+	<!-- End Wrapper -->
+	<!-- ============================================================== -->
+	<!-- ============================================================== -->
+	<!-- All Jquery -->
+	<!-- ============================================================== -->
+	<!-- <script src="assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
+    Bootstrap tether Core JavaScript
+    <script src="assets/node_modules/popper/popper.min.js"></script>
+    <script src="assets/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    slimscrollbar scrollbar JavaScript
+    <script src="dist/js/perfect-scrollbar.jquery.min.js"></script>
+    Wave Effects
+    <script src="dist/js/waves.js"></script>
+    Menu sidebar
+    <script src="dist/js/sidebarmenu.js"></script>
+    stickey kit
+    <script src="assets/node_modules/sticky-kit-master/dist/sticky-kit.min.js"></script>
+    <script src="assets/node_modules/sparkline/jquery.sparkline.min.js"></script> -->
+	<!--Custom JavaScript -->
+	<script src="dist/js/custom.min.js"></script>
+	<script type="text/javascript"
+		src="https://code.jquery.com/jquery-1.12.4.js" />
+	<script type="text/javascript"
+		src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" />
+	<link rel="stylesheet"
+		href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+	<script>
+    $(document).ready(function() {
+    	   $(".datepicker").datepicker({
+    	      dateFormat: 'dd MM, yy',
+    	      changeMonth: true,
+    	      changeYear: true,
+    	      yearRange: "1960:2017"
+    	   });
+    	});
+    </script>
+</h:body>
+</html>
