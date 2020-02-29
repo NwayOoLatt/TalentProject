@@ -31,19 +31,26 @@
 	background: #fff;
 	color: #212121;
 }
+
 .card {
 	margin: 0 auto; /* Added */
 	float: none; /* Added */
 	margin-bottom: 10px; /* Added */
 }
+
 .topbar .top-navbar {
-    min-height: 10px;
-    padding: 0px;
-    height: 48px;
+	min-height: 10px;
+	padding: 0px;
+	height: 48px;
 }
+
 body .ui-inputfield {
-    border-color:blue;
-    width: 270px;
+	border-color: blue;
+	width: 270px;
+}
+body .ui-widget, body .ui-widget .ui-widget {
+	text-decoration: none;
+	font-weight: bold;
 }
 </style>
 </h:head>
@@ -67,9 +74,7 @@ body .ui-inputfield {
 		<header class="topbar"> <nav
 			class="navbar top-navbar navbar-expand-md navbar-dark"> <!-- ============================================================== -->
 		<!-- Logo --> <!-- ============================================================== -->
-		<div class="navbar-header">
-			
-		</div>
+		<div class="navbar-header"></div>
 		<!-- ============================================================== -->
 		<!-- End Logo --> <!-- ============================================================== -->
 		<div class="navbar-collapse">
@@ -78,20 +83,23 @@ body .ui-inputfield {
 			<!-- ============================================================== -->
 			<ul class="navbar-nav mr-auto">
 				<!-- This is  -->
-				
+
 			</ul>
 			<ul class="navbar-nav my-lg-0">
 				<!-- ============================================================== -->
 				<!-- User profile and search -->
 				<!-- ============================================================== -->
-				 <li class="nav-item dropdown">
-                           <p style="color:blue;margin-right: 30px;margin-left:500px;margin-top:10px;font-size:20px"><i class="fa fa-user-circle"  style="font-size:30px"></i> #{user}</p>
-                  </li>
+				<li class="nav-item dropdown">
+					<p
+						style="color: blue; margin-right: 30px; margin-left: 500px; margin-top: 10px; font-size: 20px">
+						<i class="fa fa-user-circle" style="font-size: 30px"></i> #{user}
+					</p>
+				</li>
 				<!-- ============================================================== -->
 				<!-- User profile and search -->
 				<!-- ============================================================== -->
 			</ul>
-		
+
 		</div>
 		</nav> </header>
 		<!-- ============================================================== -->
@@ -102,8 +110,7 @@ body .ui-inputfield {
 		<!-- ============================================================== -->
 		<aside class="left-sidebar">
 		<div class="d-flex no-block nav-text-box align-items-center">
-			<span><img src="images/"
-				alt="elegant admin template" /></span> <a
+			<span><img src="images/" alt="elegant admin template" /></span> <a
 				class="waves-effect waves-dark ml-auto hidden-sm-down"
 				href="javascript:void(0)"></a> <a
 				class="nav-toggler waves-effect waves-dark ml-auto hidden-sm-up"
@@ -114,24 +121,23 @@ body .ui-inputfield {
 			<!-- Sidebar navigation-->
 			<nav class="sidebar-nav"> <h:form>
 				<ul id="sidebarnav">
-					
-					<li><p:commandLink
-							action="#{proposalController.idGenerate()}" ajax="false"
-							class="waves-effect waves-dark" aria-expanded="false">
+
+					<li><p:commandLink action="#{proposalController.idGenerate()}"
+							ajax="false" class="waves-effect waves-dark"
+							aria-expanded="false">
 							<i class="fa fa-file-text" aria-hidden="true"></i>
 							<span class="hide-menu"></span>Online Proposal</p:commandLink></li>
-							
+
 					<li><p:commandLink
 							action="#{proposalController.statusCheck()}" ajax="false"
 							class="waves-effect waves-dark" aria-expanded="false">
-							 <i class="fa fa-eye" aria-hidden="true"></i>
+							<i class="fa fa-eye" aria-hidden="true"></i>
 							<span class="hide-menu"></span>Status Checking</p:commandLink></li>
-					<li><p:commandLink
-							action="paymentform.xhtml" ajax="false"
+					<li><p:commandLink action="paymentform.xhtml" ajax="false"
 							class="waves-effect waves-dark" aria-expanded="false">
 							<i class="fa fa-smile-o"></i>
 							<span class="hide-menu"></span>Add Payment</p:commandLink></li>
-					
+
 					<li><a class="waves-effect waves-dark" href="claimform.xhtml"
 						aria-expanded="false"><i class="fa fa-wheelchair"></i><span
 							class="hide-menu"></span>Claim</a></li>
@@ -140,10 +146,11 @@ body .ui-inputfield {
 							class="waves-effect waves-dark" aria-expanded="false">
 							<i class="fa fa-list" aria-hidden="true"></i>
 							<span class="hide-menu"></span>Policy Listing</p:commandLink></li>
-					<li><p:commandLink
-							action="#{userController.userLogout()}" ajax="false"
-							class="btn waves-effect waves-light btn-success hidden-md-down" style="width:100px;margin-left:70px;margin-top:20px;color:#7FDBFF">
-							Log Out</p:commandLink></li> 
+					<li><p:commandLink action="#{userController.userLogout()}"
+							ajax="false"
+							class="btn waves-effect waves-light btn-success hidden-md-down"
+							style="width:100px;margin-left:70px;margin-top:20px;color:#7FDBFF">
+							Log Out</p:commandLink></li>
 				</ul>
 			</h:form> </nav>
 			<!-- End Sidebar navigation -->
@@ -167,7 +174,7 @@ body .ui-inputfield {
 					<div class="col-md-5 align-self-center">
 						<h4 class="text-themecolor">Premiun Form</h4>
 					</div>
-					
+
 				</div>
 				<!-- ============================================================== -->
 				<!-- End Bread crumb and right sidebar toggle -->
@@ -176,95 +183,116 @@ body .ui-inputfield {
 				<!-- Start Page Content -->
 				<!-- ============================================================== -->
 				<div class="row">
-					<div class="col-12" style="background-image: linear-gradient( 181deg,  rgba(2,0,97,1) 15%, rgba(97,149,219,1) 158.5% );">
-						
-							<div class="card" style="margin: 0 auto;box-shadow: 1px 2px 4px rgba(0, 0, 0, 10); border-radius:20px;margin-top:20px;margin-bottom:20px;" >
+					<div class="col-12">
+						<div class="card" style="background-image: linear-gradient( 181deg,  rgba(2,0,97,1) 15%, rgba(97,149,219,1) 158.5% );">
+							<div class="card-body">
+								 <div class="col-12">
+                        <div class="card" style="margin: 0 auto;box-shadow: 1px 2px 4px rgba(0, 0, 0, 10); border-radius:20px;" >
                             <div class="card-body">
-                            <h2><strong>Proposal Registration Form</strong></h2><hr></hr>
-                <h4 style="color:blue">Step 2: Premium</h4><br></br><br></br>
+								<h2>
+									<strong>Online Proposal Registration</strong>
+								</h2>
+								<hr></hr>
+								<h4 style="color: blue">Step 2: Premium</h4>
+								<br></br>
+								<br></br>
 								<h:form id="form">
-								
-								
-								
-								<!-- 2 -->
-								<div class="form-row">
-											<div class="col-sm-2"></div>
-											<div class="col-sm-5">
-										<p:outputLabel value="Year :"/>&nbsp;<br />
+
+
+
+									<!-- 2 -->
+									<div class="form-row">
+										<div class="col-sm-2"></div>
+										<div class="col-sm-5">
+											<p:outputLabel value="Year " style="font-weight:bold;"/>
+											&nbsp;<br />
 											<p:inputText class="form-control" id="year"
-													value="#{proposalController.proposal.year}"
-														required="true"  requiredMessage="Please write one year!" validatorMessage="Allow one year!"
-										 style="width:270px;" >
-										</p:inputText>
-										&nbsp;<br/>
-												<p:message for="year" style="color:red;background-color:white;"/>
-											</div>
-											<div class="col-sm-5">
-											
-											
-											
-											<p:outputLabel>SumInsurance:</p:outputLabel><br/>
-												
-													<p:inputText id="total" class="form-control"  
-														value="#{proposalController.proposal.totalamount}"
-														required="true"  style="width:270px;"  requiredMessage="Please write your insurance ammount!"  validatorMessage="must be between 500000 and 20000000!">
-										<f:validateDoubleRange minimum="500000" maximum="200000000" />
-									 
-									  </p:inputText>
-									  
-							
-									       
-                      
-                
-											
-												<p:message for="total" style="color:red;background-color:white;"></p:message>
-											
-											</div>
-										
-								</div><br></br>
-								
-								<!-- 3 -->
-								<div class="form-row">
-											<div class="col-sm-2"></div>
-											<div class="col-sm-5">
-											
-											<p:outputLabel>Term:</p:outputLabel><br/>
-												<p:selectOneRadio id="Term"
-														value="#{proposalController.proposal.term}"
-														unselectable="true" required="true" requiredMessage="Please select one as you wish!">
-														<f:selectItem itemLabel="3 months" itemValue="3" />
-														<f:selectItem itemLabel="6 months" itemValue="6" />
-														<f:selectItem itemLabel="1 year" itemValue="12" />
-													</p:selectOneRadio>&nbsp;<br/>
-												<p:message for="Term" style="color:red;background-color:white;"/>
-											</div>
-											
-											
-										
-								</div><br></br>
-								
-								<!-- 4 -->
-								<div class="form-row">
-											<div class="col-sm-2"></div>
-											
-											<p:commandButton value="Previous" immediate="true" update="form"
-											action="#{proposalController.idGenerate()}" ajax="false"
-											style="width:120px;border-radius:20px;"/>
+												value="#{proposalController.proposal.year}" required="true"
+												requiredMessage="Please write one year!"
+												validatorMessage="Allow one year!" style="width:270px;">
+											</p:inputText>
+											&nbsp;<br />
+											<p:message for="year"
+												style="color:red;background-color:white;" />
+										</div>
+										<div class="col-sm-5">
+
+
+
+											<p:outputLabel value="Sum Insured Amount "
+												style="font-weight:bold" /><br></br>
+											&nbsp;
+											<p:inputText id="total" class="form-control"
+												value="#{proposalController.proposal.totalamount}"
+												required="true" style="width:270px;"
+												requiredMessage="Please write your insurance ammount!"
+												validatorMessage="must be between 500000 and 20000000!">
+												<f:validateDoubleRange minimum="500000" maximum="200000000" />
+
+											</p:inputText>
+
+
+
+
+
+
+											<p:message for="total"
+												style="color:red;background-color:white;"></p:message>
+
+										</div>
+
+									</div>
+									<br></br>
+
+									<!-- 3 -->
+									<div class="form-row">
+										<div class="col-sm-2"></div>
+										<div class="col-sm-5">
+
+											<p:outputLabel value="Term " style="font-weight:bold" />
+											&nbsp;<br />
+											<p:selectOneRadio id="Term"
+												value="#{proposalController.proposal.term}"
+												unselectable="true" required="true"
+												requiredMessage="Please select one as you wish!">
+												<f:selectItem itemLabel="3 months" itemValue="3" />
+												<f:selectItem itemLabel="6 months" itemValue="6" />
+												<f:selectItem itemLabel="1 year" itemValue="12" />
+											</p:selectOneRadio>
+											&nbsp;<br />
+											<p:message for="Term"
+												style="color:red;background-color:white;" />
+										</div>
+
+
+
+									</div>
+									<br></br>
+
+									<!-- 4 -->
+									<div class="form-row">
+										<div class="col-sm-2"></div>
+
+										<p:commandButton value="Previous" immediate="true"
+											update="form" action="#{proposalController.idGenerate()}"
+											ajax="false" style="width:140px;border-radius:20px;" />
 										&nbsp;&nbsp;
-											
-											<p:commandButton value="Calculate"
+
+										<p:commandButton value="Calculate"
 											action="#{proposalController.holderPremium()}" ajax="false"
-											 style="width:120px;border-radius:20px;"/>
+											style="width:140px;border-radius:20px;" />
 										&nbsp;&nbsp;
-										
-										<p:commandButton action="beneficiary.xhtml" value="Next" ajax="false" style="width:120px;border-radius:20px;"></p:commandButton>
-										
-											</div>
-											
-											
-											
+
+										<p:commandButton action="beneficiary.xhtml" value="Next"
+											ajax="false" style="width:140px;border-radius:20px;"></p:commandButton>
+
+									</div>
+
+
+
 								</h:form>
-								<br></br><br></br>
+								<br></br>
+								<br></br>
 								<c:set var="flag" value="#{proposalController.pflag}" />
 								<c:if test="${flag == true}">
 
@@ -278,11 +306,13 @@ body .ui-inputfield {
 												<hr></hr>
 												<p>
 
-													
-									term : <p:outputLabel value="#{proposalController.term}">month</p:outputLabel><br></br>
-													pay amount :
-													<p:outputLabel value="#{proposalController.amount}">&nbsp;</p:outputLabel><br></br>
-													Sum Insured : <p:outputLabel value="#{proposalController.total}"></p:outputLabel>
+
+													term :
+													<p:outputLabel value="#{proposalController.term}">month</p:outputLabel>
+													<br></br> pay amount :
+													<p:outputLabel value="#{proposalController.amount}">&nbsp;</p:outputLabel>
+													<br></br> Sum Insured :
+													<p:outputLabel value="#{proposalController.total}"></p:outputLabel>
 													<br></br>
 
 												</p>
@@ -291,11 +321,11 @@ body .ui-inputfield {
 										</div>
 									</div>
 								</c:if>
-								</div>
-								</div>
-								
-						
-							
+							</div>
+						</div>
+
+</div></div></div>
+
 					</div>
 				</div>
 				<!-- ============================================================== -->
@@ -314,8 +344,10 @@ body .ui-inputfield {
 		<!-- ============================================================== -->
 		<!-- footer -->
 		<!-- ============================================================== -->
-		<center><footer class="footer"> © 2020 Personal Accident Insurance
-		Group 4.com </footer></center>
+		<center>
+			<footer class="footer"> © 2020 Personal Accident Insurance
+			Group 4.com </footer>
+		</center>
 		<!-- ============================================================== -->
 		<!-- End footer -->
 		<!-- ============================================================== -->
