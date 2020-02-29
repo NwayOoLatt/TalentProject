@@ -25,65 +25,55 @@
 	float: none; /* Added */
 	margin-bottom: 10px; /* Added */
 }
+
 .topbar .top-navbar {
-    min-height: 10px;
-    padding: 0px;
-    height: 48px;
+	min-height: 20px;
+	padding: 0px;
+	height: 70px;
 }
+
 .scroll-sidebar {
-
-    height: calc(100% - 80px);
-    position: relative;
-    background-color: transparent;
-
-} 
-.left-sidebar:hover {
-    left: 0px;
-    background-color: rgba(0,0,0,0.7);
+	height: calc(100% - 80px);
+	position: relative;
+	background-color: transparent;
 }
- .sidebar .sidebar-nav ul li a:hover {
-    color: black;
-    font-weight: bolder;
+
+.left-sidebar:hover {
+	left: 0px;
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+.sidebar .sidebar-nav ul li a:hover {
+	color: black;
+	font-weight: bolder;
 }
 
 .sidebar-nav ul li a {
-    color: lightcyan;
-    -webkit-transition: 0.1s ease-in;
-    -o-transition: 0.1s ease-in;
-    transition: 0.1s ease-in;
-}   
+	color: lightcyan;
+	-webkit-transition: 0.1s ease-in;
+	-o-transition: 0.1s ease-in;
+	transition: 0.1s ease-in;
+}
+
 .left-sidebar .sidebar-nav ul li a:hover {
-
-    color: aqua;
-    font-size: initial;
-    font-weight: bold;
-	
-} 
+	color: aqua;
+	font-size: initial;
+	font-weight: bold;
+}
+body .ui-tabs .ui-tabs-nav .ui-tabs-header a {
+    color: #333;
+    padding: .571em 1em .571em 1em;
+    display: block;
+    background-color: cadetblue;
+    }
 </style>
-<script>
-
-function myFunction() {
-	var x=document.getElementById("Term").value;
-	var y=document.getElementById("total").value;
-	x=parseInt(x);
-	y=parseInt(y);
-	var sum=x/y;
 	
-	document.getElementById("show").innerHTML = "aaaaa";
-	}
-
-</script>
 </h:head>
 <h:body class="skin-default-dark fixed-layout">
 	<!-- ============================================================== -->
 	<!-- Preloader - style you can find in spinners.css -->
 	<!-- ============================================================== -->
-	<div class="preloader">
-		<div class="loader">
-			<div class="loader__figure"></div>
-			<p class="loader__label">Elegant admin</p>
-		</div>
-	</div>
+	
 	<!-- ============================================================== -->
 	<!-- Main wrapper - style you can find in pages.scss -->
 	<!-- ============================================================== -->
@@ -91,38 +81,64 @@ function myFunction() {
 		<!-- ============================================================== -->
 		<!-- Topbar header - style you can find in pages.scss -->
 		<!-- ============================================================== -->
-		<header class="topbar"> <nav
-			class="navbar top-navbar navbar-expand-md navbar-dark"> <!-- ============================================================== -->
-		<!-- Logo --> <!-- ============================================================== -->
-		<div class="navbar-header">
-			
-		</div>
-		<!-- ============================================================== -->
-		<!-- End Logo --> <!-- ============================================================== -->
-		<div class="navbar-collapse">
-			<!-- ============================================================== -->
-			<!-- toggle and nav items -->
-			<!-- ============================================================== -->
-			<ul class="navbar-nav mr-auto">
-				<!-- This is  -->
-				
-			</ul>
-			<ul class="navbar-nav my-lg-0">
-				<!-- ============================================================== -->
-				<!-- User profile and search -->
-				<!-- ============================================================== -->
-				
-                          <li class="nav-item dropdown">
-                            
-                            
-                            <p style="color:blue;margin-right: 30px;margin-left:500px;margin-top:10px;font-size:20px"><i class="fa fa-user-circle"  style="font-size:30px"></i> #{user}</p>
+		 <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <!-- ============================================================== -->
+                <!-- Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">
+                        <!-- Logo icon --><b>
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                            <!-- Light Logo icon -->
+                            <img src="../assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                        </b>
+                        <!--End Logo icon -->
+                        <!-- Logo text --><span>
+                         <!-- dark Logo text -->
+                         <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                         <!-- Light Logo text -->    
+                         <img src="../assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav mr-auto">
+                        <!-- This is  -->
+                        <li class="nav-item hidden-sm-up"> <a class="nav-link nav-toggler waves-effect waves-light" href="javascript:void(0)"><i class="ti-menu"></i></a></li>
+                        <!-- ============================================================== -->
+                        <!-- Search -->
+                        <!-- ============================================================== -->
+                        <!-- <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="fa fa-search"></i></a>
+                            <form class="app-search">
+                                <input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="fa fa-times"></i></a></input>
+                            </form>
+                        </li> -->
+                    </ul>
+                    <ul class="navbar-nav my-lg-0">
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                             <i class="fa fa-user" style="color:blue;">&nbsp;
+                            <h4 style="color:blue; margin-right:10px;" > #{user}</h4></i></a>
                         </li>
-				<!-- ============================================================== -->
-				<!-- User profile and search -->
-				<!-- ============================================================== -->
-			</ul>
-		</div>
-		</nav> </header>
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                    </ul>
+                </div>
+            </nav>
+            
+            
+        </header>
 		<!-- ============================================================== -->
 		<!-- End Topbar header -->
 		<!-- ============================================================== -->
@@ -130,52 +146,47 @@ function myFunction() {
 		<!-- Left Sidebar - style you can find in sidebar.scss  -->
 		<!-- ============================================================== -->
 		<aside class="left-sidebar">
-		<div class="d-flex no-block nav-text-box align-items-center">
-			<span><img src="images/"
-				alt="elegant admin template" /></span> <a
-				class="waves-effect waves-dark ml-auto hidden-sm-down"
-				href="javascript:void(0)"></a> <a
-				class="nav-toggler waves-effect waves-dark ml-auto hidden-sm-up"
-				href="javascript:void(0)"></a>
-		</div>
+		 <div class="d-flex no-block nav-text-box align-items-center">
+                <span><img src="../assets/images/logo-icon.png" alt="elegant admin template"/></span>
+                <a class="waves-effect waves-dark ml-auto hidden-sm-down" href="javascript:void(0)"><i class="ti-menu"></i></a>
+                <a class="nav-toggler waves-effect waves-dark ml-auto hidden-sm-up" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+            </div>
 		<!-- Sidebar scroll-->
 		<div class="scroll-sidebar">
 			<!-- Sidebar navigation-->
 			<nav class="sidebar-nav"> <h:form>
 				<ul id="sidebarnav">
-					
+
 					<li><p:commandLink style="color:aqua;"
 							action="#{proposalController.idGenerate()}" ajax="false"
 							class="waves-effect waves-dark" aria-expanded="false">
-							<i class="fa fa-file-text" aria-hidden="true" style="color:aqua;"></i>
+							<i class="fa fa-file-text" aria-hidden="true"
+								style="color: aqua;"></i>
 							<span class="hide-menu"></span>Online Proposal</p:commandLink></li>
-							
+
 					<li><p:commandLink style="color:aqua;"
 							action="#{proposalController.statusCheck()}" ajax="false"
 							class="waves-effect waves-dark" aria-expanded="false">
-							 <i class="fa fa-eye" aria-hidden="true" style="color:aqua;"></i>
+							<i class="fa fa-eye" aria-hidden="true" style="color: aqua;"></i>
 							<span class="hide-menu"></span>Status Checking</p:commandLink></li>
-					<li><p:commandLink style="color:aqua;"
-							action="paymentform.xhtml" ajax="false"
-							class="waves-effect waves-dark" aria-expanded="false">
-								<i class="fa fa-dollar" aria-hidden="true" style="color:aqua;"></i>
-							<span class="hide-menu"></span>Add Payment</p:commandLink></li>
 					
-					<li><a class="waves-effect waves-dark" href="claimform.xhtml"  style="color:aqua;"
-						aria-expanded="false"><i class="fa fa-wheelchair" style="color:aqua;"></i><span
-							class="hide-menu"></span>Claim</a></li>
-							
+					<li><p:commandLink style="color:aqua;"
+							action="#{claimController.claimForm()}" ajax="false"
+							class="waves-effect waves-dark" aria-expanded="false">
+							<i class="fa fa-wheelchair" aria-hidden="true" style="color: aqua;"></i>
+							<span class="hide-menu"></span>Claim Registration</p:commandLink></li>
 					<li><p:commandLink style="color:aqua;"
 							action="#{policyController.policylisting()}" ajax="false"
 							class="waves-effect waves-dark" aria-expanded="false">
-							<i class="fa fa-list" aria-hidden="true" style="color:aqua;"></i>
+							<i class="fa fa-list" aria-hidden="true" style="color: aqua;"></i>
 							<span class="hide-menu"></span>Policy Listing</p:commandLink></li>
-					<li><p:commandLink 
-							action="#{userController.userLogout()}" ajax="false"
-							class="btn waves-effect waves-light btn-success hidden-md-down" style="width:100px;margin-left:70px;margin-top:20px;box-shadow: 1px 2px 4px rgba(0, 0, 0, 10);color:white">
+					<li><p:commandLink action="#{userController.userLogout()}"
+							ajax="false"
+							class="btn waves-effect waves-light btn-success hidden-md-down"
+							style="width:100px;margin-left:70px;margin-top:20px;box-shadow: 1px 2px 4px rgba(0, 0, 0, 10);color:white">
 							
 							Log Out</p:commandLink></li>
-					
+
 				</ul>
 			</h:form> </nav>
 			<!-- End Sidebar navigation -->
@@ -196,12 +207,10 @@ function myFunction() {
 				<!-- Bread crumb and right sidebar toggle -->
 				<!-- ============================================================== -->
 				<div class="row page-titles">
-					<div class="col-md-5 align-self-center">
-						
-					</div>
+					<div class="col-md-5 align-self-center"></div>
 					<div class="col-md-7 align-self-center text-right">
 						<div class="d-flex justify-content-end align-items-center">
-							
+
 						</div>
 					</div>
 				</div>
@@ -213,110 +222,175 @@ function myFunction() {
 				<!-- ============================================================== -->
 				<div class="row">
 					<div class="col-12">
-						<div class="card" style="height: 1000px;">
+						<div class="card" >
 							<div class="card-body">
+								 <div class="col-12">
+                        <div class="card" style="margin: 0 auto;box-shadow: 1px 2px 4px rgba(0, 0, 0, 10); border-radius:20px;height:900px;" >
+                            <div class="card-body">
+                            <h3><strong>Proposal Detail</strong></h3><hr></hr>
+                
+               
 								<h:form>
-									
-    <p:tabView>
-        <p:tab title="Holder Information">
-            <table>
-                            			
-                            	<tr>	
-                            	<td><h4><p:outputLabel value="Proposal No:  ">&nbsp;</p:outputLabel></h4></td>
-                            		<td><p:outputLabel value="#{proposalController.proposal.p_no}" style="font-weight:bold;font-size:18px;">&nbsp;</p:outputLabel></td>
-                            	</tr>				
-            
-              				<tr>	
-                            	<td><p:outputLabel value="Holder Name: ">&nbsp;</p:outputLabel></td>
-							
-						<td>	<p:outputLabel value="#{proposalController.proposal.name}">&nbsp;</p:outputLabel></td></tr>
-						<tr>	
-                            	<td><p:outputLabel value="NRC: ">&nbsp;</p:outputLabel></td>
-						
-							<td><p:outputLabel value="#{proposalController.proposal.nrc}">&nbsp;</p:outputLabel></td></tr>
-							<tr>	
-                            	<td><p:outputLabel value="Gender: ">&nbsp;</p:outputLabel></td>
-							<td><p:outputLabel value="#{proposalController.proposal.gender}">&nbsp;</p:outputLabel></td></tr>
-							<tr>	
-                            	<td><p:outputLabel value="Martial Status: ">&nbsp;</p:outputLabel></td>
-							
-							<td><p:outputLabel value="#{proposalController.proposal.m_status}">&nbsp;</p:outputLabel></td></tr>
-							<tr>	
-                            	<td><p:outputLabel value="Date of Birth: ">&nbsp;</p:outputLabel></td>
-							<td><p:outputLabel value="#{proposalController.proposal.dateofbirth}">&nbsp;</p:outputLabel></td></tr>
-							<tr>	
-                            	<td><p:outputLabel value="Age: ">&nbsp;</p:outputLabel></td>
-							<td><p:outputLabel value="#{proposalController.proposal.age}">&nbsp;</p:outputLabel></td></tr>
-							<tr>	
-                            	<td><p:outputLabel value="	Occupation: ">&nbsp;</p:outputLabel></td>
-						<td><p:outputLabel value="#{proposalController.proposal.occupation}">&nbsp;</p:outputLabel></td></tr>
-							<tr>	
-                            	<td><p:outputLabel value="Phone: ">&nbsp;</p:outputLabel></td>
-							<td><p:outputLabel value="#{proposalController.proposal.phone}">&nbsp;</p:outputLabel></td></tr>
-							<tr>	
-                            	<td><p:outputLabel value="Email: ">&nbsp;</p:outputLabel></td>
-							<td><p:outputLabel value="#{proposalController.proposal.email}">&nbsp;</p:outputLabel></td></tr>
-							<tr>	
-                            	<td><p:outputLabel value="Address: ">&nbsp;</p:outputLabel></td>
-							<td><p:outputLabel value="#{proposalController.address}">&nbsp;</p:outputLabel></td></tr>
-							<tr>	
-                            	<td><p:outputLabel value="Start Date: ">&nbsp;</p:outputLabel></td>
-							<td><p:outputLabel value="#{proposalController.proposal.sdate}">&nbsp;</p:outputLabel></td></tr>
-							<tr>	
-                            	<td><p:outputLabel value="End Date: ">&nbsp;</p:outputLabel></td>
-							<td><p:outputLabel value="#{proposalController.proposal.edate}">&nbsp;</p:outputLabel></td></tr>
-							<br></br>
 
-				</table>
-        </p:tab>
-        
-        <p:tab title="Premium">
-            <table>
-               			<tr>
-               			<td><p:outputLabel value="Sum Insured Amount:  ">&nbsp;</p:outputLabel></td>
-           <td><p:outputLabel value="#{proposalController.proposal.totalamount}">&nbsp;</p:outputLabel></td></tr>
-					<tr>	
-					<td><p:outputLabel value="Term:  ">&nbsp;</p:outputLabel></td>
-					<td><p:outputLabel value="#{proposalController.proposal.term}">&nbsp;</p:outputLabel></td></tr>
-						<tr>
-						<td><p:outputLabel value="Premium Amount:  ">&nbsp;</p:outputLabel></td>
-						<td><p:outputLabel value="#{proposalController.proposal.amount}">&nbsp;</p:outputLabel></td>
-				</tr>
-				
-           </table>
-        </p:tab>
-        
-    
-        
-        <p:tab title="Beneficiary">
-            <table>
-               			<tr>
-               			<td><p:outputLabel value="Name:  ">&nbsp;</p:outputLabel></td>
-               			
-               			<td><p:outputLabel value="#{proposalController.proposal.b_name}">&nbsp;</p:outputLabel></td></tr>
-					<tr>
-					<td><p:outputLabel value="NRC:  ">&nbsp;</p:outputLabel></td>
-					
-					<td><p:outputLabel value="#{proposalController.proposal.b_nrc}">&nbsp;</p:outputLabel></td></tr>
-					<tr>
-						<td><p:outputLabel value="Relationship:  ">&nbsp;</p:outputLabel></td>
-						
-						<td><p:outputLabel value="#{proposalController.proposal.relationship}">&nbsp;</p:outputLabel><br></br>
-						</td></tr>
-						
-					
-						</table>
-        </p:tab>
-        
-    </p:tabView><br></br><br></br>
-    				<center>
-   					 <p:commandButton value="Back"
+									<p:tabView style="border:none;">
+										<p:tab title="Holder Information">
+											<table>
+
+												<tr>
+													<td><h4>
+															<p:outputLabel value="Proposal No  " style="color:red;font-weight:bold;font-size:18px;">&nbsp;</p:outputLabel>
+														</h4></td>
+													<td><p:outputLabel
+															value=":#{proposalController.proposal.p_no}"
+															style="font-weight:bold;font-size:18px;">&nbsp;</p:outputLabel></td>
+												</tr>
+												<tr></tr>
+												<tr></tr>
+												<tr>
+													<td><p:outputLabel value="Holder Name ">&nbsp;</p:outputLabel></td>
+
+													<td><p:outputLabel
+															value=":#{proposalController.proposal.name}">&nbsp;</p:outputLabel></td>
+												</tr>
+												<tr>
+													<td><p:outputLabel value="NRC ">&nbsp;</p:outputLabel></td>
+
+													<td><p:outputLabel
+															value=":#{proposalController.proposal.nrc}">&nbsp;</p:outputLabel></td>
+												</tr>
+												<tr>
+													<td><p:outputLabel value="Gender ">&nbsp;</p:outputLabel></td>
+													<td><p:outputLabel
+															value=":#{proposalController.proposal.gender}">&nbsp;</p:outputLabel></td>
+												</tr>
+												<tr>
+													<td><p:outputLabel value="Martial Status ">&nbsp;</p:outputLabel></td>
+
+													<td><p:outputLabel
+															value=":#{proposalController.proposal.m_status}">&nbsp;</p:outputLabel></td>
+												</tr>
+												<tr>
+													<td><p:outputLabel value="Date of Birth ">&nbsp;</p:outputLabel></td>
+													<td><p:outputLabel
+															value=":#{proposalController.proposal.dateofbirth}">&nbsp;</p:outputLabel></td>
+												</tr>
+												<tr>
+													<td><p:outputLabel value="Age ">&nbsp;</p:outputLabel></td>
+													<td><p:outputLabel
+															value=":#{proposalController.proposal.age}">&nbsp;</p:outputLabel></td>
+												</tr>
+												<tr>
+													<td><p:outputLabel value="	Occupation ">&nbsp;</p:outputLabel></td>
+													<td><p:outputLabel
+															value=":#{proposalController.proposal.occupation}">&nbsp;</p:outputLabel></td>
+												</tr>
+												<tr>
+													<td><p:outputLabel value="Phone ">&nbsp;</p:outputLabel></td>
+													<td><p:outputLabel
+															value=":#{proposalController.proposal.phone}">&nbsp;</p:outputLabel></td>
+												</tr>
+												<tr>
+													<td><p:outputLabel value="Email ">&nbsp;</p:outputLabel></td>
+													<td><p:outputLabel
+															value=":#{proposalController.proposal.email}">&nbsp;</p:outputLabel></td>
+												</tr>
+												<tr>
+													<td><p:outputLabel value="Address ">&nbsp;</p:outputLabel></td>
+													<td><p:outputLabel
+															value=":#{proposalController.address}">&nbsp;</p:outputLabel></td>
+												</tr>
+												<tr>
+													<td><p:outputLabel value="Start Date ">&nbsp;</p:outputLabel></td>
+													<td><p:outputLabel
+															value=":#{proposalController.proposal.sdate}">&nbsp;</p:outputLabel></td>
+												</tr>
+												<tr>
+													<td><p:outputLabel value="End Date ">&nbsp;</p:outputLabel></td>
+													<td><p:outputLabel
+															value=":#{proposalController.proposal.edate}">&nbsp;</p:outputLabel></td>
+												</tr>
+												<br></br>
+
+											</table>
+										</p:tab>
+
+										<p:tab title="Premium">
+											<table>
+												<tr>
+													<td><p:outputLabel value="Sum Insured Amount  ">&nbsp;</p:outputLabel></td>
+													<td><p:outputLabel
+															value=":#{proposalController.proposal.totalamount}">&nbsp;</p:outputLabel></td>
+												</tr>
+												<tr>
+													<td><p:outputLabel value="Term  ">&nbsp;</p:outputLabel></td>
+													<td><p:outputLabel
+															value=":#{proposalController.proposal.term}">&nbsp;</p:outputLabel></td>
+												</tr>
+												<tr>
+													<td><p:outputLabel value="Premium Amount  ">&nbsp;</p:outputLabel></td>
+													<td><p:outputLabel
+															value=":#{proposalController.proposal.amount}">&nbsp;</p:outputLabel></td>
+												</tr>
+
+											</table>
+										</p:tab>
+
+
+
+										<p:tab title="Beneficiary">
+											<table>
+												<tr>
+													<td><p:outputLabel value="Name ">&nbsp;</p:outputLabel></td>
+
+													<td><p:outputLabel
+															value=":#{proposalController.proposal.b_name}">&nbsp;</p:outputLabel></td>
+												</tr>
+												<tr>
+													<td><p:outputLabel value="NRC  ">&nbsp;</p:outputLabel></td>
+
+													<td><p:outputLabel
+															value=":#{proposalController.proposal.b_nrc}">&nbsp;</p:outputLabel></td>
+												</tr>
+												<tr>
+													<td><p:outputLabel value="Relationship  ">&nbsp;</p:outputLabel></td>
+
+													<td><p:outputLabel
+															value=":#{proposalController.proposal.relationship}">&nbsp;</p:outputLabel><br></br>
+													</td>
+												</tr>
+												<tr>
+													<td><p:outputLabel value="Email  ">&nbsp;</p:outputLabel></td>
+													<td><p:outputLabel
+															value=":#{proposalController.proposal.b_email}">&nbsp;</p:outputLabel><br/></td>
+												</tr>
+													
+												<tr>
+													<td><p:outputLabel value="Phone  ">&nbsp;</p:outputLabel></td>
+													<td><p:outputLabel
+															value=":#{proposalController.proposal.b_phone}">&nbsp;</p:outputLabel><br/></td>
+												</tr>
+												
+												<tr>
+													<td><p:outputLabel value="Address  ">&nbsp;</p:outputLabel></td>
+													<td><p:outputLabel
+															value=":#{proposalController.proposal.b_address}">&nbsp;</p:outputLabel><br/></td>
+												</tr>
+
+
+											</table>
+										</p:tab>
+
+									</p:tabView>
+									<br></br>
+									<br></br>
+									<center>
+										<p:commandButton value="Back"
 											action="#{proposalController.statusCheck()}" ajax="false"
-											class="btn btn-lg btn-info" />
-											</center>
+											class="btn btn-lg btn-info" style="width:120px;border-radius:20px;"/>
+									</center>
 								</h:form>
 								<br></br>
-								
+								</div></div></div>
 							</div>
 						</div>
 					</div>
@@ -352,7 +426,7 @@ function myFunction() {
 	<script src="assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
     Bootstrap tether Core JavaScript
     <script src="assets/node_modules/popper/popper.min.js"></script>
-    <script src="assets/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="assets/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     slimscrollbar scrollbar JavaScript
     <script src="dist/js/perfect-scrollbar.jquery.min.js"></script>
     Wave Effects
@@ -360,8 +434,9 @@ function myFunction() {
     Menu sidebar
     <script src="dist/js/sidebarmenu.js"></script>
     stickey kit
-    <script src="assets/node_modules/sticky-kit-master/dist/sticky-kit.min.js"></script>
-    <script src="assets/node_modules/sparkline/jquery.sparkline.min.js"></script>
+    <script
+		src="assets/node_modules/sticky-kit-master/dist/sticky-kit.min.js"></script>
+	<script src="assets/node_modules/sparkline/jquery.sparkline.min.js"></script>
 	<!--Custom JavaScript -->
 	<script src="dist/js/custom.min.js"></script>
 	<script type="text/javascript"
@@ -371,16 +446,14 @@ function myFunction() {
 	<link rel="stylesheet"
 		href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
 	<script>
-    $(document).ready(function() {
-    	   $(".datepicker").datepicker({
-    	      dateFormat: 'dd MM, yy',
-    	      changeMonth: true,
-    	      changeYear: true,
-    	      yearRange: "1960:2017"
-    	   });
-    	});
-    
-   
-    </script>
+		$(document).ready(function() {
+			$(".datepicker").datepicker({
+				dateFormat : 'dd MM, yy',
+				changeMonth : true,
+				changeYear : true,
+				yearRange : "1960:2017"
+			});
+		});
+	</script>
 </h:body>
 </html>
