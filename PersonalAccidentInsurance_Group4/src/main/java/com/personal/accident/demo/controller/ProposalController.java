@@ -63,7 +63,9 @@ public class ProposalController {
 	}
 
 	public String idGenerate() {
-
+		
+		confirmflag=false;
+		proposal = new Proposal();
 		String p_no = proposalservice.getProposalID(); // get Max proposal ID
 		proposal = new Proposal();
 
@@ -190,7 +192,7 @@ public class ProposalController {
 			Boolean flag = proposalservice.saveProposal(proposal, userID);
 			System.out.println("successfully register" + flag);
 			confirmflag = true;
-			proposal = new Proposal();
+			
 
 		}
 
