@@ -31,7 +31,35 @@
     height: 48px;
 }
 
+.scroll-sidebar {
 
+    height: calc(100% - 80px);
+    position: relative;
+    background-color: transparent;
+
+} 
+.left-sidebar:hover {
+    left: 0px;
+    background-color: rgba(0,0,0,0.7);
+}
+ .sidebar .sidebar-nav ul li a:hover {
+    color: black;
+    font-weight: bolder;
+}
+
+.sidebar-nav ul li a {
+    color: lightcyan;
+    -webkit-transition: 0.1s ease-in;
+    -o-transition: 0.1s ease-in;
+    transition: 0.1s ease-in;
+}   
+.left-sidebar .sidebar-nav ul li a:hover {
+
+    color: aqua;
+    font-size: initial;
+    font-weight: bold;
+	
+} 
 
 </style>
     
@@ -100,42 +128,43 @@
             <!-- Sidebar scroll-->
             <div class="scroll-sidebar">
                 <!-- Sidebar navigation-->
-                <nav class="sidebar-nav">
-                <h:form>
-                    <ul id="sidebarnav">
-						<li><p:commandLink
+                <nav class="sidebar-nav"> <h:form>
+				<ul id="sidebarnav">
+					
+					<li><p:commandLink style="color:aqua;"
 							action="#{proposalController.idGenerate()}" ajax="false"
 							class="waves-effect waves-dark" aria-expanded="false">
-							<i class="fa fa-file-text" aria-hidden="true"></i>
+							<i class="fa fa-file-text" aria-hidden="true" style="color:aqua;"></i>
 							<span class="hide-menu"></span>Online Proposal</p:commandLink></li>
 							
-					<li><p:commandLink
+					<li><p:commandLink style="color:aqua;"
 							action="#{proposalController.statusCheck()}" ajax="false"
 							class="waves-effect waves-dark" aria-expanded="false">
-							 <i class="fa fa-eye" aria-hidden="true"></i>
+							 <i class="fa fa-eye" aria-hidden="true" style="color:aqua;"></i>
 							<span class="hide-menu"></span>Status Checking</p:commandLink></li>
-					<li><p:commandLink
+					<li><p:commandLink style="color:aqua;"
 							action="paymentform.xhtml" ajax="false"
 							class="waves-effect waves-dark" aria-expanded="false">
-								<i class="fa fa-dollar" aria-hidden="true"></i>
+								<i class="fa fa-dollar" aria-hidden="true" style="color:aqua;"></i>
 							<span class="hide-menu"></span>Add Payment</p:commandLink></li>
 					
-					<li><a class="waves-effect waves-dark" href="claimform.xhtml"
-						aria-expanded="false"><i class="fa fa-wheelchair"></i><span
+					<li><a class="waves-effect waves-dark" href="claimform.xhtml"  style="color:aqua;"
+						aria-expanded="false"><i class="fa fa-wheelchair" style="color:aqua;"></i><span
 							class="hide-menu"></span>Claim</a></li>
-					<li><p:commandLink
+							
+					<li><p:commandLink style="color:aqua;"
 							action="#{policyController.policylisting()}" ajax="false"
 							class="waves-effect waves-dark" aria-expanded="false">
-							<i class="fa fa-list" aria-hidden="true"></i>
+							<i class="fa fa-list" aria-hidden="true" style="color:aqua;"></i>
 							<span class="hide-menu"></span>Policy Listing</p:commandLink></li>
-					<li><p:commandLink
+					<li><p:commandLink 
 							action="#{userController.userLogout()}" ajax="false"
-							class="btn waves-effect waves-light btn-success hidden-md-down" style="width:100px;margin-left:70px;margin-top:20px;color:#7FDBFF">
+							class="btn waves-effect waves-light btn-success hidden-md-down" style="width:100px;margin-left:70px;margin-top:20px;box-shadow: 1px 2px 4px rgba(0, 0, 0, 10);color:white">
+							
 							Log Out</p:commandLink></li>
 					
 				</ul>
-				</h:form>
-                </nav>
+			</h:form> </nav>
                 <!-- End Sidebar navigation -->
             </div>
             <!-- End Sidebar scroll-->
