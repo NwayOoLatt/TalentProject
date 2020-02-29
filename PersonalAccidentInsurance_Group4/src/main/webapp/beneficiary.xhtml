@@ -33,9 +33,9 @@
 }
 
 .topbar .top-navbar {
-	min-height: 10px;
+	min-height: 20px;
 	padding: 0px;
-	height: 48px;
+	height: 70px;
 }
 
 body .ui-inputfield {
@@ -90,38 +90,64 @@ body .ui-widget, body .ui-widget .ui-widget {
 		<!-- ============================================================== -->
 		<!-- Topbar header - style you can find in pages.scss -->
 		<!-- ============================================================== -->
-		<header class="topbar"> <nav
-			class="navbar top-navbar navbar-expand-md navbar-dark"> <!-- ============================================================== -->
-		<!-- Logo --> <!-- ============================================================== -->
-		<div class="navbar-header"></div>
-		<!-- ============================================================== -->
-		<!-- End Logo --> <!-- ============================================================== -->
-		<div class="navbar-collapse">
-			<!-- ============================================================== -->
-			<!-- toggle and nav items -->
-			<!-- ============================================================== -->
-			<ul class="navbar-nav mr-auto">
-				<!-- This is  -->
-
-			</ul>
-			<ul class="navbar-nav my-lg-0">
-				<!-- ============================================================== -->
-				<!-- User profile and search -->
-				<!-- ============================================================== -->
-
-				<li class="nav-item dropdown">
-					<p
-						style="color: blue; margin-right: 30px; margin-left: 500px; margin-top: 10px; font-size: 20px">
-						<i class="fa fa-user-circle" style="font-size: 30px"></i> #{user}
-					</p>
-				</li>
-
-				<!-- ============================================================== -->
-				<!-- User profile and search -->
-				<!-- ============================================================== -->
-			</ul>
-		</div>
-		</nav> </header>
+		 <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <!-- ============================================================== -->
+                <!-- Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">
+                        <!-- Logo icon --><b>
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                            <!-- Light Logo icon -->
+                            <img src="../assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                        </b>
+                        <!--End Logo icon -->
+                        <!-- Logo text --><span>
+                         <!-- dark Logo text -->
+                         <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                         <!-- Light Logo text -->    
+                         <img src="../assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav mr-auto">
+                        <!-- This is  -->
+                        <li class="nav-item hidden-sm-up"> <a class="nav-link nav-toggler waves-effect waves-light" href="javascript:void(0)"><i class="ti-menu"></i></a></li>
+                        <!-- ============================================================== -->
+                        <!-- Search -->
+                        <!-- ============================================================== -->
+                        <!-- <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="fa fa-search"></i></a>
+                            <form class="app-search">
+                                <input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="fa fa-times"></i></a></input>
+                            </form>
+                        </li> -->
+                    </ul>
+                    <ul class="navbar-nav my-lg-0">
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            
+                            <img src="../assets/images/users/1.jpg" alt="user" class="img-circle" width="30"/><h5 style="color:blue"> #{user}</h5></a>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                    </ul>
+                </div>
+            </nav>
+            
+            
+        </header>
 		<!-- ============================================================== -->
 		<!-- End Topbar header -->
 		<!-- ============================================================== -->
@@ -130,50 +156,46 @@ body .ui-widget, body .ui-widget .ui-widget {
 		<!-- ============================================================== -->
 		<aside class="left-sidebar">
 		<div class="d-flex no-block nav-text-box align-items-center">
-			<span><img src="images/" alt="elegant admin template" /></span> <a
-				class="waves-effect waves-dark ml-auto hidden-sm-down"
-				href="javascript:void(0)"></a> <a
-				class="nav-toggler waves-effect waves-dark ml-auto hidden-sm-up"
-				href="javascript:void(0)"></a>
-		</div>
+                <span><img src="../assets/images/logo-icon.png" alt="elegant admin template"/></span>
+                <a class="waves-effect waves-dark ml-auto hidden-sm-down" href="javascript:void(0)"><i class="ti-menu"></i></a>
+                <a class="nav-toggler waves-effect waves-dark ml-auto hidden-sm-up" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+            </div>
 		<!-- Sidebar scroll-->
 		<div class="scroll-sidebar">
 			<!-- Sidebar navigation-->
 			<nav class="sidebar-nav"> <h:form>
 				<ul id="sidebarnav">
-					
+
 					<li><p:commandLink style="color:aqua;"
 							action="#{proposalController.idGenerate()}" ajax="false"
 							class="waves-effect waves-dark" aria-expanded="false">
-							<i class="fa fa-file-text" aria-hidden="true" style="color:aqua;"></i>
+							<i class="fa fa-file-text" aria-hidden="true"
+								style="color: aqua;"></i>
 							<span class="hide-menu"></span>Online Proposal</p:commandLink></li>
-							
+
 					<li><p:commandLink style="color:aqua;"
 							action="#{proposalController.statusCheck()}" ajax="false"
 							class="waves-effect waves-dark" aria-expanded="false">
-							 <i class="fa fa-eye" aria-hidden="true" style="color:aqua;"></i>
+							<i class="fa fa-eye" aria-hidden="true" style="color: aqua;"></i>
 							<span class="hide-menu"></span>Status Checking</p:commandLink></li>
-					<li><p:commandLink style="color:aqua;"
-							action="paymentform.xhtml" ajax="false"
-							class="waves-effect waves-dark" aria-expanded="false">
-								<i class="fa fa-dollar" aria-hidden="true" style="color:aqua;"></i>
-							<span class="hide-menu"></span>Add Payment</p:commandLink></li>
 					
-					<li><a class="waves-effect waves-dark" href="claimform.xhtml"  style="color:aqua;"
-						aria-expanded="false"><i class="fa fa-wheelchair" style="color:aqua;"></i><span
-							class="hide-menu"></span>Claim</a></li>
-							
+					<li><p:commandLink style="color:aqua;"
+							action="#{claimController.claimForm()}" ajax="false"
+							class="waves-effect waves-dark" aria-expanded="false">
+							<i class="fa fa-wheelchair" aria-hidden="true" style="color: aqua;"></i>
+							<span class="hide-menu"></span>Claim Registration</p:commandLink></li>
 					<li><p:commandLink style="color:aqua;"
 							action="#{policyController.policylisting()}" ajax="false"
 							class="waves-effect waves-dark" aria-expanded="false">
-							<i class="fa fa-list" aria-hidden="true" style="color:aqua;"></i>
+							<i class="fa fa-list" aria-hidden="true" style="color: aqua;"></i>
 							<span class="hide-menu"></span>Policy Listing</p:commandLink></li>
-					<li><p:commandLink 
-							action="#{userController.userLogout()}" ajax="false"
-							class="btn waves-effect waves-light btn-success hidden-md-down" style="width:100px;margin-left:70px;margin-top:20px;box-shadow: 1px 2px 4px rgba(0, 0, 0, 10);color:white">
+					<li><p:commandLink action="#{userController.userLogout()}"
+							ajax="false"
+							class="btn waves-effect waves-light btn-success hidden-md-down"
+							style="width:100px;margin-left:70px;margin-top:20px;box-shadow: 1px 2px 4px rgba(0, 0, 0, 10);color:white">
 							
 							Log Out</p:commandLink></li>
-					
+
 				</ul>
 			</h:form> </nav>
 			<!-- End Sidebar navigation -->
@@ -207,14 +229,14 @@ body .ui-widget, body .ui-widget .ui-widget {
 				<!-- ============================================================== -->
 				<div class="row">
 					<div class="col-12">
-						<div class="card" style="background-image: linear-gradient( 181deg,  rgba(2,0,97,1) 15%, rgba(97,149,219,1) 158.5% );">
+						<div class="card">
 							<div class="card-body">
 								 <div class="col-12">
                         <div class="card" style="margin: 0 auto;box-shadow: 1px 2px 4px rgba(0, 0, 0, 10); border-radius:20px;" >
                             <div class="card-body">
-								<h2>
+								<h3>
 									<strong>Online Proposal Registration</strong>
-								</h2>
+								</h3>
 								<hr></hr>
 								<h4 style="color: blue">Step 3: Beneficiary</h4>
 								<br></br>
