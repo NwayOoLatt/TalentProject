@@ -16,14 +16,59 @@
 	<!-- Favicon icon -->
 	<link rel="icon" type="image/png" sizes="16x16"
 		href="../assets/images/favicon.png" />
-	<title>Elegant Admin Template - The Ultimate Multipurpose admin
-		template</title>
+	<title>Personal Accident Insurance Group4s</title>
 	<!-- Custom CSS -->
 	<link href="dist/css/style.css" rel="stylesheet" />
 
-	<style>
-.card {
-	margin: 0 auto; /* Added */
+	<style type="text/css">
+i {
+	margin-right: 10px;
+}
+
+.ui-grid-col-3 {
+	padding: 4px 10px;
+}
+
+.topbar .top-navbar {
+	min-height: 20px;
+	padding: 0px;
+	height: 70px;
+}
+
+.scroll-sidebar {
+	height: calc(100% - 80px);
+	position: relative;
+	background-color: transparent;
+}
+
+.left-sidebar:hover {
+	left: 0px;
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+.sidebar .sidebar-nav ul li a:hover {
+	color: black;
+	font-weight: bolder;
+}
+
+.sidebar-nav ul li a {
+	color: lightcyan;
+	-webkit-transition: 0.1s ease-in;
+	-o-transition: 0.1s ease-in;
+	transition: 0.1s ease-in;
+}
+
+.left-sidebar .sidebar-nav ul li a:hover {
+	color: aqua;
+	font-size: initial;
+	font-weight: bold;
+}
+
+.table thead th, .table th {
+	font-weight: bolder;
+	width: 130px;
+	background-color: cadetblue;
+	color: white; . card { margin : 0 auto; /* Added */
 	float: none; /* Added */
 	margin-bottom: 10px; /* Added */
 }
@@ -31,46 +76,6 @@
 .table tr {
 	cursor: pointer;
 }
-
-.hiddenRow {
-	padding: 0 4px !important;
-	background-color: #eeeeee;
-	font-size: 13px;
-}
-.topbar .top-navbar {
-    min-height: 10px;
-    padding: 0px;
-    height: 48px;
-}
-.scroll-sidebar {
-
-    height: calc(100% - 80px);
-    position: relative;
-    background-color: transparent;
-
-} 
-.left-sidebar:hover {
-    left: 0px;
-    background-color: rgba(0,0,0,0.7);
-}
- .sidebar .sidebar-nav ul li a:hover {
-    color: black;
-    font-weight: bolder;
-}
-
-.sidebar-nav ul li a {
-    color: lightcyan;
-    -webkit-transition: 0.1s ease-in;
-    -o-transition: 0.1s ease-in;
-    transition: 0.1s ease-in;
-}   
-.left-sidebar .sidebar-nav ul li a:hover {
-
-    color: aqua;
-    font-size: initial;
-    font-weight: bold;
-	
-} 
 </style>
 </h:head>
 <h:body class="skin-default-dark fixed-layout">
@@ -94,7 +99,19 @@
 			class="navbar top-navbar navbar-expand-md navbar-dark"> <!-- ============================================================== -->
 		<!-- Logo --> <!-- ============================================================== -->
 		<div class="navbar-header">
-			
+			<a class="navbar-brand" href="index.html"> <!-- Logo icon -->
+				<b> <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+					<!-- Dark Logo icon --> <img src="../assets/images/logo-icon.png"
+					alt="homepage" class="dark-logo" /> <!-- Light Logo icon --> <img
+					src="../assets/images/logo-light-icon.png" alt="homepage"
+					class="light-logo" />
+			</b> <!--End Logo icon --> <!-- Logo text -->
+				<span> <!-- dark Logo text --> <img
+					src="../assets/images/logo-text.png" alt="homepage"
+					class="dark-logo" /> <!-- Light Logo text --> <img
+					src="../assets/images/logo-light-text.png" class="light-logo"
+					alt="homepage" /></span>
+			</a>
 		</div>
 		<!-- ============================================================== -->
 		<!-- End Logo --> <!-- ============================================================== -->
@@ -104,16 +121,27 @@
 			<!-- ============================================================== -->
 			<ul class="navbar-nav mr-auto">
 				<!-- This is  -->
-				
+				<li class="nav-item hidden-sm-up"><a
+					class="nav-link nav-toggler waves-effect waves-light"
+					href="javascript:void(0)"><i class="ti-menu"></i></a></li>
+				<!-- ============================================================== -->
+				<!-- Search -->
+				<!-- ============================================================== -->
+				<!-- <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="fa fa-search"></i></a>
+                            <form class="app-search">
+                                <input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="fa fa-times"></i></a></input>
+                            </form>
+                        </li> -->
 			</ul>
 			<ul class="navbar-nav my-lg-0">
 				<!-- ============================================================== -->
 				<!-- User profile and search -->
 				<!-- ============================================================== -->
-				
-                          <li class="nav-item dropdown">
-                            <p style="color:blue;margin-right: 30px;margin-left:500px;margin-top:10px;font-size:20px"><i class="fa fa-user-circle"  style="font-size:30px"></i> #{user}</p>
-                        </li>
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle text-muted waves-effect waves-dark"
+					href="" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false"> <i class="fa fa-user" style="color:blue;">&nbsp;
+                            <h4 style="color:blue; margin-right:10px;" > #{user}</h4></i></a></li>
 				<!-- ============================================================== -->
 				<!-- User profile and search -->
 				<!-- ============================================================== -->
@@ -128,51 +156,50 @@
 		<!-- ============================================================== -->
 		<aside class="left-sidebar">
 		<div class="d-flex no-block nav-text-box align-items-center">
-			<span><img src="images/"
+			<span><img src="../assets/images/logo-icon.png"
 				alt="elegant admin template" /></span> <a
 				class="waves-effect waves-dark ml-auto hidden-sm-down"
-				href="javascript:void(0)"></a> <a
+				href="javascript:void(0)"><i class="ti-menu"></i></a> <a
 				class="nav-toggler waves-effect waves-dark ml-auto hidden-sm-up"
-				href="javascript:void(0)"></a>
+				href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
 		</div>
 		<!-- Sidebar scroll-->
 		<div class="scroll-sidebar">
 			<!-- Sidebar navigation-->
 			<nav class="sidebar-nav"> <h:form>
 				<ul id="sidebarnav">
-					
+
 					<li><p:commandLink style="color:aqua;"
 							action="#{proposalController.idGenerate()}" ajax="false"
 							class="waves-effect waves-dark" aria-expanded="false">
-							<i class="fa fa-file-text" aria-hidden="true" style="color:aqua;"></i>
+							<i class="fa fa-file-text" aria-hidden="true"
+								style="color: aqua;"></i>
 							<span class="hide-menu"></span>Online Proposal</p:commandLink></li>
-							
+
 					<li><p:commandLink style="color:aqua;"
 							action="#{proposalController.statusCheck()}" ajax="false"
 							class="waves-effect waves-dark" aria-expanded="false">
-							 <i class="fa fa-eye" aria-hidden="true" style="color:aqua;"></i>
+							<i class="fa fa-eye" aria-hidden="true" style="color: aqua;"></i>
 							<span class="hide-menu"></span>Status Checking</p:commandLink></li>
+
 					<li><p:commandLink style="color:aqua;"
-							action="paymentform.xhtml" ajax="false"
+							action="#{claimController.claimForm()}" ajax="false"
 							class="waves-effect waves-dark" aria-expanded="false">
-								<i class="fa fa-dollar" aria-hidden="true" style="color:aqua;"></i>
-							<span class="hide-menu"></span>Add Payment</p:commandLink></li>
-					
-					<li><a class="waves-effect waves-dark" href="claimform.xhtml"  style="color:aqua;"
-						aria-expanded="false"><i class="fa fa-wheelchair" style="color:aqua;"></i><span
-							class="hide-menu"></span>Claim</a></li>
-							
+							<i class="fa fa-wheelchair" aria-hidden="true" style="color: aqua;"></i>
+							<span class="hide-menu"></span>Claim Registration</p:commandLink></li>
+
 					<li><p:commandLink style="color:aqua;"
 							action="#{policyController.policylisting()}" ajax="false"
 							class="waves-effect waves-dark" aria-expanded="false">
-							<i class="fa fa-list" aria-hidden="true" style="color:aqua;"></i>
+							<i class="fa fa-list" aria-hidden="true" style="color: aqua;"></i>
 							<span class="hide-menu"></span>Policy Listing</p:commandLink></li>
-					<li><p:commandLink 
-							action="#{userController.userLogout()}" ajax="false"
-							class="btn waves-effect waves-light btn-success hidden-md-down" style="width:100px;margin-left:70px;margin-top:20px;box-shadow: 1px 2px 4px rgba(0, 0, 0, 10);color:white">
+					<li><p:commandLink action="#{userController.userLogout()}"
+							ajax="false"
+							class="btn waves-effect waves-light btn-success hidden-md-down"
+							style="width:100px;margin-left:70px;margin-top:20px;box-shadow: 1px 2px 4px rgba(0, 0, 0, 10);color:white">
 							
 							Log Out</p:commandLink></li>
-					
+
 				</ul>
 			</h:form> </nav>
 			<!-- End Sidebar navigation -->
@@ -193,12 +220,10 @@
 				<!-- Bread crumb and right sidebar toggle -->
 				<!-- ============================================================== -->
 				<div class="row page-titles">
-					<div class="col-md-5 align-self-center">
-						
-					</div>
+					<div class="col-md-5 align-self-center"></div>
 					<div class="col-md-7 align-self-center text-right">
 						<div class="d-flex justify-content-end align-items-center">
-							
+
 						</div>
 					</div>
 				</div>
@@ -211,57 +236,62 @@
 				<div class="row">
 					<div class="col-12">
 						<div class="card" style="height: 700px;">
-							<div class="card-body" style="height: 500px;">
-								<h:form>
+							<div class="card-body">
+								<div class="col-12">
+									<div class="card"
+										style="margin: 0 auto; box-shadow: 1px 2px 4px rgba(0, 0, 0, 10); border-radius: 20px; border-color: solid 1px blue;">
+										<div class="card-body">
+											<h3>
+												<strong>Policy Listing</strong>
+											</h3>
+											<hr></hr>
+											<h:form>
 
-									<div class="table-responsive">
-										<table class="table table-bordered">
-											<tr>
-												<th style="font-weight: bolder; width: 130px;">Policy
-													No.</th>
-												<th style="font-weight: bolder; width: 130px;">Holder
-													Name</th>
-												<th style="font-weight: bolder;">Sum Insured Amount</th>
-												<!--<th style="font-weight: bolder; width: 140px;">Start
+												<div class="table-responsive">
+													<table class="table table-bordered">
+														<tr>
+															<th style="font-weight: bolder; width: 130px;">Policy
+																No.</th>
+															<th style="font-weight: bolder; width: 130px;">Holder
+																Name</th>
+															<th style="font-weight: bolder;">Sum Insured Amount</th>
+															<!--<th style="font-weight: bolder; width: 140px;">Start
 													Date</th>
 												<th style="font-weight: bolder; width: 140px;">End Date</th>
 
 												 <th style="font-weight: bolder;">Beneficiary</th>
 												<th style="font-weight: bolder;">Relationship</th> -->
-												<th style="font-weight: bolder;">Start Date</th>
-												<th style="font-weight: bolder;">End Date</th>
-												<th style="font-weight: bolder;">Claim</th>
-												<!-- <th style="font-weight: bolder;">Claim Type</th>
-												<th style="font-weight: bolder;">Claim Amount</th>
-												<th style="font-weight: bolder; width: 130px;">Claim
-													Date</th> -->
-												<th style="font-weight: bolder;">Pay Amount</th>
-												<th style="font-weight: bolder;">Add Payment</th>
-												<th style="font-weight: bolder;">Detail</th>
-												
-											</tr>
-											<tbody>
-												<c:forEach items="#{policyController.plist}" var="plist">
-													<tr data-toggle="collapse" data-target="##{plist.p_no}"
-														class="accordion-toggle">
-													
-														<td><h:outputText value="#{plist.p_no}"
-																style="color:#20B2AA" /></td>
-														<td><h:outputText value="#{plist.name}"
-																style="color:#20B2AA" /></td>
-														<td><h:outputText value="#{plist.totalamount}"
-																style="color:#800000" /></td>
-														
-														<td><h:outputText value="#{plist.sdate}"
-																style="color:#800000; font-size: 12px;"/></td>
-																
-														<td><h:outputText value="#{plist.edate}"
-																style="color:#800000; font-size: 12px;"/></td>
-																		
-														<td><h:outputText value="#{plist.claimCount} Time"
-																style="color:#800000" /></td>
-															
-														<!-- <td><c:forEach items="#{plist.claim}" var="clist">
+															<th style="font-weight: bolder;">Start Date</th>
+															<th style="font-weight: bolder;">End Date</th>
+															<th style="font-weight: bolder;">Claim</th>
+
+															<th style="font-weight: bolder;">Pay Amount</th>
+															<th style="font-weight: bolder;">Add Payment</th>
+															<th style="font-weight: bolder;">Detail</th>
+
+														</tr>
+														<tbody>
+															<c:forEach items="#{policyController.plist}" var="plist">
+																<tr data-toggle="collapse" data-target="##{plist.p_no}"
+																	class="accordion-toggle">
+
+																	<td><h:outputText value="#{plist.p_no}"
+																			style="color:black;font-weight:bold;" /></td>
+																	<td><h:outputText value="#{plist.name}"
+																			style="color:black;font-weight:bold;" /></td>
+																	<td><h:outputText value="#{plist.totalamount}"
+																			style="color:black;font-weight:bold;" /></td>
+
+																	<td><h:outputText value="#{plist.sdate}"
+																			style="color:black;font-weight:bold;font-size: 12px;" /></td>
+
+																	<td><h:outputText value="#{plist.edate}"
+																			style="color:black;font-weight:bold; font-size: 12px;" /></td>
+
+																	<td><h:outputText value="#{plist.claimCount} Time"
+																			style="color:black;font-weight:bold;" /></td>
+
+																	<!-- <td><c:forEach items="#{plist.claim}" var="clist">
 																
 																<h:outputText value="#{clist.type}"
 																	style="color:#800000" />
@@ -279,126 +309,34 @@
 																	style="color:#800000;font-size: 12px;" />
 																<br></br>
 															</c:forEach></td> -->
-														<td>
-															<h:outputText value="#{plist.payment}"
-																style="color:#800000" />
-														</td>
-														<td>
-															<p:commandLink action="#{paymentController.addPayment(plist)}"
-												ajax="false" value="Add Payment">
-
-											</p:commandLink>
-														</td>
-														<td><p:commandLink
-												action="#{proposalController.detailPolicy(plist)}"
-												ajax="false" value="Detail" style="color:green">
-												<i class="fa fa-check" aria-hidden="true"></i>
+																	<td><h:outputText value="#{plist.payment}"
+																			style="color:black;font-weight:bold;" /></td>
+																	<td><p:commandLink style="text-align:center;"
+																			action="#{paymentController.addPayment(plist)}">
+																			<!-- <i class="fa fa-money" style="font-size:30px"></i> -->
+																			<img src="../assets/images/phone.png" alt="payment"
+																				width="30" />
 
 
-											</p:commandLink></td>
-														
-													</tr>
-													<tr>
-														<!-- <td colspan="11" class="hiddenRow text-center" style="padding-left:20px;">
-														<div id="#{plist.p_no}"
-																class="accordian-body collapse"><br></br>
-																
-															<div class="row">
-															<div class="col"></div>
-																<div class="col text-center">
-																		<h4>Personal Info</h4>
-																		<div class="card bg-light text-dark text-center"
-																			style=" width: 250px; height: 150px; background-color: #F8F8FF; box-shadow: 1px 2px 4px rgba(0, 0, 0, .8); font-family: sans-serif;">
-																			<div class="card-body">
-
-																				
-																				<br></br> 
-																				<h:outputLabel value="Phone :"></h:outputLabel>
-																				<h:outputText value="#{plist.phone}"
-																					style="color:#808000"></h:outputText>
-																				<br></br>
-																				
-																				<h:outputLabel value="Email :"></h:outputLabel>
-																				<h:outputText value="#{plist.email}"
-																					style="color:#808000"></h:outputText>
-																				<br></br> 
-																				
-																				<h:outputLabel value=" Address :"></h:outputLabel>
-																				<h:outputText value="#{plist.address}"
-																					style="color:#808000"></h:outputText>
-																				<br></br>
+																		</p:commandLink></td>
+																	<td><p:commandLink
+																			action="#{proposalController.detailPolicy(plist)}"
+																			ajax="false" value="Detail" style="color:green">
+																			<i class="fa fa-check" aria-hidden="true"></i>
 
 
-																			</div>
-																		</div>
+																		</p:commandLink></td>
 
-																	</div>
-																<div class="col">
-																<h4>Premium</h4>
-																		<div class="card bg-light text-dark"
-																			style="width: 260px; height: 150px; background-color: #F8F8FF; box-shadow: 1px 2px 4px rgba(0, 0, 0, .8); font-family: sans-serif;">
-																			<div class="card-body">
+																</tr>
 
-																				
-																				<br></br> 
-																				<h:outputLabel value="Term :"></h:outputLabel>
-																				<h:outputText value="#{plist.term}"
-																					style="color:#808000"></h:outputText><br></br>
-																				
-																				<h:outputLabel value="PayAmount :"></h:outputLabel>
-																				<h:outputText value="#{plist.payamount}"
-																					style="color:#808000"></h:outputText><br></br>
-																				
-																				<h:outputLabel value="SUM Insured Amount :" style="text-align:right;"></h:outputLabel>
-																				<h:outputText value="#{plist.totalamount}"
-																					style="color:#808000"></h:outputText>
-																				<br></br> 
-																				<br></br>
-
-
-
-																			</div>
-																		</div>
-
-
-																	</div>
-																	
-																	<div class="col text-center">
-																<h4>Beneficiary Info</h4>
-																		<div class="card bg-light text-dark text-center"
-																			style="width: 250px; height: 150px; background-color: #F8F8FF; box-shadow: 1px 2px 4px rgba(0, 0, 0, .8); font-family: sans-serif;">
-																			<div class="card-body">
-
-																				<br></br>
-																				<h:outputLabel value="Name:"></h:outputLabel>
-																				<h:outputText value="#{plist.b_name}" style="color:#808000"></h:outputText><br></br>
-																				<h:outputLabel value="Eamil :"></h:outputLabel>
-																	<h:outputText value="#{plist.b_email}" style="color:#808000"></h:outputText><br></br>
-																				<h:outputLabel value="Relationship:"></h:outputLabel><h:outputText value="#{plist.relationship}"
-																style="color:#808000" /><br></br>
-																
-
-																			</div>
-																		</div>
-
-
-																	</div>
-																<div class="col">
-																
-																
-																</div>
-																
-																
-																
-															</div>
-														</div></td> -->
-													</tr>
-												</c:forEach>
-											</tbody>
-										</table>
+															</c:forEach>
+														</tbody>
+													</table>
+												</div>
+											</h:form>
+										</div>
 									</div>
-								</h:form>
-
+								</div>
 							</div>
 						</div>
 					</div>
@@ -417,8 +355,10 @@
 		<!-- ============================================================== -->
 		<!-- footer -->
 		<!-- ============================================================== -->
-		<center><footer class="footer"> © 2020 Personal Accident Insurance
-		Group 4.com </footer></center>
+		<center>
+			<footer class="footer"> © 2020 Personal Accident Insurance
+			Group 4.com </footer>
+		</center>
 		<!-- ============================================================== -->
 		<!-- End footer -->
 		<!-- ============================================================== -->
