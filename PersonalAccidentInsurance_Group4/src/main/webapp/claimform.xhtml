@@ -20,6 +20,31 @@
 	<!-- Custom CSS -->
 	<link href="dist/css/style.css" rel="stylesheet" />
 	<style>
+	
+#ui-message {
+	background-color: #fff;
+	border: 0 none;
+	color: #212121
+}
+
+.ui-state-error {
+	border: 1px solid #fff;
+	background: #fff;
+	color: #212121;
+}
+.topbar .top-navbar {
+  min-height: 20px;
+	padding: 0px;
+	height: 70px;
+}
+body .ui-inputfield {
+    border-color:blue;
+    width: 270px;
+}
+body .ui-widget, body .ui-widget .ui-widget {
+	text-decoration: none;
+	font-weight: bold;
+}	
 .card {
 	margin: 0 auto; /* Added */
 	float: none; /* Added */
@@ -45,9 +70,9 @@ height: 100px;
     border: none !important;
     }
 .topbar .top-navbar {
-    min-height: 10px;
-    padding: 0px;
-    height: 48px;
+   min-height: 20px;
+	padding: 0px;
+	height: 70px;
 }
 .scroll-sidebar {
 
@@ -97,39 +122,65 @@ height: 100px;
 		<!-- ============================================================== -->
 		<!-- Topbar header - style you can find in pages.scss -->
 		<!-- ============================================================== -->
-		<header class="topbar"> <nav
-			class="navbar top-navbar navbar-expand-md navbar-dark"> <!-- ============================================================== -->
-		<!-- Logo --> <!-- ============================================================== -->
-		<div class="navbar-header">
-			
-		</div>
-		<!-- ============================================================== -->
-		<!-- End Logo --> <!-- ============================================================== -->
-		<div class="navbar-collapse">
-			<!-- ============================================================== -->
-			<!-- toggle and nav items -->
-			<!-- ============================================================== -->
-			<ul class="navbar-nav mr-auto">
-				<!-- This is  -->
-							
-				
-			</ul>
-			<ul class="navbar-nav my-lg-0">
-				<!-- ============================================================== -->
-				<!-- User profile and search -->
-				<!-- ============================================================== -->
-				
-                          <li class="nav-item dropdown">
-                           
+		 <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <!-- ============================================================== -->
+                <!-- Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">
+                        <!-- Logo icon --><b>
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                            <!-- Light Logo icon -->
+                            <img src="../assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                        </b>
+                        <!--End Logo icon -->
+                        <!-- Logo text --><span>
+                         <!-- dark Logo text -->
+                         <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                         <!-- Light Logo text -->    
+                         <img src="../assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav mr-auto">
+                        <!-- This is  -->
+                        <li class="nav-item hidden-sm-up"> <a class="nav-link nav-toggler waves-effect waves-light" href="javascript:void(0)"><i class="ti-menu"></i></a></li>
+                        <!-- ============================================================== -->
+                        <!-- Search -->
+                        <!-- ============================================================== -->
+                        <!-- <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="fa fa-search"></i></a>
+                            <form class="app-search">
+                                <input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="fa fa-times"></i></a></input>
+                            </form>
+                        </li> -->
+                    </ul>
+                    <ul class="navbar-nav my-lg-0">
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             
-                            <p style="color:blue;margin-right: 30px;margin-left:500px;margin-top:10px;font-size:20px"><i class="fa fa-user-circle"  style="font-size:30px"></i> #{user}</p>
+                            <i class="fa fa-user" style="color:blue;">&nbsp;
+                            <h4 style="color:blue; margin-right:10px;" > #{user}</h4></i></a>
                         </li>
-				<!-- ============================================================== -->
-				<!-- User profile and search -->
-				<!-- ============================================================== -->
-			</ul>
-		</div>
-		</nav> </header>
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                    </ul>
+                </div>
+            </nav>
+            
+            
+        </header>
 		<!-- ============================================================== -->
 		<!-- End Topbar header -->
 		<!-- ============================================================== -->
@@ -137,52 +188,57 @@ height: 100px;
 		<!-- Left Sidebar - style you can find in sidebar.scss  -->
 		<!-- ============================================================== -->
 		<aside class="left-sidebar">
+		
 		<div class="d-flex no-block nav-text-box align-items-center">
+                <span><img src="../assets/images/logo-icon.png" alt="elegant admin template"/></span>
+                <a class="waves-effect waves-dark ml-auto hidden-sm-down" href="javascript:void(0)"><i class="ti-menu"></i></a>
+                <a class="nav-toggler waves-effect waves-dark ml-auto hidden-sm-up" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+            </div>
+		
+		<!-- <div class="d-flex no-block nav-text-box align-items-center">
 			<span><img src="images/"
 				alt="elegant admin template" /></span> <a
 				class="waves-effect waves-dark ml-auto hidden-sm-down"
 				href="javascript:void(0)"></a> <a
 				class="nav-toggler waves-effect waves-dark ml-auto hidden-sm-up"
 				href="javascript:void(0)"></a>
-		</div>
+		</div> -->
 		<!-- Sidebar scroll-->
 		<div class="scroll-sidebar">
 			<!-- Sidebar navigation-->
 			<nav class="sidebar-nav"> <h:form>
 				<ul id="sidebarnav">
-					
+
 					<li><p:commandLink style="color:aqua;"
 							action="#{proposalController.idGenerate()}" ajax="false"
 							class="waves-effect waves-dark" aria-expanded="false">
-							<i class="fa fa-file-text" aria-hidden="true" style="color:aqua;"></i>
+							<i class="fa fa-file-text" aria-hidden="true"
+								style="color: aqua;"></i>
 							<span class="hide-menu"></span>Online Proposal</p:commandLink></li>
-							
+
 					<li><p:commandLink style="color:aqua;"
 							action="#{proposalController.statusCheck()}" ajax="false"
 							class="waves-effect waves-dark" aria-expanded="false">
-							 <i class="fa fa-eye" aria-hidden="true" style="color:aqua;"></i>
+							<i class="fa fa-eye" aria-hidden="true" style="color: aqua;"></i>
 							<span class="hide-menu"></span>Status Checking</p:commandLink></li>
-					<li><p:commandLink style="color:aqua;"
-							action="paymentform.xhtml" ajax="false"
-							class="waves-effect waves-dark" aria-expanded="false">
-								<i class="fa fa-dollar" aria-hidden="true" style="color:aqua;"></i>
-							<span class="hide-menu"></span>Add Payment</p:commandLink></li>
 					
-					<li><a class="waves-effect waves-dark" href="claimform.xhtml"  style="color:aqua;"
-						aria-expanded="false"><i class="fa fa-wheelchair" style="color:aqua;"></i><span
-							class="hide-menu"></span>Claim</a></li>
-							
+					<li><p:commandLink style="color:aqua;"
+							action="#{claimController.claimForm()}" ajax="false"
+							class="waves-effect waves-dark" aria-expanded="false">
+							<i class="fa fa-wheelchair" aria-hidden="true" style="color: aqua;"></i>
+							<span class="hide-menu"></span>Claim Registration</p:commandLink></li>
 					<li><p:commandLink style="color:aqua;"
 							action="#{policyController.policylisting()}" ajax="false"
 							class="waves-effect waves-dark" aria-expanded="false">
-							<i class="fa fa-list" aria-hidden="true" style="color:aqua;"></i>
+							<i class="fa fa-list" aria-hidden="true" style="color: aqua;"></i>
 							<span class="hide-menu"></span>Policy Listing</p:commandLink></li>
-					<li><p:commandLink 
-							action="#{userController.userLogout()}" ajax="false"
-							class="btn waves-effect waves-light btn-success hidden-md-down" style="width:100px;margin-left:70px;margin-top:20px;box-shadow: 1px 2px 4px rgba(0, 0, 0, 10);color:white">
+					<li><p:commandLink action="#{userController.userLogout()}"
+							ajax="false"
+							class="btn waves-effect waves-light btn-success hidden-md-down"
+							style="width:100px;margin-left:70px;margin-top:20px;box-shadow: 1px 2px 4px rgba(0, 0, 0, 10);color:white">
 							
 							Log Out</p:commandLink></li>
-					
+
 				</ul>
 			</h:form> </nav>
 			<!-- End Sidebar navigation -->
@@ -220,9 +276,14 @@ height: 100px;
 				<!-- ============================================================== -->
 				<div class="row">
 					<div class="col-12">
-						<div class="card" style="height: 900px;padding-top: 20px;">
+						<div class="card" style="height:900px;">
 							<div class="card-body">
-
+								 <div class="col-12">
+                        <div class="card" style="margin: 0 auto;box-shadow: 1px 2px 4px rgba(0, 0, 0, 10); border-radius:20px; border-color:solid 1px blue;" >
+                            <div class="card-body">
+                            <h3><strong>Claim Registration</strong></h3><hr></hr>
+                
+               
 								<!-- <div class="text-center"> -->
 
 								<h:form>
@@ -246,11 +307,13 @@ height: 100px;
 											<p:inputText id="p_no" class="form-control"
 														value="#{claimController.pmodel.p_no}" required="true"
 														style="width:300px;" requiredMessage="Pls enter your Policy Number"/>&nbsp;
-														<p:message for="p_no" style="background-color:white;color:red"></p:message>
+														<p:message for="p_no" style="background-color:white;color:red"></p:message><br></br><br></br>
 											
-											<p:commandButton value="Submit" action="#{claimController.claimRequest()}" 
-														ajax="false" id="mySmallButton" styleClass="smallButton"
-													style=" color:#FFD700;width:100px;"/>
+											<p:commandButton value="Search"
+												action="#{claimController.claimRequest()}" ajax="false"
+												class="btn btn-lg btn-info" style="width:120px;border-radius:20px;"/>
+								
+											
 											</div>
 											
 											
@@ -263,13 +326,14 @@ height: 100px;
 
 									<br></br>
 									<br></br>
-									<hr></hr>
+									<hr ></hr>
 									<br></br>
 									</h:form>
+									
 									<h:form>
 									<c:set var="flag" value="#{claimController.flag}" />
 									<c:if test="${flag == true}">
-									<center><h3 style="color:blue">Personal Accident Claim Form</h3></center><br></br>
+									<center><h4 style="color:red"><strong>Personal Accident Claim Form</strong></h4></center><br></br><br></br>
 										<div class="form-row">
 											<div class="col-sm-2"></div>
 											<div class="col-sm-5">
@@ -329,7 +393,7 @@ height: 100px;
 											<p:outputLabel value="Claim Type" style="font-weight:bold"/><br></br>
 											<h:selectOneMenu id="Category"
 															value="#{claimController.pmodel.type}"
-															style="width:270px;height:35px;" required="true" requiredMessage="Pls select Claim Type!">
+															style="width:270px;height:35px;border-color:blue;" required="true" requiredMessage="Pls select Claim Type!">
 															<f:selectItem itemLabel="Select Category" itemValue=""
 																noSelectionOption="true" />
 															<f:selectItems value="#{claimController.category}" />
@@ -348,9 +412,9 @@ height: 100px;
 										
 										<div class="form-row">
 											<div class="col-sm-2"></div>
-											<div class="col-sm-5">
+											<div class="col-sm-10">
 											<p:outputLabel value="Reason" style="font-weight:bold"/><br></br>
-											<p:inputTextarea rows="2" cols="92" id="reason" 
+											<p:inputTextarea class="form-control" rows="2" cols="92" id="reason" style="width:79%;border-color:blue;"
 															value="#{claimController.pmodel.reason}" required="true" requiredMessage="Reason is required!"/>
 															&nbsp;
 															<p:message for="reason" style="color:red;background-color:white"></p:message>
@@ -358,9 +422,13 @@ height: 100px;
 											
 										
 										</div><br></br>
-										<center><p:commandButton value="Submit" id="mySmallButton" styleClass="smallButton"
-															action="#{claimController.getClaim()}" ajax="false"
-															style=" width:200px;" /></center>
+										<center>
+												<p:commandButton value="Submit"
+												action="#{claimController.getClaim()}" ajax="false"
+												class="btn btn-lg btn-info" style="width:120px;border-radius:20px;"/></center>
+								
+														
+														
 															
 										
 										</c:if>
@@ -524,7 +592,7 @@ height: 100px;
 									</c:if>
 								</div>
 
-
+</div></div></div>
 							</div>
 						</div>
 					</div>
