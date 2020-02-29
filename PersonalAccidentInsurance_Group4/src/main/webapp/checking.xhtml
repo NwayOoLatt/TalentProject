@@ -33,6 +33,52 @@ i {
     padding: 0px;
     height: 48px;
 }
+body .ui-datatable thead th {
+    background-color: #fff;
+    border: 1px solid #c8c8c8;
+    color: #333;
+    padding: .571em .857em;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    background-color: cadetblue;
+    color: white;
+ }
+ body .ui-datatable .ui-datatable-data > tr > td {
+    padding: .571em .857em;
+    border: inherit;
+    font-weight: bold;
+    text-align: center;
+}
+ .scroll-sidebar {
+
+    height: calc(100% - 80px);
+    position: relative;
+    background-color: transparent;
+
+} 
+.left-sidebar:hover {
+    left: 0px;
+    background-color: rgba(0,0,0,0.7);
+}
+ .sidebar .sidebar-nav ul li a:hover {
+    color: black;
+    font-weight: bolder;
+}
+
+.sidebar-nav ul li a {
+    color: lightcyan;
+    -webkit-transition: 0.1s ease-in;
+    -o-transition: 0.1s ease-in;
+    transition: 0.1s ease-in;
+}   
+.left-sidebar .sidebar-nav ul li a:hover {
+
+    color: aqua;
+    font-size: initial;
+    font-weight: bold;
+	
+} 
 </style>
 
 </h:head>
@@ -104,34 +150,35 @@ i {
 			<nav class="sidebar-nav"> <h:form>
 				<ul id="sidebarnav">
 					
-					<li><p:commandLink
+					<li><p:commandLink style="color:aqua;"
 							action="#{proposalController.idGenerate()}" ajax="false"
 							class="waves-effect waves-dark" aria-expanded="false">
-							<i class="fa fa-file-text" aria-hidden="true"></i>
+							<i class="fa fa-file-text" aria-hidden="true" style="color:aqua;"></i>
 							<span class="hide-menu"></span>Online Proposal</p:commandLink></li>
 							
-					<li><p:commandLink
+					<li><p:commandLink style="color:aqua;"
 							action="#{proposalController.statusCheck()}" ajax="false"
 							class="waves-effect waves-dark" aria-expanded="false">
-							 <i class="fa fa-eye" aria-hidden="true"></i>
+							 <i class="fa fa-eye" aria-hidden="true" style="color:aqua;"></i>
 							<span class="hide-menu"></span>Status Checking</p:commandLink></li>
-					<li><p:commandLink
+					<li><p:commandLink style="color:aqua;"
 							action="paymentform.xhtml" ajax="false"
 							class="waves-effect waves-dark" aria-expanded="false">
-								<i class="fa fa-dollar" aria-hidden="true"></i>
+								<i class="fa fa-dollar" aria-hidden="true" style="color:aqua;"></i>
 							<span class="hide-menu"></span>Add Payment</p:commandLink></li>
 					
-					<li><a class="waves-effect waves-dark" href="claimform.xhtml"
-						aria-expanded="false"><i class="fa fa-wheelchair"></i><span
+					<li><a class="waves-effect waves-dark" href="claimform.xhtml"  style="color:aqua;"
+						aria-expanded="false"><i class="fa fa-wheelchair" style="color:aqua;"></i><span
 							class="hide-menu"></span>Claim</a></li>
-					<li><p:commandLink
+							
+					<li><p:commandLink style="color:aqua;"
 							action="#{policyController.policylisting()}" ajax="false"
 							class="waves-effect waves-dark" aria-expanded="false">
-							<i class="fa fa-list" aria-hidden="true"></i>
+							<i class="fa fa-list" aria-hidden="true" style="color:aqua;"></i>
 							<span class="hide-menu"></span>Policy Listing</p:commandLink></li>
-					<li><p:commandLink
+					<li><p:commandLink 
 							action="#{userController.userLogout()}" ajax="false"
-							class="btn waves-effect waves-light btn-success hidden-md-down">
+							class="btn waves-effect waves-light btn-success hidden-md-down" style="width:100px;margin-left:70px;margin-top:20px;box-shadow: 1px 2px 4px rgba(0, 0, 0, 10);color:white">
 							
 							Log Out</p:commandLink></li>
 					
@@ -180,15 +227,21 @@ i {
 				<!-- ============================================================== -->
 				<div class="row">
 					<div class="col-12">
-						<div class="card">
+						<div class="card" style="background-image: linear-gradient( 181deg,  rgba(2,0,97,1) 15%, rgba(97,149,219,1) 158.5% );">
 							<div class="card-body">
+								 <div class="col-12">
+                        <div class="card" style="margin: 0 auto;box-shadow: 1px 2px 4px rgba(0, 0, 0, 10); border-radius:20px;" >
+                            <div class="card-body">
+                            <h2><strong>Proposal Status Checking</strong></h2><hr></hr>
+               <br></br>
+               
 								<h:form>
-									<p:growl id="growl" showDetail="false" sticky="true"
+									<!-- <p:growl id="growl" showDetail="false" sticky="true"
 										life="2000" />
-
+ -->
 
 									<p:dataTable var="plist" value="#{proposalController.plist}">
-										<p:column headerText="No">
+										<p:column headerText="No" style="width:40px;">
 											<h:outputText value="#{plist.count}" />
 										</p:column>
 
@@ -196,15 +249,15 @@ i {
 											<h:outputText value="#{plist.name}" />
 										</p:column>
 
-										<p:column headerText="Proposal No.">
-											<h:outputText value="#{plist.p_no}" />
+										<p:column headerText="Proposal No." style="width:100px;">
+											<h:outputText value="#{plist.p_no}"/>
 										</p:column>
 
-										<p:column headerText="Status">
+										<p:column headerText="Status" style="width:90px;">
 											<h:outputText value="#{plist.status_checking}" />
 										</p:column>
 
-										<p:column headerText="Detail">
+										<p:column headerText="Detail" style="width:90px;">
 											<p:commandLink
 												action="#{proposalController.detailProposal(plist)}"
 												ajax="false" value="Detail" style="color:green">
@@ -231,7 +284,7 @@ i {
 
 
 
-										<p:column headerText="Add Payment">
+										<p:column headerText="Add Payment" style="width:90px;">
 											
 											<p:commandLink
 												action="#{paymentController.addPayment(plist)}">
@@ -245,7 +298,7 @@ i {
 
 									</p:dataTable>
 								</h:form>
-
+								</div></div></div>
 
 							</div>
 						</div>
