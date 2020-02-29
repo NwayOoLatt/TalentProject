@@ -15,7 +15,7 @@
     <meta name="author" content=""/> -->
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png"/>
-    <title>Elegant Admin Template - The Ultimate Multipurpose admin template</title>
+    <title>Personal Accident Insurance Group4</title>
     <!-- Custom CSS -->
     <link href="dist/css/style.css" rel="stylesheet"/>
     
@@ -30,6 +30,9 @@
     padding: 0px;
     height: 48px;
 }
+
+
+
 </style>
     
     
@@ -38,12 +41,7 @@
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->
-    <div class="preloader">
-        <div class="loader">
-            <div class="loader__figure"></div>
-            <p class="loader__label">Elegant admin</p>
-        </div>
-    </div>
+    
     <!-- ============================================================== -->
     <!-- Main wrapper - style you can find in pages.scss -->
     <!-- ============================================================== -->
@@ -172,15 +170,26 @@
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== FFEB3B-->
-               <div class="row">
-					<div class="col-12" style="background-image: linear-gradient( 181deg,  rgba(2,0,97,1) 15%, rgba(97,149,219,1) 158.5% );">
-						
-							<div class="card" style="margin: 0 auto;box-shadow: 1px 2px 4px rgba(0, 0, 0, 10); border-radius:20px;margin-top:20px;margin-bottom:20px;" >
+              <div class="row">
+					<div class="col-12">
+						<div class="card" style="background-image: linear-gradient( 181deg,  rgba(2,0,97,1) 15%, rgba(97,149,219,1) 158.5% );">
+							<div class="card-body">
+								 <div class="col-12">
+                        <div class="card" style="margin: 0 auto;box-shadow: 1px 2px 4px rgba(0, 0, 0, 10); border-radius:20px;" >
                             <div class="card-body">
                             <h2><strong>Online Proposal Registration</strong></h2><hr></hr>
                 <h4 style="color:blue">Step 4: Proposal Confirmation</h4><br></br><br></br>
                             <c:set var="flag" value="#{proposalController.confirmflag}" />
-								<c:if test="${flag == false}">
+								<c:if test="${flag == true}">
+									<div class="col-md-12 align-self-center text-right">
+						<div class="d-flex justify-content-end align-items-center">
+							<div class="alert alert-info alert-dismissible">
+							<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+								<p:outputLabel value="Your Proposal registration is successful!"></p:outputLabel>
+							</div>
+						</div>
+					</div>
+								</c:if>
                               <h:form>
 							 		<div class="row">
 
@@ -323,22 +332,23 @@
 										<c:if test="${flag == false}">
 											<center><p:commandButton value="Submit"
 												action="#{proposalController.confirm()}" ajax="false"
-												class="btn btn-lg btn-info" /></center>
+												class="btn btn-lg btn-info" data-toggle="modal" href="#ignismyModal"/></center>
 										</c:if>
 											</div>
 										</div>
 									</div>
 							</h:form>
-							</c:if>
-							<c:set var="flag" value="#{proposalController.confirmflag}" />
-								<c:if test="${flag == true}">
-								<center><h3>Your Proposal registration is successful!</h3></center>
-								</c:if>
+							
+							
 						
                             </div>
                         </div>
                     </div>
                 </div>
+                </div>
+                </div>
+                </div>
+                
                 <!-- ============================================================== -->
                 <!-- End PAge Content -->
                 <!-- ============================================================== -->
@@ -353,8 +363,10 @@
         <!-- ============================================================== -->
         <!-- footer -->
         <!-- ============================================================== -->
-        <center><footer class="footer"> © 2020 Personal Accident Insurance
-		Group 4.com </footer></center>
+       <center>
+			<footer class="footer"> © 2020 Personal Accident Insurance
+			Group 4.com </footer>
+		</center>
         <!-- ============================================================== -->
         <!-- End footer -->
         <!-- ============================================================== -->
