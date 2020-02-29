@@ -41,7 +41,10 @@
     padding: 0px;
     height: 48px;
 }
-
+body .ui-inputfield {
+    border-color:blue;
+    width: 270px;
+}
 </style>
 </h:head>
 <h:body class="skin-default-dark fixed-layout">
@@ -137,12 +140,10 @@
 							class="waves-effect waves-dark" aria-expanded="false">
 							<i class="fa fa-list" aria-hidden="true"></i>
 							<span class="hide-menu"></span>Policy Listing</p:commandLink></li>
-					
 					<li><p:commandLink
 							action="#{userController.userLogout()}" ajax="false"
-							class="btn waves-effect waves-light btn-success hidden-md-down">
-							
-							Log Out</p:commandLink></li>
+							class="btn waves-effect waves-light btn-success hidden-md-down" style="width:100px;margin-left:70px;margin-top:20px;color:#7FDBFF">
+							Log Out</p:commandLink></li> 
 				</ul>
 			</h:form> </nav>
 			<!-- End Sidebar navigation -->
@@ -175,10 +176,13 @@
 				<!-- Start Page Content -->
 				<!-- ============================================================== -->
 				<div class="row">
-					<div class="col-12">
-						<div class="card">
-							<div class="card-body">
-								<h:form>
+					<div class="col-12" style="background-image: linear-gradient( 181deg,  rgba(2,0,97,1) 15%, rgba(97,149,219,1) 158.5% );">
+						
+							<div class="card" style="margin: 0 auto;box-shadow: 1px 2px 4px rgba(0, 0, 0, 10); border-radius:20px;margin-top:20px;margin-bottom:20px;" >
+                            <div class="card-body">
+                            <h2><strong>Proposal Registration Form</strong></h2><hr></hr>
+                <h4 style="color:blue">Step 2: Premium</h4><br></br><br></br>
+								<h:form id="form">
 								
 								
 								
@@ -242,21 +246,25 @@
 								<!-- 4 -->
 								<div class="form-row">
 											<div class="col-sm-2"></div>
-										
+											
+											<p:commandButton value="Previous" immediate="true" update="form"
+											action="#{proposalController.idGenerate()}" ajax="false"
+											style="width:120px;border-radius:20px;"/>
+										&nbsp;&nbsp;
 											
 											<p:commandButton value="Calculate"
 											action="#{proposalController.holderPremium()}" ajax="false"
-											 onclick="myFunction()" />
+											 style="width:120px;border-radius:20px;"/>
 										&nbsp;&nbsp;
 										
-										<p:commandButton action="beneficiary.xhtml" value="Next" ajax="false"></p:commandButton>
+										<p:commandButton action="beneficiary.xhtml" value="Next" ajax="false" style="width:120px;border-radius:20px;"></p:commandButton>
 										
 											</div>
 											
 											
 											
 								</h:form>
-						<br></br>
+								<br></br><br></br>
 								<c:set var="flag" value="#{proposalController.pflag}" />
 								<c:if test="${flag == true}">
 
@@ -270,10 +278,11 @@
 												<hr></hr>
 												<p>
 
-													Sum Insured : <p:outputLabel value="#{proposalController.total}"></p:outputLabel><br></br>
+													
 									term : <p:outputLabel value="#{proposalController.term}">month</p:outputLabel><br></br>
 													pay amount :
-													<p:outputLabel value="#{proposalController.amount}">&nbsp;</p:outputLabel>
+													<p:outputLabel value="#{proposalController.amount}">&nbsp;</p:outputLabel><br></br>
+													Sum Insured : <p:outputLabel value="#{proposalController.total}"></p:outputLabel>
 													<br></br>
 
 												</p>
@@ -282,8 +291,11 @@
 										</div>
 									</div>
 								</c:if>
-							</div>
-						</div>
+								</div>
+								</div>
+								
+						
+							
 					</div>
 				</div>
 				<!-- ============================================================== -->
