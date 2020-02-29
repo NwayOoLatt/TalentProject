@@ -132,8 +132,7 @@
 							<span class="hide-menu"></span>Policy Listing</p:commandLink></li>
 					<li><p:commandLink
 							action="#{userController.userLogout()}" ajax="false"
-							class="btn waves-effect waves-light btn-success hidden-md-down">
-							
+							class="btn waves-effect waves-light btn-success hidden-md-down" style="width:100px;margin-left:70px;margin-top:20px;color:#7FDBFF">
 							Log Out</p:commandLink></li>
 					
 				</ul>
@@ -173,56 +172,145 @@
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== FFEB3B-->
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card" style="height: 100%;">
+               <div class="row">
+					<div class="col-12" style="background-image: linear-gradient( 181deg,  rgba(2,0,97,1) 15%, rgba(97,149,219,1) 158.5% );">
+						
+							<div class="card" style="margin: 0 auto;box-shadow: 1px 2px 4px rgba(0, 0, 0, 10); border-radius:20px;margin-top:20px;margin-bottom:20px;" >
                             <div class="card-body">
+                            <h2><strong>Online Proposal Registration</strong></h2><hr></hr>
+                <h4 style="color:blue">Step 4: Proposal Confirmation</h4><br></br><br></br>
                             <c:set var="flag" value="#{proposalController.confirmflag}" />
 								<c:if test="${flag == false}">
                               <h:form>
 							 		<div class="row">
 
 										<div class="card text-dark"
-											style="width: 400px; height: 950px; background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%); box-shadow: 1px 2px 4px rgba(0, 0, 0, .8); font-family: sans-serif;">
+											style="width: 500px; height: 100%; box-shadow: 1px 2px 4px rgba(0, 0, 0, .8);border:solid 2px red; font-family: sans-serif;">
 											<div class="card-body">
 
-												<h3 style="color: blue; text-align: center;">Your Proposal</h3><hr></hr><br></br>
-												<h4>Holder Information</h4>
+												<h3 style="color: black; text-align: center;">Online Proposal Form</h3><hr></hr><br></br>
+												<h4 style="color:red"><strong>Holder Information</strong></h4>
 												<br></br>
-												<p>
+												
 
+													<table>
+														<tr>
+															<td style="width:120px;"><p:outputLabel value="Holder Name"></p:outputLabel></td>
+															<td><p:outputLabel value=":#{proposalController.proposal.name}">&nbsp;</p:outputLabel></td>
+														</tr>
 													
-													Holder Name :
-													<p:outputLabel value="#{proposalController.proposal.name}">&nbsp;</p:outputLabel><br></br>
-													NRC:<p:outputLabel value="#{proposalController.proposal.nrc}">&nbsp;</p:outputLabel><br></br>
-													Gender:<p:outputLabel value="#{proposalController.proposal.gender}">&nbsp;</p:outputLabel><br></br>
-													Martial Status:<p:outputLabel value="#{proposalController.proposal.m_status}">&nbsp;</p:outputLabel><br></br>
-													Date of Birth:<p:outputLabel value="#{proposalController.dob}">&nbsp;</p:outputLabel><br></br>
-													Age:<p:outputLabel value="#{proposalController.proposal.age}">&nbsp;</p:outputLabel><br></br>
-													Occupation:<p:outputLabel value="#{proposalController.proposal.occupation}">&nbsp;</p:outputLabel><br></br>
-													Phone:<p:outputLabel value="#{proposalController.proposal.phone}">&nbsp;</p:outputLabel><br></br>
-													Email:<p:outputLabel value="#{proposalController.proposal.email}">&nbsp;</p:outputLabel><br></br>
-													Address:<p:outputLabel value="#{proposalController.address}">&nbsp;</p:outputLabel><br></br>
-													Start Date:<p:outputLabel value="#{proposalController.startdate}">&nbsp;</p:outputLabel><br></br>
-													End Date:<p:outputLabel value="#{proposalController.enddate}">&nbsp;</p:outputLabel><br></br>
+														<tr>
+															<td><p:outputLabel value="NRC"/></td>
+															<td><p:outputLabel value=":#{proposalController.proposal.nrc}">&nbsp;</p:outputLabel></td>
+														</tr>
+														
+														<tr>
+															<td><p:outputLabel value="Gender"/></td>
+															<td><p:outputLabel value="#{proposalController.proposal.gender}">&nbsp;</p:outputLabel></td>
+														</tr>
+														
+														<tr>
+															<td><p:outputLabel value="Martial Status"/></td>
+															<td><p:outputLabel value=":#{proposalController.proposal.m_status}">&nbsp;</p:outputLabel></td>
+														</tr>
+														
+														<tr>
+															<td><p:outputLabel value="Date Of Birth"/></td>
+															<td><p:outputLabel value=":#{proposalController.dob}">&nbsp;</p:outputLabel></td>
+														</tr>
+														
+														<tr>
+															<td><p:outputLabel value="Age"/></td>
+															<td><p:outputLabel value=":#{proposalController.proposal.age}">&nbsp;</p:outputLabel></td>
+														</tr>
+														
+														<tr>
+															<td><p:outputLabel value="Occupation"/></td>
+															<td><p:outputLabel value=":#{proposalController.proposal.occupation}">&nbsp;</p:outputLabel></td>
+														</tr>
+													
+													
+														<tr>
+															<td><p:outputLabel value="Phone"/></td>
+															<td><p:outputLabel value=":#{proposalController.proposal.phone}">&nbsp;</p:outputLabel></td>
+														</tr>
+														
+														<tr>
+															<td><p:outputLabel value="Email"/></td>
+															<td><p:outputLabel value=":#{proposalController.proposal.email}">&nbsp;</p:outputLabel></td>
+														</tr>
+														
+														<tr>
+															<td><p:outputLabel value="Address"/></td>
+															<td><p:outputLabel value=":#{proposalController.address}">&nbsp;</p:outputLabel></td>
+														</tr>
+														
+														<tr>
+															<td><p:outputLabel value="Start Date"/></td>
+															<td><p:outputLabel value=":#{proposalController.startdate}">&nbsp;</p:outputLabel></td>
+														</tr>
+														
+														<tr>
+															<td><p:outputLabel value="End Date"/></td>
+															<td><p:outputLabel value=":#{proposalController.enddate}">&nbsp;</p:outputLabel></td>
+														</tr>
+													</table>
+													
 													<br></br>
-
-												</p>
-												<h4>Premium</h4>
+												
+													
+											
+												<h4 style="color:red"><strong>Premium</strong></h4>
 												 <br></br>
-												 <p>
-												 	Sum Insured Amount:<p:outputLabel value="#{proposalController.proposal.totalamount}">&nbsp;</p:outputLabel><br></br>
-												 	Term:<p:outputLabel value="#{proposalController.proposal.term}">&nbsp;</p:outputLabel><br></br>
-												 	Premium Amount:<p:outputLabel value="#{proposalController.amount}">&nbsp;</p:outputLabel><br></br>
-												 </p>
-												<h4>Beneficiary</h4>
+												 <table>
+												 	<tr>
+												 		<td><p:outputLabel value="Sum Insured Amount">&nbsp;</p:outputLabel></td>
+												 		<td><p:outputLabel value=":#{proposalController.proposal.totalamount}">&nbsp;</p:outputLabel></td>
+												 	</tr>
+												 	
+												 	<tr>
+												 		<td><p:outputLabel value="Term">&nbsp;</p:outputLabel></td>
+												 		<td><p:outputLabel value=":#{proposalController.proposal.term}">&nbsp;</p:outputLabel></td>
+												 	</tr>
+												 	
+												 	<tr>
+												 		<td><p:outputLabel value="Premium Amount">&nbsp;</p:outputLabel></td>
+												 		<td><p:outputLabel value=":#{proposalController.amount}">&nbsp;</p:outputLabel></td>
+												 	</tr>
+												 
+												 </table><br></br>
+												 
+												<h4 style="color:red"><strong>Beneficiary</strong></h4>
 												<br></br>
-												<p>
-													Name:<p:outputLabel value="#{proposalController.proposal.b_name}">&nbsp;</p:outputLabel><br></br>
-													NRC:<p:outputLabel value="#{proposalController.proposal.b_nrc}">&nbsp;</p:outputLabel><br></br>
-													Relationship:<p:outputLabel value="#{proposalController.proposal.relationship}">&nbsp;</p:outputLabel><br></br>
-												</p>
-												<p:selectBooleanCheckbox value="#{proposalController.check}" itemLabel="I Accept" required="true">
+												<table>
+													<tr>
+														<td style="width:120px;"><p:outputLabel value="Name">&nbsp;</p:outputLabel></td>
+														<td><p:outputLabel value=":#{proposalController.proposal.b_name}">&nbsp;</p:outputLabel></td>
+													</tr>
+													
+													<tr>
+														<td><p:outputLabel value="NRC">&nbsp;</p:outputLabel></td>
+														<td><p:outputLabel value=":#{proposalController.proposal.b_nrc}">&nbsp;</p:outputLabel></td>
+													</tr>
+													
+													<tr>
+														<td><p:outputLabel value="Relationship"/></td>
+														<td><p:outputLabel value=":#{proposalController.proposal.relationship}"/></td>
+													</tr>
+													
+													<tr>
+														<td><p:outputLabel value="Email"/></td>
+														<td><p:outputLabel value=":#{proposalController.proposal.b_email}"/></td>
+													</tr>
+													
+													<tr>
+														<td><p:outputLabel value="Address"/></td>
+														<td><p:outputLabel value=":#{proposalController.proposal.b_address}"/></td>
+													</tr>
+												
+												</table><br></br>
+												
+												<p:selectBooleanCheckbox value="#{proposalController.check}" itemLabel="I Accept the terms and policy" required="true">
         
         										</p:selectBooleanCheckbox><br></br><br></br>
 												
