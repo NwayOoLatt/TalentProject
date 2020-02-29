@@ -31,10 +31,21 @@
 	background: #fff;
 	color: #212121;
 }
+
 .topbar .top-navbar {
-    min-height: 10px;
-    padding: 0px;
-    height: 48px;
+	min-height: 10px;
+	padding: 0px;
+	height: 48px;
+}
+
+body .ui-inputfield {
+	border-color: blue;
+	width: 270px;
+}
+
+body .ui-widget, body .ui-widget .ui-widget {
+	text-decoration: none;
+	font-weight: bold;
 }
 </style>
 </h:head>
@@ -58,9 +69,7 @@
 		<header class="topbar"> <nav
 			class="navbar top-navbar navbar-expand-md navbar-dark"> <!-- ============================================================== -->
 		<!-- Logo --> <!-- ============================================================== -->
-		<div class="navbar-header">
-			
-		</div>
+		<div class="navbar-header"></div>
 		<!-- ============================================================== -->
 		<!-- End Logo --> <!-- ============================================================== -->
 		<div class="navbar-collapse">
@@ -69,16 +78,20 @@
 			<!-- ============================================================== -->
 			<ul class="navbar-nav mr-auto">
 				<!-- This is  -->
-				
+
 			</ul>
 			<ul class="navbar-nav my-lg-0">
 				<!-- ============================================================== -->
 				<!-- User profile and search -->
 				<!-- ============================================================== -->
-				
-				 <li class="nav-item dropdown">
-                               <p style="color:blue;margin-right: 30px;margin-left:500px;margin-top:10px;font-size:20px"><i class="fa fa-user-circle"  style="font-size:30px"></i> #{user}</p>                        </li>
-                  
+
+				<li class="nav-item dropdown">
+					<p
+						style="color: blue; margin-right: 30px; margin-left: 500px; margin-top: 10px; font-size: 20px">
+						<i class="fa fa-user-circle" style="font-size: 30px"></i> #{user}
+					</p>
+				</li>
+
 				<!-- ============================================================== -->
 				<!-- User profile and search -->
 				<!-- ============================================================== -->
@@ -93,8 +106,7 @@
 		<!-- ============================================================== -->
 		<aside class="left-sidebar">
 		<div class="d-flex no-block nav-text-box align-items-center">
-			<span><img src="images/"
-				alt="elegant admin template" /></span> <a
+			<span><img src="images/" alt="elegant admin template" /></span> <a
 				class="waves-effect waves-dark ml-auto hidden-sm-down"
 				href="javascript:void(0)"></a> <a
 				class="nav-toggler waves-effect waves-dark ml-auto hidden-sm-up"
@@ -105,24 +117,23 @@
 			<!-- Sidebar navigation-->
 			<nav class="sidebar-nav"> <h:form>
 				<ul id="sidebarnav">
-					
-					<li><p:commandLink
-							action="#{proposalController.idGenerate()}" ajax="false"
-							class="waves-effect waves-dark" aria-expanded="false">
+
+					<li><p:commandLink action="#{proposalController.idGenerate()}"
+							ajax="false" class="waves-effect waves-dark"
+							aria-expanded="false">
 							<i class="fa fa-file-text" aria-hidden="true"></i>
 							<span class="hide-menu"></span>Online Proposal</p:commandLink></li>
-							
+
 					<li><p:commandLink
 							action="#{proposalController.statusCheck()}" ajax="false"
 							class="waves-effect waves-dark" aria-expanded="false">
-							 <i class="fa fa-eye" aria-hidden="true"></i>
+							<i class="fa fa-eye" aria-hidden="true"></i>
 							<span class="hide-menu"></span>Status Checking</p:commandLink></li>
-					<li><p:commandLink
-							action="paymentform.xhtml" ajax="false"
+					<li><p:commandLink action="paymentform.xhtml" ajax="false"
 							class="waves-effect waves-dark" aria-expanded="false">
 							<i class="fa fa-smile-o"></i>
 							<span class="hide-menu"></span>Add Payment</p:commandLink></li>
-					
+
 					<li><a class="waves-effect waves-dark" href="claimform.xhtml"
 						aria-expanded="false"><i class="fa fa-wheelchair"></i><span
 							class="hide-menu"></span>Claim</a></li>
@@ -131,13 +142,13 @@
 							class="waves-effect waves-dark" aria-expanded="false">
 							<i class="fa fa-list" aria-hidden="true"></i>
 							<span class="hide-menu"></span>Policy Listing</p:commandLink></li>
-					<li><p:commandLink
-							action="#{userController.userLogout()}" ajax="false"
-							class="btn waves-effect waves-light btn-success hidden-md-down">
-							
+					<li><p:commandLink action="#{userController.userLogout()}"
+							ajax="false"
+							class="btn waves-effect waves-light btn-success hidden-md-down"
+							style="width:100px;margin-left:70px;margin-top:20px;color:#7FDBFF">
 							Log Out</p:commandLink></li>
-					
-					
+
+
 				</ul>
 			</h:form> </nav>
 			<!-- End Sidebar navigation -->
@@ -159,9 +170,9 @@
 				<!-- ============================================================== -->
 				<div class="row page-titles">
 					<div class="col-md-5 align-self-center">
-						<h4 class="text-themecolor">Beneficiary Form</h4>
+						<!-- <h4 class="text-themecolor">Beneficiary Form</h4> -->
 					</div>
-					
+
 				</div>
 				<!-- ============================================================== -->
 				<!-- End Bread crumb and right sidebar toggle -->
@@ -170,132 +181,168 @@
 				<!-- Start Page Content -->
 				<!-- ============================================================== -->
 				<div class="row">
-					<div class="col-12">
-						<div class="card">
+					<div class="col-12"
+						style="background-image: linear-gradient(181deg, rgba(2, 0, 97, 1) 15%, rgba(97, 149, 219, 1) 158.5%);">
+
+						<div class="card"
+							style="margin: 0 auto; box-shadow: 1px 2px 4px rgba(0, 0, 0, 10); border-radius: 20px; margin: 20px">
 							<div class="card-body">
+								<h2>
+									<strong>Proposal Registration Form</strong>
+								</h2>
+								<hr></hr>
+								<h4 style="color: blue">Step 3: Beneficiary</h4>
+								<br></br>
+								<br></br>
 								<h:form>
-								
-								<!---1 -->
-								<div class="form-row">
-								<div class="col-sm-2"></div>
-											<div class="col-sm-5">
-											<p:outputLabel value="Name :"/>&nbsp;<br />
+
+									<!---1 -->
+									<div class="form-row">
+										<div class="col-sm-2"></div>
+										<div class="col-sm-5">
+											<p:outputLabel value="Name " />
+											&nbsp;<br />
 											<p:inputText class="form-control" id="name"
-													value="#{proposalController.proposal.b_name}"
-													required="true" requiredMessage="Name is required!"
-													validatorMessage="Name must be character!"
-													style="width:270px;">
-													<f:validateRegex pattern="^\S[a-zA-Z\s]{3,}$" />
-												</p:inputText>&nbsp;<br/>
-												<p:message for="name" style="color:red;background-color:white;"/>
-											</div>
-											<div class="col-sm-5">
-															
-								</div>
-								</div>
-								<!-- 2 -->
-								<div class="form-row">
-											<div class="col-sm-2"></div>
-											<div class="col-sm-5">
-											<p:outputLabel>NRC</p:outputLabel><br/>
-												<p:inputText class="form-control" id="nrc"
-													value="#{proposalController.proposal.b_nrc}" required="true"
-													requiredMessage="NRC is required!"
-													validatorMessage="Must be NRC format!" style="width:270px;"
-													placeholder="12/OuKaTA(Naing)079887">
-													<f:validateRegex
-														pattern="^([\d]{1,2})\/([A-Za-z]{6})\(Naing\)([\d]{6})$" />
-												</p:inputText><br/>
-												<p:message for="nrc" style="color:red;background-color:white;"></p:message>
-											
-											</div>
-											<div class="col-sm-5">
-											
-											<p:outputLabel>Relationship</p:outputLabel><br/>
-												<p:inputText class="form-control" id="rs"
-													value="#{proposalController.proposal.relationship}" required="true"
-													requiredMessage="This field is required!" validatorMessage="Must be atleast 3 characters!" style="width:270px;" >
-										 <f:validateRegex pattern="^\S[a-zA-Z\s]{2,}$" /></p:inputText><br/>
-												<p:message for="rs" style="color:red;background-color:white;"></p:message>
-											
-											
-											</div>
+												value="#{proposalController.proposal.b_name}"
+												required="true" requiredMessage="Name is required!"
+												validatorMessage="Name must be character!"
+												style="width:270px;">
+												<f:validateRegex pattern="^\S[a-zA-Z\s]{3,}$" />
+											</p:inputText>
+											&nbsp;<br />
+											<p:message for="name"
+												style="color:red;background-color:white;" />
+										</div>
+										<div class="col-sm-5">
 										
-								</div><br></br>
-								
-								<!-- 3 -->
-								<div class="form-row">
-											<div class="col-sm-2"></div>
-											<div class="col-sm-5">
-											
-											<p:outputLabel>Email</p:outputLabel><br/>
-												<p:inputText id="mail" class="form-control"
-													value="#{proposalController.proposal.b_email}" required="true"  requiredMessage="Email is required!" validatorMessage="Must be email format!" style="width:270px;">
-													<f:validateRegex pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]" />
-												</p:inputText><br/>
-												<p:message for="mail" style="color:red;background-color:white;"></p:message>
-											
-											</div>
-											
-											<div class="col-sm-5">
-											
-											<p:outputLabel value="Phone :" />&nbsp;<br />
-											
-												<p:inputText class="form-control" id="phone"
-													value="#{proposalController.proposal.b_phone}"
-													required="true" 
-													style="width:270px;" requiredMessage="Phone number is required!">
-													<f:validateRegex pattern="^(09[0-9]{6,}|01[0-9]{6,})$" />
-												</p:inputText><br/>
-												<p:message for="phone" style="color:red;background-color:white;"/>
-											
-												
-											</div>
+										<p:outputLabel value="NRC"></p:outputLabel>
+											<br />
+											<p:inputText class="form-control" id="nrc"
+												value="#{proposalController.proposal.b_nrc}" required="true"
+												requiredMessage="NRC is required!"
+												validatorMessage="Must be NRC format!" style="width:270px;"
+												placeholder="12/OuKaTA(Naing)079887">
+												<f:validateRegex
+													pattern="^([\d]{1,2})\/([A-Za-z]{6})\(Naing\)([\d]{6})$" />
+											</p:inputText>
+											<br />
+											<p:message for="nrc"
+												style="color:red;background-color:white;"></p:message>
 										
-								</div><br></br>
-								
-								<!-- 4 -->
-								<div class="form-row">
-											<div class="col-sm-2"></div>
-											<div class="col-sm-10">
+										</div>
+									</div>
+									<!-- 2 -->
+									<div class="form-row">
+										<div class="col-sm-2"></div>
+										<div class="col-sm-5">
 											
-											<p:outputLabel>Address</p:outputLabel><br/>
-											<p:inputTextarea rows="3" cols="20" id="add"
-														style="width:730px;" class="form-control"
-														value="#{proposalController.proposal.b_address}"
-														required="true" requiredMessage="Your Address is required!">
-												</p:inputTextarea>
-		
-												<br/>
-												<p:message for="add" style="color:red;background-color:white;"></p:message>
+											<p:outputLabel value="Relationship"></p:outputLabel>
+											<br />
+											<p:inputText class="form-control" id="rs"
+												value="#{proposalController.proposal.relationship}"
+												required="true" requiredMessage="This field is required!"
+												validatorMessage="Must be atleast 3 characters!"
+												style="width:270px;">
+												<f:validateRegex pattern="^\S[a-zA-Z\s]{2,}$" />
+											</p:inputText>
+											<br />
+											<p:message for="rs" style="color:red;background-color:white;"></p:message>
 											
-											</div>
+
+										</div>
+										<div class="col-sm-5">
+
+											<p:outputLabel value="Email"></p:outputLabel>
+											<br />
+											<p:inputText id="mail" class="form-control"
+												value="#{proposalController.proposal.b_email}"
+												required="true" requiredMessage="Email is required!"
+												validatorMessage="Must be email format!"
+												style="width:270px;">
+												<f:validateRegex
+													pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]" />
+											</p:inputText>
+											<br />
+											<p:message for="mail"
+												style="color:red;background-color:white;"></p:message>
 											
-										
-								</div><br></br>
-								
-								
-								
-							<br></br>
-								
-								
-									<br />
-									<br />
+
+										</div>
+
+									</div>
+									<br></br>
+
+									<!-- 3 -->
+									<div class="form-row">
+										<div class="col-sm-2"></div>
+										<div class="col-sm-5">
+											
+											<p:outputLabel value="Phone" />
+											&nbsp;<br />
+
+											<p:inputText class="form-control" id="phone"
+												value="#{proposalController.proposal.b_phone}"
+												required="true" style="width:270px;"
+												requiredMessage="Phone number is required!">
+												<f:validateRegex pattern="^(09[0-9]{6,}|01[0-9]{6,})$" />
+											</p:inputText>
+											<br />
+											<p:message for="phone"
+												style="color:red;background-color:white;" />
+											
+											
+										</div>
+
+										<div class="col-sm-5">
+
+											<p:outputLabel value="Address"></p:outputLabel>
+											<br />
+											<p:inputTextarea rows="3" cols="40" id="add"
+												 class="form-control"
+												value="#{proposalController.proposal.b_address}"
+												required="true" requiredMessage="Your Address is required!">
+											</p:inputTextarea>
+
+											<br />
+											<p:message for="add"
+												style="color:red;background-color:white;"></p:message>
+											
+
+										</div>
+
+									</div>
+									<br></br>
+
+									<!-- 4 -->
+									<div class="form-row">
+										<div class="col-sm-2"></div>
+										<div class="col-sm-10">
+
+											
+										</div>
+
+
+									</div>
+									<br></br>
+									
 									<div class="form-row">
 										<div class="col-5"></div>
 										<div class="col-7">
-											<p:commandButton value="Save"
+											<p:commandButton value="Next"
 												action="#{proposalController.benefit()}" ajax="false"
-												class="btn btn-lg btn-info" />
+												class="btn btn-lg btn-info" style="width:120px;border-radius:20px;"/>
 										</div>
 									</div>
-									
+
 
 								</h:form>
+
 							</div>
 						</div>
 					</div>
+
 				</div>
+
 				<!-- ============================================================== -->
 				<!-- End PAge Content -->
 				<!-- ============================================================== -->
@@ -310,8 +357,10 @@
 		<!-- ============================================================== -->
 		<!-- footer -->
 		<!-- ============================================================== -->
-		<center><footer class="footer"> © 2020 Personal Accident Insurance
-		Group 4.com </footer></center>
+		<center>
+			<footer class="footer"> © 2020 Personal Accident Insurance
+			Group 4.com </footer>
+		</center>
 		<!-- ============================================================== -->
 		<!-- End footer -->
 		<!-- ============================================================== -->
