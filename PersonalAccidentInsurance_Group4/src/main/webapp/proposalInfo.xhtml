@@ -40,6 +40,10 @@ body .ui-inputfield {
     border-color:blue;
     width: 270px;
 }
+body .ui-widget, body .ui-widget .ui-widget {
+	text-decoration: none;
+	font-weight: bold;
+}
 </style>
 </h:head>
 <h:body class="skin-default-dark fixed-layout">
@@ -161,7 +165,7 @@ body .ui-inputfield {
 				<!-- ============================================================== -->
 				<div class="row page-titles">
 					<div class="col-md-5 align-self-center">
-						<h4 class="text-themecolor">Proposal Form</h4>
+					<!-- 	<h4 class="text-themecolor">Proposal Form</h4> -->
 					</div>
 					
 				</div>
@@ -178,8 +182,9 @@ body .ui-inputfield {
 								 <div class="col-12">
                         <div class="card" style="margin: 0 auto;box-shadow: 1px 2px 4px rgba(0, 0, 0, 10); border-radius:20px;" >
                             <div class="card-body">
-                            <h2><strong>Proposal Registration Form</strong></h2><hr></hr>
+                            <h2><strong>Online Proposal Registration</strong></h2><hr></hr>
                 <h4 style="color:blue">Step 1: Personal Information</h4><br></br><br></br>
+               
                 <h:form>
 								
 								<!-- 1 -->
@@ -436,16 +441,16 @@ body .ui-inputfield {
 											</div>
 										
 								</div><br></br>
-								
+									<center><p:commandButton value="Next"
+												action="#{proposalController.holderInfo()}" ajax="false"
+												class="btn btn-lg btn-info" style="width:120px;border-radius:20px;"/></center>
 								
 									<br />
 									<br />
 									<div class="form-row">
 										<div class="col-6"></div>
 										<div class="col-6">
-											<p:commandButton value="Next"
-												action="#{proposalController.holderInfo()}" ajax="false"
-												class="btn btn-lg btn-info" style="width:120px;border-radius:20px;"/>
+											
 										</div>
 									</div>
 									
