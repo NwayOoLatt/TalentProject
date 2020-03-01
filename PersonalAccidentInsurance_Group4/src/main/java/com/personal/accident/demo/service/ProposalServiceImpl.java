@@ -219,12 +219,6 @@ Optional<PolicyHolder> updateDB=this.holderInfoRepository.findById(p.getP_no());
 		
 		if(updateDB.isPresent()) {
 			
-//			User u = new User();
-//			u.setId(1);
-//			u.setName("User");
-//			u.setEmail("u@gmail.com");
-//			u.setPassword("11111");
-//			u.setStatus("active");
 
 			
 			System.out.println("------Premium-------"+p.getP_id());
@@ -239,8 +233,8 @@ Optional<PolicyHolder> updateDB=this.holderInfoRepository.findById(p.getP_no());
 			PolicyHolder holder = updateDB.get();
 
 			
-			holder.setReject("delete");
-			holder.setStatus_checking("reject");
+			holder.setReject("true");
+			holder.setStatus_checking("delete");
 			holderInfoRepository.save(holder);
 
 			System.out.println("------Benefit-------");
@@ -264,7 +258,8 @@ Optional<PolicyHolder> updateDB=this.holderInfoRepository.findById(p.getP_no());
 		// TODO Auto-generated method stub
 		
 		Double pay=0.0;
-		List<PolicyHolder> plist=holderInfoRepository.getProposal(id);
+		List<PolicyHolder> plist=holderInfoRepository.getProposal(id); //statuscheck repository
+		
 		List<Proposal> prolist = new ArrayList<Proposal>();
 		DateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy");
 		/*
