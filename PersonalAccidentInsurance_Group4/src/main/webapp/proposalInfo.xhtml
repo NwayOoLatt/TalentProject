@@ -382,13 +382,15 @@ body .ui-widget, body .ui-widget .ui-widget {
 															style="font-weight:bold" />
 														&nbsp;<br />
 
-														<p:calendar id="date"
+														<p:calendar id="event"
 															value="#{proposalController.proposal.dob}"
 															pattern="dd/MM/yyyy" yearNavigator="true"
 															yearRange="1950:3000" required="true"
-															requiredMessage="Date is required!" />
+															requiredMessage="Date is required!" >
+														<p:ajax event="dateSelect" update="age" listener="#{proposalController.getAge}" />  
+														</p:calendar>
 														<br />
-														<p:message for="date"
+														<p:message for="event"
 															style="color:red;background-color:white;" />
 
 													</div>
@@ -407,7 +409,7 @@ body .ui-widget, body .ui-widget .ui-widget {
 														<br />
 														<p:inputText class="form-control" id="age"
 															value="#{proposalController.proposal.age}"
-															required="true" requiredMessage="Age required!"
+															required="true" requiredMessage="Age required!" style="font-size:17px;"
 															validatorMessage="Must be 16 ang 65!">
 
 
