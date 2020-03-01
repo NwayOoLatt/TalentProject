@@ -1,5 +1,7 @@
 package com.personal.accident.demo.controller;
 
+import java.text.DecimalFormat;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
@@ -23,7 +25,9 @@ public class PaymentController {
 	
 	private PaymentModel paymodel = new PaymentModel();	
 	private ProposalController p=new ProposalController();
-
+	DecimalFormat decimalFormat = new DecimalFormat("0.0");
+	String premiumamount;
+	
 	public String getPayment(Proposal pro) {
 		try {
 			paymodel.setP_no(pro.getP_no());
@@ -42,7 +46,8 @@ public class PaymentController {
 		
 		try {
 		paymodel.setP_no(pro.getP_no());
-		paymodel.setAmount(pro.getAmount());
+		premiumamount=decimalFormat.format(pro.getAmount());
+		
 		
 		}catch(NullPointerException e) {
 			System.out.println(e);
@@ -74,6 +79,7 @@ public class PaymentController {
 		
 		System.out.println("-------savepay-------");
 		System.out.println("pno"+paymodel.getP_no());
+		paymodel.setAmount(Double.parseDouble(premiumamount));
 		
 		Boolean flag=payservice.savePayment(paymodel);
 		
@@ -97,6 +103,12 @@ public class PaymentController {
 
 		public void setPaymodel(PaymentModel paymodel) {
 			this.paymodel = paymodel;
+		}
+		public String getPremiumamount() {
+			return premiumamount;
+		}
+		public void setPremiumamount(String premiumamount) {
+			this.premiumamount = premiumamount;
 		}
 		
 		
