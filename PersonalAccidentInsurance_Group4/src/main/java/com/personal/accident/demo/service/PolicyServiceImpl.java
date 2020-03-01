@@ -1,6 +1,7 @@
 package com.personal.accident.demo.service;
 
 import java.text.DateFormat;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +28,7 @@ public class PolicyServiceImpl implements PolicyService {
 	@Override
 	public List<Proposal> proposalList(int id) {
 		
-
+		DecimalFormat decimalFormat = new DecimalFormat("0.0");
 		// TODO Auto-generated method stub
 	
 		Double pay=0.0;
@@ -57,6 +58,7 @@ public class PolicyServiceImpl implements PolicyService {
 					pp.setPhone(plist.get(j).getPhone());
 					pp.setEmail(plist.get(j).getEmail());
 					pp.setStatus_checking(plist.get(j).getStatus_checking());
+					pp.setTotalamount1(decimalFormat.format(plist.get(j).getPremium().getLampSum()));
 					pp.setTotalamount(plist.get(j).getPremium().getLampSum());
 					pp.setYear(plist.get(j).getPremium().getYear());
 					pp.setTerm(plist.get(j).getPremium().getTerm());
@@ -100,14 +102,17 @@ public class PolicyServiceImpl implements PolicyService {
 						  
 						  clist.add(cmodel);
 					  }
+					  pay=0.0;
 					  for(int p=0;p<plist.get(j).getPayment().size();p++) {
 							 
+						  	
+						  	
 						  	 pp.setAmount(plist.get(j).getPayment().get(p).getAmount());
 							 pay+=plist.get(j).getPayment().get(p).getAmount();
 							 System.out.println("payamount----"+pay);
 						}
-					 
-					  pp.setPayment(String.valueOf(pay));
+					  pp.setPayment(null);
+					  pp.setPayment(decimalFormat.format(pay));
 					  pp.setClaim(clist);
 					  prolist.add(pp);
 						
