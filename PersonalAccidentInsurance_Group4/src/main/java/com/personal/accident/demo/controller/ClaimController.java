@@ -64,10 +64,13 @@ public class ClaimController {
 	Double remainbalance = 0.0;
 	DateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy");
 
+	
+	// Claim Category
+	
 	@PostConstruct
 	public void init() {
 
-		category = new HashMap<String, Integer>();
+		category = new HashMap<String, Integer>(); 
 		categoryid=new HashMap<String, Integer>();
 		
 		List<CategoryModel> catList=new ArrayList<>();
