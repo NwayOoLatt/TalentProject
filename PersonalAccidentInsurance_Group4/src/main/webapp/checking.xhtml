@@ -82,11 +82,11 @@ body .ui-datatable .ui-datatable-data>tr>td {
 	font-size: initial;
 	font-weight: bold;
 }
-.page-wrapper, .footer {
-    margin-left: 60px;
-    margin-bottom: auto;
-}
 
+.page-wrapper, .footer {
+	margin-left: 60px;
+	margin-bottom: auto;
+}
 </style>
 
 </h:head>
@@ -258,97 +258,121 @@ body .ui-datatable .ui-datatable-data>tr>td {
 				<!-- ============================================================== -->
 				<div class="row">
 					<div class="col-12">
-						<div class="card">
-							<div class="card-body">
-								<div class="col-12">
-									<div class="card"
-										style="margin: 0 auto; box-shadow: 1px 2px 4px rgba(0, 0, 0, 10); border-radius: 20px;">
-										<div class="card-body">
-											<h3>
-												<strong>Proposal Status Checking</strong>
-											</h3>
-											<hr></hr>
-											<br></br>
+						<c:if test="#{user != null}">
+							<div class="card">
+								<div class="card-body">
+									<div class="col-12">
+										<div class="card"
+											style="margin: 0 auto; box-shadow: 1px 2px 4px rgba(0, 0, 0, 10); border-radius: 20px;">
+											<div class="card-body">
+												<h3>
+													<strong>Proposal Status Checking</strong>
+												</h3>
+												<hr></hr>
+												<br></br>
 
-											<h:form>
-												<!-- <p:growl id="growl" showDetail="false" sticky="true"
+												<h:form>
+													<!-- <p:growl id="growl" showDetail="false" sticky="true"
 										life="2000" />
  -->
 
-												<p:dataTable var="plist" value="#{proposalController.plist}">
-													<p:column headerText="No" style="width:40px;">
-														<h:outputText value="#{plist.count}" />
-													</p:column>
+													<p:dataTable var="plist"
+														value="#{proposalController.plist}">
+														<p:column headerText="No" style="width:40px;">
+															<h:outputText value="#{plist.count}" />
+														</p:column>
 
-													<p:column headerText="Name">
-														<h:outputText value="#{plist.name}" />
-													</p:column>
+														<p:column headerText="Name">
+															<h:outputText value="#{plist.name}" />
+														</p:column>
 
-													<p:column headerText="Proposal No." style="width:120px;">
-														<h:outputText value="#{plist.p_no}" />
-													</p:column>
+														<p:column headerText="Proposal No." style="width:120px;">
+															<h:outputText value="#{plist.p_no}" />
+														</p:column>
 
-													<p:column headerText="Status" style="width:110px;">
-														<h:outputText value="#{plist.status_checking}" />
-													</p:column>
+														<p:column headerText="Status" style="width:110px;">
+															<h:outputText value="#{plist.status_checking}" />
+														</p:column>
 
-													<p:column headerText="Detail" style="width:100px;">
-														<p:commandLink
-															action="#{proposalController.detailProposal(plist)}"
-															ajax="false" value="Detail" style="color:green">
-															<i class="fa fa-check" aria-hidden="true"></i>
-
-
-														</p:commandLink>
-													</p:column>
-
-													<p:column headerText="Option" style="width:260px;">
+														<p:column headerText="Detail" style="width:100px;">
+															<p:commandLink
+																action="#{proposalController.detailProposal(plist)}"
+																ajax="false" value="Detail" style="color:green">
+																<i class="fa fa-check" aria-hidden="true"></i>
 
 
-														<p:commandButton id="Edit" icon="fa fa-edit" value="Edit"
-															title="Edit"
-															action="#{proposalController.editProposal(plist)}"
-															style="width:120px;" />&nbsp;&nbsp;&nbsp;
+															</p:commandLink>
+														</p:column>
+
+														<p:column headerText="Option" style="width:260px;">
+
+
+															<p:commandButton id="Edit" icon="fa fa-edit" value="Edit"
+																title="Edit"
+																action="#{proposalController.editProposal(plist)}"
+																style="width:120px;" />&nbsp;&nbsp;&nbsp;
 											
 											<p:commandButton id="Delete" icon="fa fa-trash"
-															value="Delete" title="Delete"
-															action="#{proposalController.deleteProposal(plist)}"
-															update="@form" style="width:120px;">
-															<p:confirm header="Confirmation" message="Are you sure want to delete?" />
-														</p:commandButton>
+																value="Delete" title="Delete"
+																action="#{proposalController.deleteProposal(plist)}"
+																update="@form" style="width:120px;">
+																<p:confirm header="Confirmation"
+																	message="Are you sure want to delete?" />
+															</p:commandButton>
 
-														<p:confirmDialog global="true" showEffect="fade"
-															hideEffect="fade">
-															<p:commandButton value="Yes" type="button"
-																styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
-															<p:commandButton value="No" type="button"
-																styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
-														</p:confirmDialog>
+															<p:confirmDialog global="true" showEffect="fade"
+																hideEffect="fade">
+																<p:commandButton value="Yes" type="button"
+																	styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+																<p:commandButton value="No" type="button"
+																	styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+															</p:confirmDialog>
 
-													</p:column>
-
-
-
-													<p:column headerText="Add Payment" style="width:90px;">
-
-														<p:commandLink
-															action="#{paymentController.addPayment(plist)}">
-															<!-- <i class="fa fa-money" style="font-size:30px"></i> -->
-															<img src="../assets/images/phone.png" alt="payment"
-																width="30" />
+														</p:column>
 
 
-														</p:commandLink>
-													</p:column>
 
-												</p:dataTable>
-											</h:form>
+														<p:column headerText="Add Payment" style="width:90px;">
+
+															<p:commandLink
+																action="#{paymentController.addPayment(plist)}">
+																<!-- <i class="fa fa-money" style="font-size:30px"></i> -->
+																<img src="../assets/images/phone.png" alt="payment"
+																	width="30" />
+
+
+															</p:commandLink>
+														</p:column>
+
+													</p:dataTable>
+												</h:form>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</c:if>
+						<c:if test="#{user == null}">
+							<div class="card" style="height: 700px;">
+								<div class="card-body">
+									<div class="col-12">
+										<div class="card"
+											style="margin: 0 auto; box-shadow: 1px 2px 4px rgba(0, 0, 0, 10); border-radius: 20px; border-color: solid 1px blue;">
+											<div class="card-body">
+												<h:form>
+													<p:commandLink action="loginform.xhtml" ajax="false">
+											       Please <h:outputText value="Login" style="color:red;" /> First!
+											    </p:commandLink>
+												</h:form>
+
+											</div>
 										</div>
 									</div>
 								</div>
-
 							</div>
-						</div>
+						</c:if>
+
 					</div>
 				</div>
 				<!-- ============================================================== -->
@@ -366,8 +390,8 @@ body .ui-datatable .ui-datatable-data>tr>td {
 		<!-- footer -->
 		<!-- ============================================================== -->
 		<center>
-			<footer class="footer" style="margin-bottom:0;"> © 2020 Personal Accident Insurance
-			Group 4.com </footer>
+			<footer class="footer" style="margin-bottom:0;"> © 2020
+			Personal Accident Insurance Group 4.com </footer>
 		</center>
 		<!-- ============================================================== -->
 		<!-- End footer -->
