@@ -19,6 +19,9 @@
 	<title>Personal Accident Insurance Group 4</title>
 	<!-- Custom CSS -->
 	<link href="dist/css/style.css" rel="stylesheet" />
+	
+	
+	
 	<style>
 #ui-message {
 	background-color: #fff;
@@ -248,9 +251,9 @@ body .ui-widget, body .ui-widget .ui-widget {
 									<div class="card"
 										style="margin: 0 auto; box-shadow: 1px 2px 4px rgba(0, 0, 0, 10); border-radius: 20px;">
 										<div class="card-body">
-											<h2>
+											<h3>
 												<strong>Online Proposal Registration</strong>
-											</h2>
+											</h3>
 											<hr></hr>
 											<h4 style="color: blue">Step 2: Premium</h4>
 											<br></br> <br></br>
@@ -345,13 +348,13 @@ body .ui-widget, body .ui-widget .ui-widget {
 													<div class="col-sm-2"></div>
 
 													<p:commandButton value="Previous" immediate="true"
-														update="form" action="#{proposalController.idGenerate()}"
+														update="form" action="proposalInfo.xhtml"
 														ajax="false" style="width:140px;border-radius:20px;" />
 													&nbsp;&nbsp;
 
 													<p:commandButton value="Calculate"
 														actionListener="#{proposalController.holderPremium()}"
-														ajax="false" style="width:140px;border-radius:20px;"
+														 style="width:140px;border-radius:20px;"
 														update="output" />
 													&nbsp;&nbsp;
 
