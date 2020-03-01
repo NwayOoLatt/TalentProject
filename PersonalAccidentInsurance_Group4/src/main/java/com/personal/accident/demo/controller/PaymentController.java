@@ -43,12 +43,12 @@ public class PaymentController {
 		try {
 		paymodel.setP_no(pro.getP_no());
 		paymodel.setAmount(pro.getAmount());
+		
 		}catch(NullPointerException e) {
 			System.out.println(e);
 			return "paymentform.xhtml?faces-redirect=true";
 		}
 		if (pro.getStatus_checking().equalsIgnoreCase("Approved")) {
-			
 			
 			return "paymentform.xhtml?faces-redirect=true";
 			
@@ -57,10 +57,11 @@ public class PaymentController {
 			
 			return "paymentform.xhtml?faces-redirect=true";
 		}
+		
 		else {
 				
 			pControl.setInfoflag(true);
-			pControl.setInfo("can't add your payment at this time");
+			pControl.setInfo("Can't add your payment at this time");
 			
 			System.out.println("can't pay");
 			return "checking.xhtml?faces-redirect=true";
