@@ -23,20 +23,15 @@ public class PolicyController {
 	@Autowired 	
 	PolicyService policyservice;
 	
-	Proposal proposal=new Proposal();
+	@Autowired
+	ProposalController proposal;
 	
 	private User u=new User();
 	
 	List<Proposal> plist=new ArrayList<Proposal>();
 	PolicyModel pmodel=new PolicyModel();
 	
-	public PolicyModel getPmodel() {
-		return pmodel;
-	}
-
-	public void setPmodel(PolicyModel pmodel) {
-		this.pmodel = pmodel;
-	}
+	
 	public int loginUser() {
 		FacesContext facesContext = FacesContext.getCurrentInstance(); HttpSession
 		session = (HttpSession) facesContext.getExternalContext().getSession(true);
@@ -47,7 +42,8 @@ public class PolicyController {
 	}
 
 	public String policylisting() {
-		proposal.setPolicyflag(true);
+		
+		proposal.setPolicyflag(false);
 		System.out.println("----------------"+proposal.getPolicyflag());
 		
 		int userID=loginUser();
@@ -80,15 +76,22 @@ public class PolicyController {
 		this.plist = plist;
 	}
 
-	public Proposal getProposal() {
+	
+	public ProposalController getProposal() {
 		return proposal;
 	}
 
-	public void setProposal(Proposal proposal) {
+	public void setProposal(ProposalController proposal) {
 		this.proposal = proposal;
 	}
 
-	
+	public PolicyModel getPmodel() {
+		return pmodel;
+	}
+
+	public void setPmodel(PolicyModel pmodel) {
+		this.pmodel = pmodel;
+	}
 	
 	
 
