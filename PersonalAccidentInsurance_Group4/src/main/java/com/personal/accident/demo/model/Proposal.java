@@ -72,6 +72,8 @@ public class Proposal {
 
 	private List<BeneficiaryModel> benefit=new ArrayList<BeneficiaryModel>();
 	private List<ClaimModel> claim=new ArrayList<ClaimModel>();
+	private List<Proposal> pnoList=new ArrayList<Proposal>();
+	
 	
 	private ContactModel contact;	
 	private Premium premium;
@@ -397,6 +399,12 @@ public class Proposal {
 	}
 	public void setAddress(String address) {
 		this.address = address;
+	}
+	public List<Proposal> getPnoList() {
+		return pnoList;
+	}
+	public void setPnoList(List<Proposal> pnoList) {
+		this.pnoList = pnoList;
 	}
 	
 }
