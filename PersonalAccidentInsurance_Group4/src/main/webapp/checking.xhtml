@@ -82,6 +82,11 @@ body .ui-datatable .ui-datatable-data>tr>td {
 	font-size: initial;
 	font-weight: bold;
 }
+.page-wrapper, .footer {
+    margin-left: 60px;
+    margin-bottom: auto;
+}
+
 </style>
 
 </h:head>
@@ -309,7 +314,7 @@ body .ui-datatable .ui-datatable-data>tr>td {
 															value="Delete" title="Delete"
 															action="#{proposalController.deleteProposal(plist)}"
 															update="@form" style="width:120px;">
-															<p:confirm header="Confirmation" message="Are you sure want to delete?" icon="ui-icon-alert" />
+															<p:confirm header="Confirmation" message="Are you sure want to delete?" />
 														</p:commandButton>
 
 														<p:confirmDialog global="true" showEffect="fade"
@@ -361,7 +366,7 @@ body .ui-datatable .ui-datatable-data>tr>td {
 		<!-- footer -->
 		<!-- ============================================================== -->
 		<center>
-			<footer class="footer"> © 2020 Personal Accident Insurance
+			<footer class="footer" style="margin-bottom:0;"> © 2020 Personal Accident Insurance
 			Group 4.com </footer>
 		</center>
 		<!-- ============================================================== -->
