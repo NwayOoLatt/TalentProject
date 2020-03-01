@@ -22,6 +22,9 @@ public class UserController {
 	@Autowired
 	public UserServiceImpl userservice;
 
+	@Autowired
+	private ProposalController proposal;
+	
 	private UserModel userModel = new UserModel();
 
 	List<UserModel> usrList = new ArrayList<UserModel>();
@@ -29,21 +32,7 @@ public class UserController {
 	Boolean infoflag;
 	String info;
 	
-	public Boolean getInfoflag() {
-		return infoflag;
-	}
-
-	public void setInfoflag(Boolean infoflag) {
-		this.infoflag = infoflag;
-	}
-
-	public String getInfo() {
-		return info;
-	}
-
-	public void setInfo(String info) {
-		this.info = info;
-	}
+	
 
 	public void save() {
 		
@@ -77,6 +66,7 @@ public class UserController {
 		infoflag = false;
 		return "/loginform.xhtml?faces-redirect=true";
 	}
+	
 	public String userLogin() {
 
 		System.out.println("----login----" + userModel.getName());
@@ -117,8 +107,8 @@ public class UserController {
 			
 			
 			userModel = new UserModel();
-
-			return "/sample.xhtml?faces-redirect=true";
+			proposal.idGenerate();
+			return "/proposalInfo.xhtml?faces-redirect=true";
 
 		} else {
 			System.out.println("wrong password");
@@ -147,7 +137,33 @@ public class UserController {
 				System.out.println("session fill"+e);
 			}
 		
-		return "/login.xhtml?faces-redirect=true";
+		return "/home.xhtml?faces-redirect=true";
+	}
+	
+	
+	
+	public ProposalController getProposal() {
+		return proposal;
+	}
+
+	public void setProposal(ProposalController proposal) {
+		this.proposal = proposal;
+	}
+
+	public Boolean getInfoflag() {
+		return infoflag;
+	}
+
+	public void setInfoflag(Boolean infoflag) {
+		this.infoflag = infoflag;
+	}
+
+	public String getInfo() {
+		return info;
+	}
+
+	public void setInfo(String info) {
+		this.info = info;
 	}
 	public UserServiceImpl getUserservice() {
 		return userservice;
