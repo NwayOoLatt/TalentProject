@@ -19,6 +19,8 @@
 	<title>Personal Accident Insurance Group 4</title>
 	<!-- Custom CSS -->
 	<link href="dist/css/style.css" rel="stylesheet" />
+	
+	
 	<style>
 	
 #ui-message {
@@ -276,7 +278,7 @@ height: 100px;
 				<!-- ============================================================== -->
 				<div class="row">
 					<div class="col-12">
-						<div class="card" style="height:900px;">
+						<div class="card" style="height:100%;">
 							<div class="card-body">
 								 <div class="col-12">
                         <div class="card" style="margin: 0 auto;box-shadow: 1px 2px 4px rgba(0, 0, 0, 10); border-radius:20px; border-color:solid 1px blue;" >
@@ -289,37 +291,30 @@ height: 100px;
 								<h:form>
 								<center>
 								<p:messages id="msgs" severity="info" style="width:300px;" />
-									<!-- <p:growl id="growl" life="3000" /> -->
-									<!-- <p:panelGrid columns="3" styleClass="noBorders">
 									
-									<p:outputLabel for="p_no" value="Policy Number" />
-									 &nbsp;&nbsp;
-														&nbsp;
-														
-									</p:panelGrid> -->
 									
 									<div class="form-row">
-											<!-- <div class="col-2"></div> -->
-											<div class="col">
-											<p:outputLabel for="p_no" value="Policy Number" />&nbsp;
+											<div class="col-3"></div>
+											<div class="col-sm-2">
+											&nbsp;
+											<p:outputLabel for="p_no" value="Policy Number*" style="color:black;font-size:18px;"/>
+											</div>
+											<div class="col-sm-3">	
+											<p:autoComplete id="p_no" value="#{claimController.pmodel.p_no}" completeMethod="#{claimController.pnoList}" placeholder="P000000"/>
+														
+											</div>
+											<div class="col-sm-4"> 
 											
-											
-											<p:inputText id="p_no" class="form-control"
-														value="#{claimController.pmodel.p_no}" required="true"
-														style="width:300px;" requiredMessage="Pls enter your Policy Number"/>&nbsp;
-														<p:message for="p_no" style="background-color:white;color:red"></p:message><br></br><br></br>
-											
-											<p:commandButton value="Search"
-												action="#{claimController.claimRequest()}" ajax="false"
-												class="btn btn-lg btn-info" style="width:120px;border-radius:20px;"/>
-								
 											
 											</div>
 											
 											
 										
-										</div>
-									
+										</div><br></br><br></br>
+										<p:commandButton value="Search"
+												action="#{claimController.claimRequest()}" ajax="false"
+												class="btn btn-lg btn-info" style="width:120px;border-radius:20px;"/>
+								
 									</center>
 									
 									
@@ -444,7 +439,7 @@ height: 100px;
 											<div class="card bg-light text-dark text-center"
 												style="border: solid 3px #FF8C00; width: 400px; height: 100px; background-color: #F8F8FF; box-shadow: 1px 2px 4px rgba(0, 0, 0, .8); font-family: sans-serif;">
 												<div class="card-body">
-													<h3 style="color:red">Your Policy Number is wrong!</h3>
+													<h4 style="color:red">Please Enter your correct policy number!</h4>
 													<hr></hr>
 													
 												</div>
