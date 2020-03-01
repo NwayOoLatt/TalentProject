@@ -9,7 +9,7 @@ public interface ProposalService {
 	Boolean saveProposal(Proposal p,int id);
 	Boolean updateProposal(Proposal p,int id);
 	Boolean deleteProposal(Proposal p);
-	
+	Boolean searchById(Proposal p);
 	List<Proposal> statusChecking(int id);
 	String getProposalID();
 	
