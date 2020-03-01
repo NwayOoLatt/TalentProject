@@ -28,59 +28,60 @@ i {
 .ui-grid-col-3 {
 	padding: 4px 10px;
 }
+
 .topbar .top-navbar {
-  
 	min-height: 20px;
 	padding: 0px;
 	height: 70px;
-
 }
+
 body .ui-datatable thead th {
-    background-color: #fff;
-    border: 1px solid #c8c8c8;
-    color: #333;
-    padding: .571em .857em;
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-    background-color: cadetblue;
-    color: white;
- }
- body .ui-datatable .ui-datatable-data > tr > td {
-    padding: .571em .857em;
-    border: inherit;
-    font-weight: bold;
-    text-align: center;
+	background-color: #fff;
+	border: 1px solid #c8c8c8;
+	color: #333;
+	padding: .571em .857em;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+	background-color: cadetblue;
+	color: white;
 }
- .scroll-sidebar {
 
-    height: calc(100% - 80px);
-    position: relative;
-    background-color: transparent;
+body .ui-datatable .ui-datatable-data>tr>td {
+	padding: .571em .857em;
+	border: inherit;
+	font-weight: bold;
+	text-align: center;
+}
 
-} 
+.scroll-sidebar {
+	height: calc(100% - 80px);
+	position: relative;
+	background-color: transparent;
+}
+
 .left-sidebar:hover {
-    left: 0px;
-    background-color: rgba(0,0,0,0.7);
+	left: 0px;
+	background-color: rgba(0, 0, 0, 0.7);
 }
- .sidebar .sidebar-nav ul li a:hover {
-    color: black;
-    font-weight: bolder;
+
+.sidebar .sidebar-nav ul li a:hover {
+	color: black;
+	font-weight: bolder;
 }
 
 .sidebar-nav ul li a {
-    color: lightcyan;
-    -webkit-transition: 0.1s ease-in;
-    -o-transition: 0.1s ease-in;
-    transition: 0.1s ease-in;
-}   
-.left-sidebar .sidebar-nav ul li a:hover {
+	color: lightcyan;
+	-webkit-transition: 0.1s ease-in;
+	-o-transition: 0.1s ease-in;
+	transition: 0.1s ease-in;
+}
 
-    color: aqua;
-    font-size: initial;
-    font-weight: bold;
-	
-} 
+.left-sidebar .sidebar-nav ul li a:hover {
+	color: aqua;
+	font-size: initial;
+	font-weight: bold;
+}
 </style>
 
 </h:head>
@@ -101,65 +102,60 @@ body .ui-datatable thead th {
 		<!-- ============================================================== -->
 		<!-- Topbar header - style you can find in pages.scss -->
 		<!-- ============================================================== -->
-		 <header class="topbar">
-            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
-                <!-- ============================================================== -->
-                <!-- Logo -->
-                <!-- ============================================================== -->
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html">
-                        <!-- Logo icon --><b>
-                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-                            <!-- Dark Logo icon -->
-                            <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
-                            <!-- Light Logo icon -->
-                            <img src="../assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
-                        </b>
-                        <!--End Logo icon -->
-                        <!-- Logo text --><span>
-                         <!-- dark Logo text -->
-                         <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
-                         <!-- Light Logo text -->    
-                         <img src="../assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
-                </div>
-                <!-- ============================================================== -->
-                <!-- End Logo -->
-                <!-- ============================================================== -->
-                <div class="navbar-collapse">
-                    <!-- ============================================================== -->
-                    <!-- toggle and nav items -->
-                    <!-- ============================================================== -->
-                    <ul class="navbar-nav mr-auto">
-                        <!-- This is  -->
-                        <li class="nav-item hidden-sm-up"> <a class="nav-link nav-toggler waves-effect waves-light" href="javascript:void(0)"><i class="ti-menu"></i></a></li>
-                        <!-- ============================================================== -->
-                        <!-- Search -->
-                        <!-- ============================================================== -->
-                        <!-- <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="fa fa-search"></i></a>
+		<header class="topbar"> <nav
+			class="navbar top-navbar navbar-expand-md navbar-dark"> <!-- ============================================================== -->
+		<!-- Logo --> <!-- ============================================================== -->
+		<div class="navbar-header">
+			<a class="navbar-brand" href="index.html"> <!-- Logo icon --> <b>
+					<!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+					<!-- Dark Logo icon --> <img src="../assets/images/logo-icon.png"
+					alt="homepage" class="dark-logo" /> <!-- Light Logo icon --> <img
+					src="../assets/images/logo-light-icon.png" alt="homepage"
+					class="light-logo" />
+			</b> <!--End Logo icon --> <!-- Logo text --> <span> <!-- dark Logo text -->
+					<img src="../assets/images/logo-text.png" alt="homepage"
+					class="dark-logo" /> <!-- Light Logo text --> <img
+					src="../assets/images/logo-light-text.png" class="light-logo"
+					alt="homepage" /></span>
+			</a>
+		</div>
+		<!-- ============================================================== -->
+		<!-- End Logo --> <!-- ============================================================== -->
+		<div class="navbar-collapse">
+			<!-- ============================================================== -->
+			<!-- toggle and nav items -->
+			<!-- ============================================================== -->
+			<ul class="navbar-nav mr-auto">
+				<!-- This is  -->
+				<li class="nav-item hidden-sm-up"><a
+					class="nav-link nav-toggler waves-effect waves-light"
+					href="javascript:void(0)"><i class="ti-menu"></i></a></li>
+				<!-- ============================================================== -->
+				<!-- Search -->
+				<!-- ============================================================== -->
+				<!-- <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="fa fa-search"></i></a>
                             <form class="app-search">
                                 <input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="fa fa-times"></i></a></input>
                             </form>
                         </li> -->
-                    </ul>
-                    <ul class="navbar-nav my-lg-0">
-                        <!-- ============================================================== -->
-                        <!-- User profile and search -->
-                        <!-- ============================================================== -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            
-                             <i class="fa fa-user" style="color:blue;">&nbsp;
-                            <h4 style="color:blue; margin-right:10px;" > #{user}</h4></i></a>
-                        </li>
-                        <!-- ============================================================== -->
-                        <!-- User profile and search -->
-                        <!-- ============================================================== -->
-                    </ul>
-                </div>
-            </nav>
-            
-            
-        </header>
+			</ul>
+			<ul class="navbar-nav my-lg-0">
+				<!-- ============================================================== -->
+				<!-- User profile and search -->
+				<!-- ============================================================== -->
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle text-muted waves-effect waves-dark"
+					href="" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false"> <i class="fa fa-user"
+						style="color: blue;">&nbsp;
+							<h4 style="color: blue; margin-right: 10px;">#{user}</h4>
+					</i></a></li>
+				<!-- ============================================================== -->
+				<!-- User profile and search -->
+				<!-- ============================================================== -->
+			</ul>
+		</div>
+		</nav> </header>
 		<!-- ============================================================== -->
 		<!-- End Topbar header -->
 		<!-- ============================================================== -->
@@ -168,11 +164,14 @@ body .ui-datatable thead th {
 		<!-- ============================================================== -->
 		<aside class="left-sidebar">
 		<div class="d-flex no-block nav-text-box align-items-center">
-                <span><img src="../assets/images/logo-icon.png" alt="elegant admin template"/></span>
-                <a class="waves-effect waves-dark ml-auto hidden-sm-down" href="javascript:void(0)"><i class="ti-menu"></i></a>
-                <a class="nav-toggler waves-effect waves-dark ml-auto hidden-sm-up" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
-            </div>
-		
+			<span><img src="../assets/images/logo-icon.png"
+				alt="elegant admin template" /></span> <a
+				class="waves-effect waves-dark ml-auto hidden-sm-down"
+				href="javascript:void(0)"><i class="ti-menu"></i></a> <a
+				class="nav-toggler waves-effect waves-dark ml-auto hidden-sm-up"
+				href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+		</div>
+
 		<!-- Sidebar scroll-->
 		<div class="scroll-sidebar">
 			<!-- Sidebar navigation-->
@@ -191,11 +190,12 @@ body .ui-datatable thead th {
 							class="waves-effect waves-dark" aria-expanded="false">
 							<i class="fa fa-eye" aria-hidden="true" style="color: aqua;"></i>
 							<span class="hide-menu"></span>Status Checking</p:commandLink></li>
-					
+
 					<li><p:commandLink style="color:aqua;"
 							action="#{claimController.claimForm()}" ajax="false"
 							class="waves-effect waves-dark" aria-expanded="false">
-							<i class="fa fa-wheelchair" aria-hidden="true" style="color: aqua;"></i>
+							<i class="fa fa-wheelchair" aria-hidden="true"
+								style="color: aqua;"></i>
 							<span class="hide-menu"></span>Claim Registration</p:commandLink></li>
 					<li><p:commandLink style="color:aqua;"
 							action="#{policyController.policylisting()}" ajax="false"
@@ -229,22 +229,21 @@ body .ui-datatable thead th {
 				<!-- Bread crumb and right sidebar toggle -->
 				<!-- ============================================================== -->
 				<div class="row page-titles">
-					<div class="col-md-5 align-self-center">
-						
-					</div>
+					<div class="col-md-5 align-self-center"></div>
 					<c:set var="flag" value="#{proposalController.infoflag}" />
-									<c:if test="${flag == true}">
-							<div class="col-md-7 align-self-center text-right">
-						<div class="d-flex justify-content-end align-items-center">
-							<div class="alert alert-info alert-dismissible">
-							<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-								<strong>Info!</strong> <p:outputLabel value="#{proposalController.info}"></p:outputLabel>
+					<c:if test="${flag == true}">
+						<div class="col-md-7 align-self-center text-right">
+							<div class="d-flex justify-content-end align-items-center">
+								<div class="alert alert-info alert-dismissible">
+									<a href="#" class="close" data-dismiss="alert"
+										aria-label="close">&times;</a> <strong><p:outputLabel
+											value="#{proposalController.info}"></p:outputLabel></strong><br></br>
+								</div>
 							</div>
 						</div>
-					</div>
-							</c:if>
-					
-					
+					</c:if>
+
+
 				</div>
 				<!-- ============================================================== -->
 				<!-- End Bread crumb and right sidebar toggle -->
@@ -256,76 +255,92 @@ body .ui-datatable thead th {
 					<div class="col-12">
 						<div class="card">
 							<div class="card-body">
-								 <div class="col-12">
-                        <div class="card" style="margin: 0 auto;box-shadow: 1px 2px 4px rgba(0, 0, 0, 10); border-radius:20px;" >
-                            <div class="card-body">
-                            <h3><strong>Proposal Status Checking</strong></h3><hr></hr>
-               <br></br>
-               
-								<h:form>
-									<!-- <p:growl id="growl" showDetail="false" sticky="true"
+								<div class="col-12">
+									<div class="card"
+										style="margin: 0 auto; box-shadow: 1px 2px 4px rgba(0, 0, 0, 10); border-radius: 20px;">
+										<div class="card-body">
+											<h3>
+												<strong>Proposal Status Checking</strong>
+											</h3>
+											<hr></hr>
+											<br></br>
+
+											<h:form>
+												<!-- <p:growl id="growl" showDetail="false" sticky="true"
 										life="2000" />
  -->
 
-									<p:dataTable var="plist" value="#{proposalController.plist}">
-										<p:column headerText="No" style="width:40px;">
-											<h:outputText value="#{plist.count}" />
-										</p:column>
+												<p:dataTable var="plist" value="#{proposalController.plist}">
+													<p:column headerText="No" style="width:40px;">
+														<h:outputText value="#{plist.count}" />
+													</p:column>
 
-										<p:column headerText="Name">
-											<h:outputText value="#{plist.name}" />
-										</p:column>
+													<p:column headerText="Name">
+														<h:outputText value="#{plist.name}" />
+													</p:column>
 
-										<p:column headerText="Proposal No." style="width:120px;">
-											<h:outputText value="#{plist.p_no}"/>
-										</p:column>
+													<p:column headerText="Proposal No." style="width:120px;">
+														<h:outputText value="#{plist.p_no}" />
+													</p:column>
 
-										<p:column headerText="Status" style="width:110px;">
-											<h:outputText value="#{plist.status_checking}" />
-										</p:column>
+													<p:column headerText="Status" style="width:110px;">
+														<h:outputText value="#{plist.status_checking}" />
+													</p:column>
 
-										<p:column headerText="Detail" style="width:100px;">
-											<p:commandLink
-												action="#{proposalController.detailProposal(plist)}"
-												ajax="false" value="Detail" style="color:green">
-												<i class="fa fa-check" aria-hidden="true"></i>
-
-
-											</p:commandLink>
-										</p:column>
-
-										<p:column headerText="Option" style="width:260px;">
+													<p:column headerText="Detail" style="width:100px;">
+														<p:commandLink
+															action="#{proposalController.detailProposal(plist)}"
+															ajax="false" value="Detail" style="color:green">
+															<i class="fa fa-check" aria-hidden="true"></i>
 
 
-											<p:commandButton id="Edit" icon="fa fa-edit" value="Edit"
-												title="Edit"
-												action="#{proposalController.editProposal(plist)}"
-												style="width:120px;" />&nbsp;&nbsp;&nbsp;
+														</p:commandLink>
+													</p:column>
+
+													<p:column headerText="Option" style="width:260px;">
+
+
+														<p:commandButton id="Edit" icon="fa fa-edit" value="Edit"
+															title="Edit"
+															action="#{proposalController.editProposal(plist)}"
+															style="width:120px;" />&nbsp;&nbsp;&nbsp;
 											
 											<p:commandButton id="Delete" icon="fa fa-trash"
-												value="Delete" title="Delete"
-												action="#{proposalController.deleteProposal(plist)}"
-												update="@form" style="width:120px;" />
+															value="Delete" title="Delete"
+															action="#{proposalController.deleteProposal(plist)}"
+															update="@form" style="width:120px;">
+															<p:confirm header="Confirmation" message="Are you sure want to delete?" icon="ui-icon-alert" />
+														</p:commandButton>
 
-										</p:column>
+														<p:confirmDialog global="true" showEffect="fade"
+															hideEffect="fade">
+															<p:commandButton value="Yes" type="button"
+																styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+															<p:commandButton value="No" type="button"
+																styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+														</p:confirmDialog>
+
+													</p:column>
 
 
 
-										<p:column headerText="Add Payment" style="width:90px;">
-											
-											<p:commandLink
-												action="#{paymentController.addPayment(plist)}">
-												<!-- <i class="fa fa-money" style="font-size:30px"></i> -->
-												<img src="../assets/images/phone.png" alt="payment"
-													width="30" />
+													<p:column headerText="Add Payment" style="width:90px;">
+
+														<p:commandLink
+															action="#{paymentController.addPayment(plist)}">
+															<!-- <i class="fa fa-money" style="font-size:30px"></i> -->
+															<img src="../assets/images/phone.png" alt="payment"
+																width="30" />
 
 
-											</p:commandLink>
-										</p:column>
+														</p:commandLink>
+													</p:column>
 
-									</p:dataTable>
-								</h:form>
-								</div></div></div>
+												</p:dataTable>
+											</h:form>
+										</div>
+									</div>
+								</div>
 
 							</div>
 						</div>
@@ -345,8 +360,10 @@ body .ui-datatable thead th {
 		<!-- ============================================================== -->
 		<!-- footer -->
 		<!-- ============================================================== -->
-		<center><footer class="footer"> © 2020 Personal Accident Insurance
-		Group 4.com </footer></center>
+		<center>
+			<footer class="footer"> © 2020 Personal Accident Insurance
+			Group 4.com </footer>
+		</center>
 		<!-- ============================================================== -->
 		<!-- End footer -->
 		<!-- ============================================================== -->
@@ -371,7 +388,8 @@ body .ui-datatable thead th {
     <script src="assets/node_modules/sticky-kit-master/dist/sticky-kit.min.js"></script>
     <script src="assets/node_modules/sparkline/jquery.sparkline.min.js"></script> -->
 	<!--Custom JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<script src="dist/js/custom.min.js"></script>
 	<script type="text/javascript"
 		src="https://code.jquery.com/jquery-1.12.4.js" />
