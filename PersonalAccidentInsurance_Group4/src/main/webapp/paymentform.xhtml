@@ -36,6 +36,7 @@
 	padding: 0px;
 	height: 70px;
 }
+
 body .ui-inputfield {
     border-color:blue;
     width: 270px;
@@ -238,7 +239,7 @@ body .ui-widget, body .ui-widget .ui-widget {
                             <div class="card-body">
                             <h3><strong>Add Payment</strong></h3><hr></hr>
                
-								<h:form>
+								<h:form id="form">
 
 									<center>
 									<p:messages id="msgs" severity="info" style="width:300px;" />
@@ -264,24 +265,7 @@ body .ui-widget, body .ui-widget .ui-widget {
 											</p:selectOneRadio>
 											&nbsp;<p:message for="pt" style="background-color:white;color:red;"></p:message>
 											<p:outputLabel></p:outputLabel>
-											<!-- <p:panelGrid columns="2" styleClass="noBorders"> -->
-												
 											
-											<!-- <c:set var="flag" value="#{proposalController.proposal.policyflag}" />
-								<c:if test="${flag == false}">	
-												<p:commandButton value="Cancel"
-											action="#{proposalController.statusCheck()}" ajax="false"
-											class="btn btn-lg btn-info" />
-										</c:if>
-										
-								<c:if test="${flag == true}">	
-											<p:commandButton value="Cancel2"
-											action="#{policyController.policylisting()}" ajax="false"
-											class="btn btn-lg btn-info" />
-											</c:if> -->
-											
-											<!-- </p:panelGrid> -->
-
 										</p:panelGrid>
 									</center>
 									<center>
@@ -289,10 +273,26 @@ body .ui-widget, body .ui-widget .ui-widget {
 												action="#{paymentController.paymentInfo()}" ajax="false"
 												class="btn btn-lg btn-info" style="width:120px;border-radius:20px;"/>&nbsp;&nbsp;
 												
-												<p:commandButton value="Reset"
+												<!-- <p:commandButton value="Reset"
 												action="#{paymentController.reset()}" ajax="false"
 												class="btn btn-lg btn-info" style="width:120px;border-radius:20px;"/><br></br>
-											</center>	
+											 -->
+											
+													<c:set var="flag" value="#{proposalController.policyflag}" />
+										<c:if test="${flag == true}">	
+														<p:commandButton value="Cancel"
+													action="#{proposalController.statusCheck()}" ajax="false"
+													class="btn btn-lg btn-info" style="width:120px;border-radius:20px;" update="form" immediate="true"/>
+												</c:if>
+												
+										<c:if test="${flag == false}">	
+													<p:commandButton value="Cancel"
+													action="#{policyController.policylisting()}" ajax="false"
+													class="btn btn-lg btn-info" style="width:120px;border-radius:20px;" update="form" immediate="true"/>
+													</c:if>
+											
+											
+									</center>	
 								</h:form>
 								</div></div></div>
 							</div>
