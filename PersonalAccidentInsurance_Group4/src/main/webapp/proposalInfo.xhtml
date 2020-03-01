@@ -21,7 +21,8 @@
 	<link href="dist/css/style.css" rel="stylesheet" />
 	
 	
-	<style>
+<style>
+
 #ui-message {
 	background-color: #fff;
 	border: 0 none;
@@ -78,8 +79,11 @@ body .ui-widget, body .ui-widget .ui-widget {
 	font-size: initial;
 	font-weight: bold;
 }
+
 </style>
+
 </h:head>
+
 <h:body class="skin-default-dark fixed-layout">
 	<!-- ============================================================== -->
 	<!-- Preloader - style you can find in spinners.css -->
@@ -232,12 +236,14 @@ body .ui-widget, body .ui-widget .ui-widget {
 				<!-- ============================================================== -->
 				<div class="row">
 					<div class="col-12">
+					<c:if test="#{user != null}">
 						<div class="card">
 							<div class="card-body">
 								<div class="col-12">
 									<div class="card"
 										style="margin: 0 auto; box-shadow: 1px 2px 4px rgba(0, 0, 0, 10); border-radius: 20px; border-color: solid 1px blue;">
 										<div class="card-body">
+										
 											<h3>
 												<strong>Online Proposal Registration</strong>
 											</h3>
@@ -245,7 +251,7 @@ body .ui-widget, body .ui-widget .ui-widget {
 											<h4 style="color: blue">Step 1: Personal Information</h4>
 											<br></br>
 											<br></br>
-
+											
 											<h:form>
 
 												<!-- 1 -->
@@ -574,12 +580,33 @@ body .ui-widget, body .ui-widget .ui-widget {
 
 
 											</h:form>
-
+											
+											
+											
+												
 										</div>
 									</div>
 								</div>
 							</div>
+							
 						</div>
+						</c:if>
+						
+						<c:if test="#{user == null}">
+						<div class="card" style="height:700px;">
+							<div class="card-body">
+								<div class="col-12">
+									<div class="card"
+										style="margin: 0 auto; box-shadow: 1px 2px 4px rgba(0, 0, 0, 10); border-radius: 20px; border-color: solid 1px blue;">
+										<div class="card-body">
+										<h:form>
+												<p:commandLink action="loginform.xhtml" ajax="false">
+											       Please <h:outputText value="Login" style="color:red;"/> First!
+											    </p:commandLink>  
+											   </h:form>
+											
+							</div></div></div></div></div>
+						</c:if>
 					</div>
 				</div>
 				<!-- ============================================================== -->
