@@ -2,6 +2,8 @@ package com.personal.accident.demo.controller;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -13,6 +15,7 @@ import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 import javax.servlet.http.HttpSession;
 
+import org.primefaces.event.SelectEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.personal.accident.demo.model.Proposal;
 import com.personal.accident.demo.model.UserModel;
@@ -60,11 +63,6 @@ public class ProposalController {
 			System.out.println(e);
 		}
 		return userID;
-	}
-
-	public void addMessage(String summary) {
-		FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, summary, null);
-		FacesContext.getCurrentInstance().addMessage(null, message);
 	}
 
 	public String idGenerate() {
@@ -126,6 +124,34 @@ public class ProposalController {
 
 	}
 
+	
+	// Calculate Age from BirthDate
+	public void getAge(SelectEvent event) {
+		
+		System.out.println("getAge");
+		Date dob=proposal.getDob();
+		
+		Calendar c = Calendar.getInstance();
+		  c.setTime(dob);
+		  int year = c.get(Calendar.YEAR);
+		  int month = c.get(Calendar.MONTH) + 1;
+		  int date = c.get(Calendar.DATE);
+		  LocalDate l1 = LocalDate.of(year, month, date);
+		  LocalDate now1 = LocalDate.now();
+		  Period diff1 = Period.between(l1, now1);
+		  proposal.setAge(diff1.getYears());
+		  System.out.println("age:" + diff1.getYears() + "years");
+	 
+		
+		
+	}
+	
+	public void addMessage(String summary) {
+		FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, summary, null);
+		FacesContext.getCurrentInstance().addMessage(null, message);
+	}
+
+	
 	public String holderInfo() {
 
 		System.out.println("-------save1-------");
