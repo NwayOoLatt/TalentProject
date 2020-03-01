@@ -67,6 +67,13 @@ public class UserController {
 		return "/loginform.xhtml?faces-redirect=true";
 	}
 	
+	public String requestSignup() {
+		
+		infoflag = false;
+		return "/Registration.xhtml?faces-redirect=true";
+		
+	}
+	
 	public String userLogin() {
 
 		System.out.println("----login----" + userModel.getName());
