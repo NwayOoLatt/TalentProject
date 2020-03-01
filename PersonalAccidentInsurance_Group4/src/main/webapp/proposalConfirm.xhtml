@@ -19,6 +19,8 @@
     <!-- Custom CSS -->
     <link href="dist/css/style.css" rel="stylesheet"/>
     
+    
+    
     <style>
 	.card {
 	margin: 0 auto; /* Added */
@@ -230,7 +232,7 @@
 								 <div class="col-12">
                         <div class="card" style="margin: 0 auto;box-shadow: 1px 2px 4px rgba(0, 0, 0, 10); border-radius:20px;" >
                             <div class="card-body">
-                            <h2><strong>Online Proposal Registration</strong></h2><hr></hr>
+                            <h3><strong>Online Proposal Registration</strong></h3><hr></hr>
                 <h4 style="color:blue">Step 4: Proposal Confirmation</h4><br></br><br></br>
                             <c:set var="flag" value="#{proposalController.confirmflag}" />
 								<c:if test="${flag == true}">
@@ -238,7 +240,7 @@
 						<div class="d-flex justify-content-end align-items-center">
 							<div class="alert alert-info alert-dismissible">
 							<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-								<p:outputLabel value="Your Proposal registration is successful!"></p:outputLabel>
+								<strong><p:outputLabel value="#{proposalController.confirm}"></p:outputLabel></strong>
 							</div>
 						</div>
 					</div>
@@ -250,7 +252,10 @@
 											style="width: 500px; height: 100%; box-shadow: 1px 2px 4px rgba(0, 0, 0, .8);border:solid 2px red; font-family: sans-serif;">
 											<div class="card-body">
 
-												<h3 style="color: black; text-align: center;">Online Proposal Form</h3><hr></hr><br></br>
+												<h3 style="color: black; text-align: center;">Online Proposal Form</h3><hr></hr>
+												<center><div style="border-radius:40px;width:260px;height:50px;padding-top:10px;  background-image: linear-gradient(to right top, #8fadda, #6bbbd9, #65c5c4, #86c9a4, #b5c88a);box-shadow: 1px 2px 4px rgba(0.5, 0.5, 0.5, 5);"><h4 style="font-weight:bold;color:white;">Proposal No :
+												<p:outputLabel value="#{proposalController.proposal.p_no}"
+																style="font-weight:bold;color:white;font-size:19px;"></p:outputLabel></h4><br></br></div></center><br></br>
 												<h4 style="color:red"><strong>Holder Information</strong></h4>
 												<br></br>
 												
