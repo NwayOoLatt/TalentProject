@@ -245,6 +245,7 @@ body .ui-widget, body .ui-widget .ui-widget {
 				<!-- ============================================================== -->
 				<div class="row">
 					<div class="col-12">
+					<c:if test="#{user != null}">
 						<div class="card">
 							<div class="card-body">
 								<div class="col-12">
@@ -367,41 +368,30 @@ body .ui-widget, body .ui-widget .ui-widget {
 
 											</h:form>
 											<br></br> <br></br>
-											<!-- <c:set var="flag" value="#{proposalController.pflag}" />
-								<c:if test="${flag == true}">
-
-									<div class="row">
-
-										<div class="card bg-light text-dark text-center"
-											style="border: solid 3px #FF8C00; width: 400px; height: 200px; background-color: #F8F8FF; box-shadow: 1px 2px 4px rgba(0, 0, 0, .8); font-family: sans-serif;">
-											<div class="card-body">
-
-												<h3 style="color: blue">Your Premium</h3>
-												<hr></hr>
-												<p>
-
-
-													term :
-													<p:outputLabel value="#{proposalController.term}">month</p:outputLabel>
-													<br></br> pay amount :
-													<p:outputLabel value="#{proposalController.amount}">&nbsp;</p:outputLabel>
-													<br></br> Sum Insured :
-													<p:outputLabel value="#{proposalController.total}"></p:outputLabel>
-													<br></br>
-
-												</p>
-
-											</div>
-										</div>
-									</div>
-								</c:if> -->
+											
 										</div>
 									</div>
 
 								</div>
 							</div>
 						</div>
-
+						</c:if>
+						<c:if test="#{user == null}">
+						<div class="card" style="height:700px;">
+							<div class="card-body">
+								<div class="col-12">
+									<div class="card"
+										style="margin: 0 auto; box-shadow: 1px 2px 4px rgba(0, 0, 0, 10); border-radius: 20px; border-color: solid 1px blue;">
+										<div class="card-body">
+										<h:form>
+												<p:commandLink action="loginform.xhtml" ajax="false">
+											       Please <h:outputText value="Login" style="color:red;"/> First!
+											    </p:commandLink>  
+											   </h:form>
+											
+							</div></div></div></div></div>
+						</c:if>
+						
 					</div>
 				</div>
 				<!-- ============================================================== -->
