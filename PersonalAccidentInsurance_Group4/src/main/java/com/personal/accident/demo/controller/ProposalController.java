@@ -30,11 +30,11 @@ public class ProposalController {
 	List<Proposal> plist = new ArrayList<Proposal>();
 
 	private Proposal proposal = new Proposal();
-	/* private PaymentController pay=new PaymentController(); */
 
 	Boolean flag = false;
 	Boolean pflag = false;
 	Boolean confirmflag = false;
+	Boolean policyflag = false;
 
 	Double total;
 	int term;
@@ -63,8 +63,8 @@ public class ProposalController {
 	}
 
 	public String idGenerate() {
-		
-		confirmflag=false;
+
+		confirmflag = false;
 		proposal = new Proposal();
 		String p_no = proposalservice.getProposalID(); // get Max proposal ID
 		proposal = new Proposal();
@@ -142,6 +142,7 @@ public class ProposalController {
 		dob = dateFormat.format(proposal.getDob());
 		address = proposal.getHomeNo() + "/ " + proposal.getStreet() + "/ " + proposal.getState();
 		pflag = false;
+		amount = 0.0;
 		return "premium.xhtml?faces-redirect=true";
 
 	}
@@ -192,7 +193,6 @@ public class ProposalController {
 			Boolean flag = proposalservice.saveProposal(proposal, userID);
 			System.out.println("successfully register" + flag);
 			confirmflag = true;
-			
 
 		}
 
@@ -229,14 +229,14 @@ public class ProposalController {
 		int userID = loginUser();
 		System.out.println(userID);
 
-		/* proposal.setStatusflag(true); */
-		proposal.setPolicyflag(false);
+		policyflag = true;
+
 		System.out.println("----------------" + proposal.getPolicyflag());
-		
+
 		try {
 			plist = proposalservice.statusChecking(userID);
 			System.out.println("status checkkkkkkk");
-			
+
 		} catch (IndexOutOfBoundsException e) {
 			System.out.println(e);
 
@@ -263,9 +263,9 @@ public class ProposalController {
 			info = "Can't Update Your Proposal ! Your Proposal has been Approved";
 			return "checking.xhtml?faces-redirect=true";
 
-		} else if (pro.getStatus_checking().equalsIgnoreCase("Reject")) {
+		} else if (pro.getStatus_checking().equalsIgnoreCase("delete")) {
 
-			System.out.println("Reject");
+			System.out.println("delete");
 			infoflag = true;
 			info = "Can't Update Your Proposal ! Your Proposal has been Rejected";
 			return "checking.xhtml?faces-redirect=true";
@@ -278,15 +278,6 @@ public class ProposalController {
 		}
 
 	}
-
-	/*
-	 * public String addPayment() {
-	 * 
-	 * infoflag = true; info = "can't add your payment at this time"; return
-	 * "checking.xhtml?faces-redirect=true";
-	 * 
-	 * }
-	 */
 
 	public String detailProposal(Proposal pro) {
 
@@ -314,18 +305,21 @@ public class ProposalController {
 
 		if (p.getStatus_checking().equalsIgnoreCase("pending")) {
 			System.out.println("pending");
-			Boolean flag = proposalservice.deleteProposal(p);
+
+			Boolean flag = proposalservice.deleteProposal(p); // delete proposal
 			statusCheck(); // status check list
+
 			infoflag = true;
 			info = "Your Proposal is successfully deleted!";
+
 		} else if (p.getStatus_checking().equalsIgnoreCase("Approved")) {
 			infoflag = true;
 			info = "Can't delete! Your Proposal has been Approved.";
 			System.out.println("Approved");
-		} else if (p.getStatus_checking().equalsIgnoreCase("Reject")) {
+		} else if (p.getStatus_checking().equalsIgnoreCase("delete")) {
 			infoflag = true;
 			info = " Your Proposal has been Rejected!";
-			System.out.println("Reject");
+			System.out.println("delete");
 		} else {
 			infoflag = true;
 			info = "Can't delete! Your Proposal has been Completed.";
@@ -460,6 +454,14 @@ public class ProposalController {
 
 	public void setInfo(String info) {
 		this.info = info;
+	}
+
+	public Boolean getPolicyflag() {
+		return policyflag;
+	}
+
+	public void setPolicyflag(Boolean policyflag) {
+		this.policyflag = policyflag;
 	}
 
 }
