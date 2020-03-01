@@ -1,5 +1,6 @@
 package com.personal.accident.demo.controller;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,7 +31,7 @@ public class PolicyController {
 	
 	List<Proposal> plist=new ArrayList<Proposal>();
 	PolicyModel pmodel=new PolicyModel();
-	
+	DecimalFormat decimalFormat = new DecimalFormat("0.0");
 	
 	public int loginUser() {
 		FacesContext facesContext = FacesContext.getCurrentInstance(); HttpSession
