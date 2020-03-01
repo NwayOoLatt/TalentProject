@@ -35,7 +35,9 @@ public class ProposalController {
 	Boolean pflag = false;
 	Boolean confirmflag = false;
 	Boolean policyflag = false;
-
+	String confirm;
+	
+	
 	Double total;
 	int term;
 	Double amount;
@@ -66,6 +68,7 @@ public class ProposalController {
 
 		confirmflag = false;
 		proposal = new Proposal();
+		amount = 0.0;
 		String p_no = proposalservice.getProposalID(); // get Max proposal ID
 		proposal = new Proposal();
 
@@ -142,7 +145,7 @@ public class ProposalController {
 		dob = dateFormat.format(proposal.getDob());
 		address = proposal.getHomeNo() + "/ " + proposal.getStreet() + "/ " + proposal.getState();
 		pflag = false;
-		amount = 0.0;
+		
 		return "premium.xhtml?faces-redirect=true";
 
 	}
@@ -183,20 +186,30 @@ public class ProposalController {
 
 	}
 
+	
 	public void confirm() {
 
 		int userID = loginUser();
 		System.out.println(userID);
-
+		
 		if (check == true) {
-
+			Boolean idflag=proposalservice.searchById(proposal);
+			if(idflag==true) {
+				confirmflag = true;
+				confirm="Your Proposal is already registered!";
+			}else {
 			Boolean flag = proposalservice.saveProposal(proposal, userID);
 			System.out.println("successfully register" + flag);
 			confirmflag = true;
+			confirm="Your Proposal registration is successfull !";
+			}
+			
 
 		}
 
 		else {
+			confirmflag = true;
+			confirm="Can't register without accepting your term and policy";
 			System.out.println("register fill");
 		}
 
@@ -213,7 +226,7 @@ public class ProposalController {
 			Boolean flag = proposalservice.updateProposal(proposal, userID);
 			confirmflag = true;
 
-			proposal = new Proposal();
+			
 		} else {
 
 			System.out.println("register fill");
@@ -230,11 +243,12 @@ public class ProposalController {
 		System.out.println(userID);
 
 		policyflag = true;
-
+		confirmflag = true;
+		confirm="Editing your proposal is successful! ";
 		System.out.println("----------------" + proposal.getPolicyflag());
 
 		try {
-			plist = proposalservice.statusChecking(userID);
+			plist = proposalservice.statusChecking(userID); // invoke status checking service
 			System.out.println("status checkkkkkkk");
 
 		} catch (IndexOutOfBoundsException e) {
@@ -252,6 +266,7 @@ public class ProposalController {
 			System.out.println("pending");
 			proposal = pro;
 			proid = proposal.getP_no();
+			amount=proposal.getPayamount();
 			System.out.println("pno" + proid);
 			flag = true;
 
@@ -462,6 +477,14 @@ public class ProposalController {
 
 	public void setPolicyflag(Boolean policyflag) {
 		this.policyflag = policyflag;
+	}
+
+	public String getConfirm() {
+		return confirm;
+	}
+
+	public void setConfirm(String confirm) {
+		this.confirm = confirm;
 	}
 
 }
