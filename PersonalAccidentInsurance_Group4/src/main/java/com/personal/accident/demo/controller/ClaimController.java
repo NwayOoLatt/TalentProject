@@ -1,6 +1,7 @@
 package com.personal.accident.demo.controller;
 
 import java.text.DateFormat;
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -62,8 +63,14 @@ public class ClaimController {
 	Double currentAmount = 0.0;
 	Double total_claimAmount = 0.0;
 	Double remainbalance = 0.0;
-	DateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy");
-
+	
+	String sumInsured1="0.0";
+	String currentAmount1="0.0";
+	String total_claimAmount1="0.0";
+	String remainbalance1="0.0";
+	
+	DateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy"); // date format
+	DecimalFormat decimalFormat = new DecimalFormat("0.0"); // decimal format
 	
 	// Claim Category
 	
@@ -144,6 +151,7 @@ public class ClaimController {
 		
 		plist = claimservice.findPolicy(pmodel,userID); // find policy
 		
+		
 		pmodel=new Proposal();
 		pmodel.setP_no(null);
 		if (plist.isEmpty()) {
@@ -151,9 +159,7 @@ public class ClaimController {
 			System.out.println("empty proposal");
 			flag = false;
 			policyflag=true;
-			FacesContext.getCurrentInstance().addMessage(null,
-					new FacesMessage(FacesMessage.SEVERITY_INFO, "not found Policy No.!", "info Messages"));
-
+			
 		} else {
 
 			if (plist.get(0).getStatus_checking().equals("Complete")) {
@@ -183,6 +189,11 @@ public class ClaimController {
 		
 		sumInsured = pmodel.getTotalamount(); // sum insured
 		currentAmount = sumInsured * (Math.abs(c * 0.01)); // request claim amount
+		
+		sumInsured1 = decimalFormat.format(pmodel.getTotalamount()); // sum insured
+		currentAmount1 = decimalFormat.format(sumInsured * (Math.abs(c * 0.01))); // request claim amount
+		
+		
 		System.out.println(c);
 		pmodel.setType(getKey(category, c));
 		pmodel.setC_id(categoryid.get(pmodel.getType()));
@@ -223,6 +234,7 @@ public class ClaimController {
 					System.out.println("------beneficiary--------");// show alert
 					pmodel.setAmount(currentAmount);
 					remainbalance = pmodel.getTotalamount();
+					remainbalance1=decimalFormat.format(remainbalance);
 					System.out.println("claim"+pmodel.getType());
 					claimservice.saveClaim(pmodel);
 					flag = false;
@@ -231,6 +243,7 @@ public class ClaimController {
 
 					pmodel.setAmount(currentAmount);
 					remainbalance = pmodel.getTotalamount();
+					remainbalance1=decimalFormat.format(remainbalance);
 					System.out.println("claim"+pmodel.getType());
 					claimservice.saveClaim(pmodel);
 					flag = false;
@@ -246,9 +259,11 @@ public class ClaimController {
 				for (int i = 0; i < clist.size(); i++) {
 
 					total_claimAmount += clist.get(i).getAmount(); // spent amount
+					total_claimAmount1=decimalFormat.format(total_claimAmount);
+					
 					System.out.println("((((spent)))" + total_claimAmount);
 					remainbalance = pmodel.getTotalamount() - total_claimAmount; // remain balance
-
+					remainbalance1=decimalFormat.format(remainbalance);
 					System.out.println(clist.get(i).getType() + "\t" + clist.get(i).getAmount());
 
 					if (clist.get(i).getType().equals("death")) {
@@ -450,6 +465,38 @@ public class ClaimController {
 
 	public void setPolicyflag(Boolean policyflag) {
 		this.policyflag = policyflag;
+	}
+
+	public String getSumInsured1() {
+		return sumInsured1;
+	}
+
+	public void setSumInsured1(String sumInsured1) {
+		this.sumInsured1 = sumInsured1;
+	}
+
+	public String getCurrentAmount1() {
+		return currentAmount1;
+	}
+
+	public void setCurrentAmount1(String currentAmount1) {
+		this.currentAmount1 = currentAmount1;
+	}
+
+	public String getTotal_claimAmount1() {
+		return total_claimAmount1;
+	}
+
+	public void setTotal_claimAmount1(String total_claimAmount1) {
+		this.total_claimAmount1 = total_claimAmount1;
+	}
+
+	public String getRemainbalance1() {
+		return remainbalance1;
+	}
+
+	public void setRemainbalance1(String remainbalance1) {
+		this.remainbalance1 = remainbalance1;
 	}
 
 	
