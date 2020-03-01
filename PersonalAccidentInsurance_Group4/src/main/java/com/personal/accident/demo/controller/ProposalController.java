@@ -53,9 +53,12 @@ public class ProposalController {
 	public int loginUser() {
 		FacesContext facesContext = FacesContext.getCurrentInstance();
 		HttpSession session = (HttpSession) facesContext.getExternalContext().getSession(true);
-
-		int userID = (int) session.getAttribute("id");
-
+		int userID = 0;
+		try {
+		userID = (int) session.getAttribute("id");
+		}catch(NullPointerException e) {
+			System.out.println(e);
+		}
 		return userID;
 	}
 
