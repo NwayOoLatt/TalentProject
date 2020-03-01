@@ -26,6 +26,7 @@ import com.personal.accident.demo.model.ClaimModel;
 import com.personal.accident.demo.model.Proposal;
 import com.personal.accident.demo.service.CategoryService;
 import com.personal.accident.demo.service.ClaimServiceImpl;
+import com.personal.accident.demo.service.PolicyService;
 
 @Named
 @ViewScoped
@@ -36,6 +37,9 @@ public class ClaimController {
 	
 	@Autowired
 	CategoryService categoryservice;
+	
+	@Autowired 	
+	PolicyService policyservice;
 
 	private HashMap<String, Integer> category;
 	private HashMap<String, Integer> categoryid;
@@ -75,6 +79,30 @@ public class ClaimController {
 			categoryid.put(catList.get(i).getType(),catList.get(i).getId());
 		}
 		
+	}
+	
+	public List<String> pnoList(String query) {
+		
+		List<String> results = new ArrayList<>();
+		int userID=loginUser();
+		
+		try {
+		plist=policyservice.proposalList(userID);
+		
+		if(plist.isEmpty()) {
+			System.out.println("policy is empty");
+		}else {
+			
+		for(int i = 0; i < plist.size(); i++) {
+            results.add(plist.get(i).getP_no());
+        }
+		}
+		}catch(IndexOutOfBoundsException e) {
+			System.out.println(e);
+		}
+        
+         
+        return results;
 	}
 	
 	public int loginUser() {
