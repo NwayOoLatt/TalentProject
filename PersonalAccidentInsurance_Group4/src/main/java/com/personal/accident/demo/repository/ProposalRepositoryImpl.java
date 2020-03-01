@@ -31,7 +31,10 @@ public class ProposalRepositoryImpl implements ProposalCustom{
 		System.out.println("---------Repository1-------------");
 		Root<PolicyHolder> usrr = cq.from(PolicyHolder.class);
 		Predicate p = cb.equal(usrr.get("user"), id);
-		cq.where(p).distinct(true);
+		Predicate p2=cb.notEqual(usrr.get("status_checking"), "delete");
+		
+		cq.where(cb.and(p,p2)).distinct(true);
+		
 		TypedQuery<PolicyHolder> typedQuery = em.createQuery(cq);
 		List<PolicyHolder> resultList = new ArrayList<PolicyHolder>();
 
