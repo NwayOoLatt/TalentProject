@@ -68,6 +68,7 @@ public class Proposal {
 	private String place;
 	private String payment;
 	
+	private String totalamount1;
 	private String status_checking;
 
 	private List<BeneficiaryModel> benefit=new ArrayList<BeneficiaryModel>();
@@ -263,6 +264,12 @@ public class Proposal {
 	}
 	public void setOccupation(String occupation) {
 		this.occupation = occupation;
+	}
+	public String getTotalamount1() {
+		return totalamount1;
+	}
+	public void setTotalamount1(String totalamount1) {
+		this.totalamount1 = totalamount1;
 	}
 	public String getNrc() {
 		return nrc;
