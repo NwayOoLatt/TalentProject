@@ -40,10 +40,7 @@ public class ProposalServiceImpl implements ProposalService{
 	
 	@Autowired
 		BeneficiaryRepository benefitRepository;
-	
-	
-	
-	  
+  
 	
 	@Override
 	public Boolean saveProposal(Proposal p,int id) {
@@ -215,7 +212,7 @@ public class ProposalServiceImpl implements ProposalService{
 	public Boolean deleteProposal(Proposal p) {
 		// TODO Auto-generated method stub
 		
-Optional<PolicyHolder> updateDB=this.holderInfoRepository.findById(p.getP_no());		
+		Optional<PolicyHolder> updateDB=this.holderInfoRepository.findById(p.getP_no());		
 		
 		if(updateDB.isPresent()) {
 			
@@ -349,6 +346,17 @@ Optional<PolicyHolder> updateDB=this.holderInfoRepository.findById(p.getP_no());
 	public String getProposalID() {
 		
 		return holderInfoRepository.getProposalID();
+	}
+
+	@Override
+	public Boolean searchById(Proposal p) {
+		// TODO Auto-generated method stub
+		Boolean idflag=false;
+		Optional<PolicyHolder> plist=holderInfoRepository.findById(p.getP_no());
+		if(plist.isPresent()) {
+			idflag=true;
+		}
+		return idflag;
 	}
 
 }
