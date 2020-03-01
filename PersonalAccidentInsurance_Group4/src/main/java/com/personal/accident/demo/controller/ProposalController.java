@@ -345,6 +345,9 @@ public class ProposalController {
 		proposal = pro;
 		address = proposal.getHomeNo() + "/ " + proposal.getStreet() + "/ " + proposal.getState();
 		proid = proposal.getP_no();
+		
+		premiumamount=decimalFormat.format(proposal.getAmount());
+		System.out.println("premium:"+premiumamount);
 		flag = true;
 		return "/proposalDetail.xhtml?faces-redirect=true";
 
@@ -355,6 +358,8 @@ public class ProposalController {
 		proposal = pro;
 		address = proposal.getHomeNo() + "/ " + proposal.getStreet() + "/ " + proposal.getState();
 		proid = proposal.getP_no();
+		premiumamount=decimalFormat.format(proposal.getAmount());
+		
 		flag = true;
 		return "/policyDetail.xhtml?faces-redirect=true";
 
