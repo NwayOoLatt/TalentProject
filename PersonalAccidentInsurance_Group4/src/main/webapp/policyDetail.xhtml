@@ -351,7 +351,7 @@ body .ui-tabs .ui-tabs-nav .ui-tabs-header a {
 															<tr>
 																<td><p:outputLabel value="Premium Amount  ">&nbsp;</p:outputLabel></td>
 																<td><p:outputLabel
-																		value=":#{proposalController.proposal.amount}">&nbsp;</p:outputLabel></td>
+																		value=":#{proposalController.premiumamount}">&nbsp;</p:outputLabel></td>
 															</tr>
 
 														</table>
@@ -380,7 +380,24 @@ body .ui-tabs .ui-tabs-nav .ui-tabs-header a {
 																		value=":#{proposalController.proposal.relationship}">&nbsp;</p:outputLabel><br></br>
 																</td>
 															</tr>
-
+															
+															<tr>
+													<td><p:outputLabel value="Email  ">&nbsp;</p:outputLabel></td>
+													<td><p:outputLabel
+															value=":#{proposalController.proposal.b_email}">&nbsp;</p:outputLabel><br/></td>
+												</tr>
+													
+												<tr>
+													<td><p:outputLabel value="Phone  ">&nbsp;</p:outputLabel></td>
+													<td><p:outputLabel
+															value=":#{proposalController.proposal.b_phone}">&nbsp;</p:outputLabel><br/></td>
+												</tr>
+												
+												<tr>
+													<td><p:outputLabel value="Address  ">&nbsp;</p:outputLabel></td>
+													<td><p:outputLabel
+															value=":#{proposalController.proposal.b_address}">&nbsp;</p:outputLabel><br/></td>
+												</tr>
 
 														</table>
 
