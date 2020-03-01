@@ -48,39 +48,40 @@ body .ui-inputfield {
 	border-color: blue;
 	width: 270px;
 }
+
 body .ui-widget, body .ui-widget .ui-widget {
 	text-decoration: none;
 	font-weight: bold;
 }
+
 .scroll-sidebar {
-
-    height: calc(100% - 80px);
-    position: relative;
-    background-color: transparent;
-
-} 
-.left-sidebar:hover {
-    left: 0px;
-    background-color: rgba(0,0,0,0.7);
+	height: calc(100% - 80px);
+	position: relative;
+	background-color: transparent;
 }
- .sidebar .sidebar-nav ul li a:hover {
-    color: black;
-    font-weight: bolder;
+
+.left-sidebar:hover {
+	left: 0px;
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+.sidebar .sidebar-nav ul li a:hover {
+	color: black;
+	font-weight: bolder;
 }
 
 .sidebar-nav ul li a {
-    color: lightcyan;
-    -webkit-transition: 0.1s ease-in;
-    -o-transition: 0.1s ease-in;
-    transition: 0.1s ease-in;
-}   
-.left-sidebar .sidebar-nav ul li a:hover {
+	color: lightcyan;
+	-webkit-transition: 0.1s ease-in;
+	-o-transition: 0.1s ease-in;
+	transition: 0.1s ease-in;
+}
 
-    color: aqua;
-    font-size: initial;
-    font-weight: bold;
-	
-} 
+.left-sidebar .sidebar-nav ul li a:hover {
+	color: aqua;
+	font-size: initial;
+	font-weight: bold;
+}
 </style>
 </h:head>
 <h:body class="skin-default-dark fixed-layout">
@@ -100,64 +101,61 @@ body .ui-widget, body .ui-widget .ui-widget {
 		<!-- ============================================================== -->
 		<!-- Topbar header - style you can find in pages.scss -->
 		<!-- ============================================================== -->
-		 <header class="topbar">
-            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
-                <!-- ============================================================== -->
-                <!-- Logo -->
-                <!-- ============================================================== -->
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html">
-                        <!-- Logo icon --><b>
-                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-                            <!-- Dark Logo icon -->
-                            <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
-                            <!-- Light Logo icon -->
-                            <img src="../assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
-                        </b>
-                        <!--End Logo icon -->
-                        <!-- Logo text --><span>
-                         <!-- dark Logo text -->
-                         <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
-                         <!-- Light Logo text -->    
-                         <img src="../assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
-                </div>
-                <!-- ============================================================== -->
-                <!-- End Logo -->
-                <!-- ============================================================== -->
-                <div class="navbar-collapse">
-                    <!-- ============================================================== -->
-                    <!-- toggle and nav items -->
-                    <!-- ============================================================== -->
-                    <ul class="navbar-nav mr-auto">
-                        <!-- This is  -->
-                        <li class="nav-item hidden-sm-up"> <a class="nav-link nav-toggler waves-effect waves-light" href="javascript:void(0)"><i class="ti-menu"></i></a></li>
-                        <!-- ============================================================== -->
-                        <!-- Search -->
-                        <!-- ============================================================== -->
-                        <!-- <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="fa fa-search"></i></a>
+		<header class="topbar"> <nav
+			class="navbar top-navbar navbar-expand-md navbar-dark"> <!-- ============================================================== -->
+		<!-- Logo --> <!-- ============================================================== -->
+		<div class="navbar-header">
+			<a class="navbar-brand" href="index.html"> <!-- Logo icon -->
+				<b> <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+					<!-- Dark Logo icon --> <img src="../assets/images/logo-icon.png"
+					alt="homepage" class="dark-logo" /> <!-- Light Logo icon --> <img
+					src="../assets/images/logo-light-icon.png" alt="homepage"
+					class="light-logo" />
+			</b> <!--End Logo icon --> <!-- Logo text -->
+				<span> <!-- dark Logo text --> <img
+					src="../assets/images/logo-text.png" alt="homepage"
+					class="dark-logo" /> <!-- Light Logo text --> <img
+					src="../assets/images/logo-light-text.png" class="light-logo"
+					alt="homepage" /></span>
+			</a>
+		</div>
+		<!-- ============================================================== -->
+		<!-- End Logo --> <!-- ============================================================== -->
+		<div class="navbar-collapse">
+			<!-- ============================================================== -->
+			<!-- toggle and nav items -->
+			<!-- ============================================================== -->
+			<ul class="navbar-nav mr-auto">
+				<!-- This is  -->
+				<li class="nav-item hidden-sm-up"><a
+					class="nav-link nav-toggler waves-effect waves-light"
+					href="javascript:void(0)"><i class="ti-menu"></i></a></li>
+				<!-- ============================================================== -->
+				<!-- Search -->
+				<!-- ============================================================== -->
+				<!-- <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="fa fa-search"></i></a>
                             <form class="app-search">
                                 <input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="fa fa-times"></i></a></input>
                             </form>
                         </li> -->
-                    </ul>
-                    <ul class="navbar-nav my-lg-0">
-                        <!-- ============================================================== -->
-                        <!-- User profile and search -->
-                        <!-- ============================================================== -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                             <i class="fa fa-user" style="color:blue;">&nbsp;
-                            <h4 style="color:blue; margin-right:10px;" > #{user}</h4></i></a>
-                        </li>
-                        <!-- ============================================================== -->
-                        <!-- User profile and search -->
-                        <!-- ============================================================== -->
-                    </ul>
-                </div>
-            </nav>
-            
-            
-        </header>
+			</ul>
+			<ul class="navbar-nav my-lg-0">
+				<!-- ============================================================== -->
+				<!-- User profile and search -->
+				<!-- ============================================================== -->
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle text-muted waves-effect waves-dark"
+					href="" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false"> <i class="fa fa-user"
+						style="color: blue;">&nbsp;
+							<h4 style="color: blue; margin-right: 10px;">#{user}</h4>
+					</i></a></li>
+				<!-- ============================================================== -->
+				<!-- User profile and search -->
+				<!-- ============================================================== -->
+			</ul>
+		</div>
+		</nav> </header>
 		<!-- ============================================================== -->
 		<!-- End Topbar header -->
 		<!-- ============================================================== -->
@@ -166,10 +164,13 @@ body .ui-widget, body .ui-widget .ui-widget {
 		<!-- ============================================================== -->
 		<aside class="left-sidebar">
 		<div class="d-flex no-block nav-text-box align-items-center">
-                <span><img src="../assets/images/logo-icon.png" alt="elegant admin template"/></span>
-                <a class="waves-effect waves-dark ml-auto hidden-sm-down" href="javascript:void(0)"><i class="ti-menu"></i></a>
-                <a class="nav-toggler waves-effect waves-dark ml-auto hidden-sm-up" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
-            </div>
+			<span><img src="../assets/images/logo-icon.png"
+				alt="elegant admin template" /></span> <a
+				class="waves-effect waves-dark ml-auto hidden-sm-down"
+				href="javascript:void(0)"><i class="ti-menu"></i></a> <a
+				class="nav-toggler waves-effect waves-dark ml-auto hidden-sm-up"
+				href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+		</div>
 		<!-- Sidebar scroll-->
 		<div class="scroll-sidebar">
 			<!-- Sidebar navigation-->
@@ -188,11 +189,12 @@ body .ui-widget, body .ui-widget .ui-widget {
 							class="waves-effect waves-dark" aria-expanded="false">
 							<i class="fa fa-eye" aria-hidden="true" style="color: aqua;"></i>
 							<span class="hide-menu"></span>Status Checking</p:commandLink></li>
-					
+
 					<li><p:commandLink style="color:aqua;"
 							action="#{claimController.claimForm()}" ajax="false"
 							class="waves-effect waves-dark" aria-expanded="false">
-							<i class="fa fa-wheelchair" aria-hidden="true" style="color: aqua;"></i>
+							<i class="fa fa-wheelchair" aria-hidden="true"
+								style="color: aqua;"></i>
 							<span class="hide-menu"></span>Claim Registration</p:commandLink></li>
 
 					<li><p:commandLink style="color:aqua;"
@@ -240,116 +242,129 @@ body .ui-widget, body .ui-widget .ui-widget {
 				<!-- ============================================================== -->
 				<div class="row">
 					<div class="col-12">
-						<div class="card" >
+						<div class="card">
 							<div class="card-body">
-								 <div class="col-12">
-                        <div class="card" style="margin: 0 auto;box-shadow: 1px 2px 4px rgba(0, 0, 0, 10); border-radius:20px;" >
-                            <div class="card-body">
-								<h2>
-									<strong>Online Proposal Registration</strong>
-								</h2>
-								<hr></hr>
-								<h4 style="color: blue">Step 2: Premium</h4>
-								<br></br>
-								<br></br>
-								<h:form id="form">
+								<div class="col-12">
+									<div class="card"
+										style="margin: 0 auto; box-shadow: 1px 2px 4px rgba(0, 0, 0, 10); border-radius: 20px;">
+										<div class="card-body">
+											<h2>
+												<strong>Online Proposal Registration</strong>
+											</h2>
+											<hr></hr>
+											<h4 style="color: blue">Step 2: Premium</h4>
+											<br></br> <br></br>
+											<h:form id="form">
 
 
 
-									<!-- 2 -->
-									<div class="form-row">
-										<div class="col-sm-2"></div>
-										<div class="col-sm-5">
-											<p:outputLabel value="Year " style="font-weight:bold;"/>
-											&nbsp;<br />
-											<p:inputText class="form-control" id="year"
-												value="#{proposalController.proposal.year}" required="true"
-												requiredMessage="Please write one year!"
-												validatorMessage="Allow one year!" style="width:270px;">
-											</p:inputText>
-											&nbsp;<br />
-											<p:message for="year"
-												style="color:red;background-color:white;" />
-										</div>
-										<div class="col-sm-5">
+												<!-- 2 -->
+												<div class="form-row">
+													<div class="col-sm-2"></div>
+													<div class="col-sm-5">
+														<p:outputLabel value="Year " style="font-weight:bold;" />
+														&nbsp;<br />
+														<p:inputText class="form-control" id="year"
+															value="#{proposalController.proposal.year}"
+															required="true" requiredMessage="Please write one year!"
+															validatorMessage="Allow one year!" style="width:270px;">
+														</p:inputText>
+														&nbsp;<br />
+														<p:message for="year"
+															style="color:red;background-color:white;" />
+													</div>
+													<div class="col-sm-5">
 
 
 
-											<p:outputLabel value="Sum Insured Amount "
-												style="font-weight:bold" /><br></br>
-											&nbsp;
-											<p:inputText id="total" class="form-control"
-												value="#{proposalController.proposal.totalamount}"
-												required="true" style="width:270px;"
-												requiredMessage="Please write your insurance ammount!"
-												validatorMessage="must be between 500000 and 20000000!">
-												<f:validateDoubleRange minimum="500000" maximum="200000000" />
+														<p:outputLabel value="Sum Insured Amount "
+															style="font-weight:bold" />
+														<br></br> &nbsp;
+														<p:inputText id="total" class="form-control"
+															value="#{proposalController.proposal.totalamount}"
+															required="true" style="width:270px;"
+															requiredMessage="Please write your insurance ammount!"
+															validatorMessage="must be between 500000 and 20000000!">
+															<f:validateDoubleRange minimum="500000"
+																maximum="200000000" />
 
-											</p:inputText>
-
-
-
+														</p:inputText>
 
 
 
-											<p:message for="total"
-												style="color:red;background-color:white;"></p:message>
-
-										</div>
-
-									</div>
-									<br></br>
-
-									<!-- 3 -->
-									<div class="form-row">
-										<div class="col-sm-2"></div>
-										<div class="col-sm-5">
-
-											<p:outputLabel value="Term " style="font-weight:bold" />
-											&nbsp;<br />
-											<p:selectOneRadio id="Term"
-												value="#{proposalController.proposal.term}"
-												unselectable="true" required="true"
-												requiredMessage="Please select one as you wish!">
-												<f:selectItem itemLabel="3 months" itemValue="3" />
-												<f:selectItem itemLabel="6 months" itemValue="6" />
-												<f:selectItem itemLabel="1 year" itemValue="12" />
-											</p:selectOneRadio>
-											&nbsp;<br />
-											<p:message for="Term"
-												style="color:red;background-color:white;" />
-										</div>
 
 
 
-									</div>
-									<br></br>
+														<p:message for="total"
+															style="color:red;background-color:white;"></p:message>
 
-									<!-- 4 -->
-									<div class="form-row">
-										<div class="col-sm-2"></div>
+													</div>
 
-										<p:commandButton value="Previous" immediate="true"
-											update="form" action="#{proposalController.idGenerate()}"
-											ajax="false" style="width:140px;border-radius:20px;" />
-										&nbsp;&nbsp;
+												</div>
+												<br></br>
 
-										<p:commandButton value="Calculate"
-											action="#{proposalController.holderPremium()}" ajax="false"
-											style="width:140px;border-radius:20px;" />
-										&nbsp;&nbsp;
+												<!-- 3 -->
+												<div class="form-row">
+													<div class="col-sm-2"></div>
+													<div class="col-sm-5">
 
-										<p:commandButton action="beneficiary.xhtml" value="Next"
-											ajax="false" style="width:140px;border-radius:20px;"></p:commandButton>
+														<p:outputLabel value="Term " style="font-weight:bold" />
+														&nbsp;<br />
+														<p:selectOneRadio id="Term"
+															value="#{proposalController.proposal.term}"
+															unselectable="true" required="true"
+															requiredMessage="Please select one as you wish!">
+															<f:selectItem itemLabel="3 months" itemValue="3" />
+															<f:selectItem itemLabel="6 months" itemValue="6" />
+															<f:selectItem itemLabel="1 year" itemValue="12" />
+														</p:selectOneRadio>
+														&nbsp;<br />
+														<p:message for="Term"
+															style="color:red;background-color:white;" />
 
-									</div>
+
+													</div>
+
+													<div class="col-sm-5">
+														<br></br>&nbsp;&nbsp;
+														<h:outputText value="Your Premium Amount : "
+															style="color:black;font-weight:bold;" />
+														<h:outputText id="output"
+															value="#{proposalController.amount}   MMK"
+															style="color:red;font-weight:bold;" />
+
+													</div>
 
 
 
-								</h:form>
-								<br></br>
-								<br></br>
-								<c:set var="flag" value="#{proposalController.pflag}" />
+												</div>
+												<br></br>
+
+												<!-- 4 -->
+												<div class="form-row">
+													<div class="col-sm-2"></div>
+
+													<p:commandButton value="Previous" immediate="true"
+														update="form" action="#{proposalController.idGenerate()}"
+														ajax="false" style="width:140px;border-radius:20px;" />
+													&nbsp;&nbsp;
+
+													<p:commandButton value="Calculate"
+														actionListener="#{proposalController.holderPremium()}"
+														ajax="false" style="width:140px;border-radius:20px;"
+														update="output" />
+													&nbsp;&nbsp;
+
+													<p:commandButton action="beneficiary.xhtml" value="Next"
+														ajax="false" style="width:140px;border-radius:20px;"></p:commandButton>
+
+												</div>
+
+
+
+											</h:form>
+											<br></br> <br></br>
+											<!-- <c:set var="flag" value="#{proposalController.pflag}" />
 								<c:if test="${flag == true}">
 
 									<div class="row">
@@ -376,11 +391,13 @@ body .ui-widget, body .ui-widget .ui-widget {
 											</div>
 										</div>
 									</div>
-								</c:if>
+								</c:if> -->
+										</div>
+									</div>
+
+								</div>
 							</div>
 						</div>
-
-</div></div></div>
 
 					</div>
 				</div>
