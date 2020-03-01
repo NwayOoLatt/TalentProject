@@ -1,6 +1,9 @@
 package com.personal.accident.demo.controller;
 
+import java.math.BigDecimal;
 import java.text.DateFormat;
+import java.text.DecimalFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Period;
@@ -33,7 +36,10 @@ public class ProposalController {
 	List<Proposal> plist = new ArrayList<Proposal>();
 
 	private Proposal proposal = new Proposal();
-
+	
+	DateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy");
+	DecimalFormat decimalFormat = new DecimalFormat("#,##0.0");
+	
 	Boolean flag = false;
 	Boolean pflag = false;
 	Boolean confirmflag = false;
@@ -52,6 +58,7 @@ public class ProposalController {
 	Boolean check;
 	Boolean infoflag;
 	String info;
+	String premiumamount;
 
 	public int loginUser() {
 		FacesContext facesContext = FacesContext.getCurrentInstance();
@@ -70,6 +77,7 @@ public class ProposalController {
 		confirmflag = false;
 		proposal = new Proposal();
 		amount = 0.0;
+		premiumamount="";
 		String p_no = proposalservice.getProposalID(); // get Max proposal ID
 		proposal = new Proposal();
 
@@ -180,7 +188,9 @@ public class ProposalController {
 	}
 
 	public String holderPremium() {
+		/* "#,##0.000" */
 		pflag = false;
+		
 		System.out.println("-------save2-------");
 		try {
 			total = Math.abs(proposal.getTotalamount());
@@ -188,8 +198,10 @@ public class ProposalController {
 			term = Integer.parseInt(proposal.getTerm());
 			System.out.println(term);
 			amount = (total * term) / 12;
+			System.out.println("----amount---" + decimalFormat.format(amount));
 			proposal.setPayamount(amount);
-			System.out.println("----amount---" + proposal.getPayamount());
+			premiumamount=decimalFormat.format(amount); // invoke decimal format
+			
 			pflag = true;
 		} catch (NullPointerException e) {
 
@@ -289,13 +301,18 @@ public class ProposalController {
 	}
 
 	// Update Proposal
-	public String editProposal(Proposal pro) {
+	public String editProposal(Proposal pro) throws ParseException {
 
 		if (pro.getStatus_checking().equalsIgnoreCase("pending")) {
 			System.out.println("pending");
 			proposal = pro;
 			proid = proposal.getP_no();
-			amount=proposal.getPayamount();
+			premiumamount=String.valueOf(proposal.getAmount());
+			proposal.setDob(dateFormat.parse(proposal.getDateofbirth())); //set date of birth
+			proposal.setStart_date(dateFormat.parse(proposal.getSdate())); // set start date
+			
+			System.out.println("premium amount:"+proposal.getAmount());
+			
 			System.out.println("pno" + proid);
 			flag = true;
 
@@ -514,6 +531,14 @@ public class ProposalController {
 
 	public void setConfirm(String confirm) {
 		this.confirm = confirm;
+	}
+
+	public String getPremiumamount() {
+		return premiumamount;
+	}
+
+	public void setPremiumamount(String premiumamount) {
+		this.premiumamount = premiumamount;
 	}
 
 }
