@@ -136,9 +136,10 @@ body .ui-widget, body .ui-widget .ui-widget {
 				<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle text-muted waves-effect waves-dark"
 					href="" data-toggle="dropdown" aria-haspopup="true"
-					aria-expanded="false"> <img src="../assets/images/users/1.jpg"
-						alt="user" class="img-circle" width="30" />
-					<h5 style="color: blue">#{user}</h5></a></li>
+					aria-expanded="false"> <i class="fa fa-user"
+						style="color: blue;">&nbsp;
+							<h4 style="color: blue; margin-right: 10px;">#{user}</h4>
+					</i></a></li>
 				<!-- ============================================================== -->
 				<!-- User profile and search -->
 				<!-- ============================================================== -->
@@ -335,8 +336,8 @@ body .ui-widget, body .ui-widget .ui-widget {
 															<p:inputText class="form-control" id="phone"
 																value="#{proposalController.proposal.b_phone}"
 																required="true" style="width:270px;"
-																requiredMessage="Phone number is required!">
-																<f:validateRegex pattern="^(09[0-9]{6,}|01[0-9]{6,})$" />
+																requiredMessage="Phone number is required!" validatorMessage="Phone Number is invalid!">
+																<f:validateRegex pattern="^(09[0-9]{6,}|01[0-9]{9,})$" />
 															</p:inputText>
 															<br />
 															<p:message for="phone"
