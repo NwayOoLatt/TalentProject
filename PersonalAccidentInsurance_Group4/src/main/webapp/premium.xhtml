@@ -268,13 +268,18 @@ body .ui-widget, body .ui-widget .ui-widget {
 													<div class="col-sm-5">
 														<p:outputLabel value="Year " style="font-weight:bold;" />
 														&nbsp;<br />
-														<p:inputText class="form-control" id="year"
+														
+														<h:selectOneMenu id="Year"
 															value="#{proposalController.proposal.year}"
-															required="true" requiredMessage="Please write one year!"
-															validatorMessage="Allow one year!" style="width:270px;">
-														</p:inputText>
+															style="width:270px;height:35px;border-color:blue;" required="true" requiredMessage="Pls select Year!">
+															<f:selectItem itemLabel="" itemValue=""
+																noSelectionOption="true" />
+															<f:selectItem itemValue = "1" itemLabel = "1 Year" /> 
+            	
+														</h:selectOneMenu> &nbsp;&nbsp;
+														
 														&nbsp;<br />
-														<p:message for="year"
+														<p:message for="Year"
 															style="color:red;background-color:white;" />
 													</div>
 													<div class="col-sm-5">
