@@ -15,7 +15,7 @@
     <meta name="author" content=""/> -->
 	<!-- Favicon icon -->
 	<link rel="icon" type="image/png" sizes="16x16"
-		href="../assets/images/favicon.png" />
+		href="../assets/images/logo9.png" />
 	<title>Personal Accident Insurance Group4</title>
 	<!-- Custom CSS -->
 	<link href="dist/css/style.css" rel="stylesheet" />
@@ -81,13 +81,29 @@ body .ui-widget, body .ui-widget .ui-widget {
 	background: none !important;
 	border: none !important;
 }
+img {
+    vertical-align: middle;
+    border-style: none;
+    width: 70px;
+    
+}
+.skin-default-dark .left-sidebar .nav-text-box {
+    border-color: transparent;
+    background: rgba(0, 0, 0, 0.3);
+    height: 70px;
+}
 </style>
 </h:head>
 <h:body class="skin-default-dark fixed-layout">
 	<!-- ============================================================== -->
 	<!-- Preloader - style you can find in spinners.css -->
 	<!-- ============================================================== -->
-	
+	<div class="preloader">
+		<div class="loader">
+			<div class="loader__figure"></div>
+			<p class="loader__label">Elegant admin</p>
+		</div>
+	</div>
 	<!-- ============================================================== -->
 	<!-- Main wrapper - style you can find in pages.scss -->
 	<!-- ============================================================== -->
@@ -95,65 +111,55 @@ body .ui-widget, body .ui-widget .ui-widget {
 		<!-- ============================================================== -->
 		<!-- Topbar header - style you can find in pages.scss -->
 		<!-- ============================================================== -->
-		 <header class="topbar">
-            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
-                <!-- ============================================================== -->
-                <!-- Logo -->
-                <!-- ============================================================== -->
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html">
-                        <!-- Logo icon --><b>
-                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-                            <!-- Dark Logo icon -->
-                            <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
-                            <!-- Light Logo icon -->
-                            <img src="../assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
-                        </b>
-                        <!--End Logo icon -->
-                        <!-- Logo text --><span>
-                         <!-- dark Logo text -->
-                         <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
-                         <!-- Light Logo text -->    
-                         <img src="../assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
-                </div>
-                <!-- ============================================================== -->
-                <!-- End Logo -->
-                <!-- ============================================================== -->
-                <div class="navbar-collapse">
-                    <!-- ============================================================== -->
-                    <!-- toggle and nav items -->
-                    <!-- ============================================================== -->
-                    <ul class="navbar-nav mr-auto">
-                        <!-- This is  -->
-                        <li class="nav-item hidden-sm-up"> <a class="nav-link nav-toggler waves-effect waves-light" href="javascript:void(0)"><i class="ti-menu"></i></a></li>
-                        <!-- ============================================================== -->
-                        <!-- Search -->
-                        <!-- ============================================================== -->
-                        <!-- <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="fa fa-search"></i></a>
+		<header class="topbar"> <nav
+			class="navbar top-navbar navbar-expand-md navbar-dark"> <!-- ============================================================== -->
+		<!-- Logo --> <!-- ============================================================== -->
+		<div class="navbar-header">
+			<a class="navbar-brand" href="index.html"> <!-- Logo icon --> <b>
+					<!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+					<!-- Dark Logo icon --> <img src="../assets/images/logo9.png"
+					alt="homepage" class="dark-logo" /> <!-- Light Logo icon --> 
+			</b> <!--End Logo icon --> <!-- Logo text --> <span> <!-- dark Logo text -->
+					</span>
+			</a>
+		</div>
+		<!-- ============================================================== -->
+		<!-- End Logo --> <!-- ============================================================== -->
+		<div class="navbar-collapse">
+			<!-- ============================================================== -->
+			<!-- toggle and nav items -->
+			<!-- ============================================================== -->
+			<ul class="navbar-nav mr-auto">
+				<!-- This is  -->
+				<li class="nav-item hidden-sm-up"><a
+					class="nav-link nav-toggler waves-effect waves-light"
+					href="javascript:void(0)"><i class="ti-menu"></i></a></li>
+				<!-- ============================================================== -->
+				<!-- Search -->
+				<!-- ============================================================== -->
+				<!-- <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="fa fa-search"></i></a>
                             <form class="app-search">
                                 <input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="fa fa-times"></i></a></input>
                             </form>
                         </li> -->
-                    </ul>
-                    <ul class="navbar-nav my-lg-0">
-                        <!-- ============================================================== -->
-                        <!-- User profile and search -->
-                        <!-- ============================================================== -->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            
-                            <i class="fa fa-user" style="color:blue;">&nbsp;
-                            <h4 style="color:blue; margin-right:10px;" > #{user}</h4></i></a>
-                        </li>
-                        <!-- ============================================================== -->
-                        <!-- User profile and search -->
-                        <!-- ============================================================== -->
-                    </ul>
-                </div>
-            </nav>
-            
-            
-        </header>
+			</ul>
+			<ul class="navbar-nav my-lg-0">
+				<!-- ============================================================== -->
+				<!-- User profile and search -->
+				<!-- ============================================================== -->
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle text-muted waves-effect waves-dark"
+					href="" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false"> <i class="fa fa-user"
+						style="color: blue;">&nbsp;
+							<h4 style="color: blue; margin-right: 10px;">#{user}</h4>
+					</i></a></li>
+				<!-- ============================================================== -->
+				<!-- User profile and search -->
+				<!-- ============================================================== -->
+			</ul>
+		</div>
+		</nav> </header>
 		<!-- ============================================================== -->
 		<!-- End Topbar header -->
 		<!-- ============================================================== -->
@@ -162,10 +168,14 @@ body .ui-widget, body .ui-widget .ui-widget {
 		<!-- ============================================================== -->
 		<aside class="left-sidebar">
 		<div class="d-flex no-block nav-text-box align-items-center">
-                <span><img src="../assets/images/logo-icon.png" alt="elegant admin template"/></span>
-                <a class="waves-effect waves-dark ml-auto hidden-sm-down" href="javascript:void(0)"><i class="ti-menu"></i></a>
-                <a class="nav-toggler waves-effect waves-dark ml-auto hidden-sm-up" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
-            </div>
+			<span><img src="../assets/images/logo9.png"
+				alt="elegant admin template" /></span> <a
+				class="waves-effect waves-dark ml-auto hidden-sm-down"
+				href="javascript:void(0)"><i class="ti-menu"></i></a> <a
+				class="nav-toggler waves-effect waves-dark ml-auto hidden-sm-up"
+				href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+		</div>
+
 		<!-- Sidebar scroll-->
 		<div class="scroll-sidebar">
 			<!-- Sidebar navigation-->
