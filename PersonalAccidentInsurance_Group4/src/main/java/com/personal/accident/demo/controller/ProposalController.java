@@ -59,7 +59,9 @@ public class ProposalController {
 	Boolean infoflag;
 	String info;
 	String premiumamount;
-
+	String siamount;
+	String claimamount;
+	
 	public int loginUser() {
 		FacesContext facesContext = FacesContext.getCurrentInstance();
 		HttpSession session = (HttpSession) facesContext.getExternalContext().getSession(true);
@@ -290,7 +292,7 @@ public class ProposalController {
 
 		try {
 			plist = proposalservice.statusChecking(userID); // invoke status checking service
-			System.out.println("status checkkkkkkk");
+			System.out.println("status checkkkkkkk"+userID);
 
 		} catch (IndexOutOfBoundsException e) {
 			System.out.println(e);
@@ -347,6 +349,8 @@ public class ProposalController {
 		proid = proposal.getP_no();
 		
 		premiumamount=decimalFormat.format(proposal.getAmount());
+		siamount=decimalFormat.format(proposal.getTotalamount());
+		
 		System.out.println("premium:"+premiumamount);
 		flag = true;
 		return "/proposalDetail.xhtml?faces-redirect=true";
@@ -359,6 +363,7 @@ public class ProposalController {
 		address = proposal.getHomeNo() + "/ " + proposal.getStreet() + "/ " + proposal.getState();
 		proid = proposal.getP_no();
 		premiumamount=decimalFormat.format(proposal.getAmount());
+		siamount=decimalFormat.format(proposal.getTotalamount());
 		
 		flag = true;
 		return "/policyDetail.xhtml?faces-redirect=true";
@@ -544,6 +549,22 @@ public class ProposalController {
 
 	public void setPremiumamount(String premiumamount) {
 		this.premiumamount = premiumamount;
+	}
+
+	public String getSiamount() {
+		return siamount;
+	}
+
+	public void setSiamount(String siamount) {
+		this.siamount = siamount;
+	}
+
+	public String getClaimamount() {
+		return claimamount;
+	}
+
+	public void setClaimamount(String claimamount) {
+		this.claimamount = claimamount;
 	}
 
 }
