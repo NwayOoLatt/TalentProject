@@ -1,6 +1,7 @@
 package com.personal.accident.demo.service;
 
 import java.text.DateFormat;
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -31,6 +32,8 @@ public class ClaimServiceImpl implements ClaimService {
 	@Autowired
 	ClaimRepository crepository;
 
+	DecimalFormat decimalFormat = new DecimalFormat("0.0");
+	
 	@Override
 	public List<Proposal> findPolicy(Proposal pmodel,int id) {
 		// TODO Auto-generated method stub
@@ -56,6 +59,7 @@ public class ClaimServiceImpl implements ClaimService {
 					pp.setEmail(plist.get(j).getEmail());
 					pp.setStatus_checking(plist.get(j).getStatus_checking());
 					pp.setTotalamount(plist.get(j).getPremium().getLampSum());
+					pp.setTotalamount1(decimalFormat.format(pp.getTotalamount()));
 					pp.setSdate(plist.get(j).getStart_date());
 					pp.setEdate(plist.get(j).getEnd_date());
 				/* pp.setClaim(plist.get(j).getClaim()); */
