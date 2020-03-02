@@ -100,6 +100,7 @@ h6 {
 
 #header #logo {
   float: left;
+  align:top;
 }
 
 #header #logo h1 {
@@ -121,10 +122,12 @@ h6 {
 #header #logo img {
   padding: 0;
   margin: 0;
+  height:50px;
+  width:100px;
 }
 
 #header.header-fixed {
-  background:rgba(52,59,64,0.9);
+  background:#315B8D;
   padding: 20px 0;
   height: 72px;
   transition: all 0.5s;
@@ -980,8 +983,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 --------------------------------------------------------------*/
 
 #footer {
-  background: #343b40;
-  padding: 30px 0;
+  background: #fff;
+ /*  padding: 30px 0; */
   color: #fff;
   font-size: 14px;
 }
