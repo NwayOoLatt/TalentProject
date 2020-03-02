@@ -80,7 +80,7 @@
 			<div class="form-row">
 				<div class="col-2"></div>
 				<div class="col">
-					<i class="fa fa-user" aria-hidden="true"></i>&nbsp;
+					<i class="fa fa-user" aria-hidden="true" style="color:white;"></i>&nbsp;
 					<p:inputText id="name" class="form-input"
 						value="#{userController.userModel.name}" required="true"
 						placeholder="Your Name" requiredMessage="Name is required!" style="width:270px;">
@@ -94,7 +94,7 @@
 			<div class="form-row">
 				<div class="col-2"></div>
 				<div class="col">
-				<i class="fa fa-lock" aria-hidden="true"></i>&nbsp;
+				<i class="fa fa-lock" aria-hidden="true" style="color:white;"></i>&nbsp;
 				<p:password id="password" class="form-input" name="password" placeholder="Password"
 										value="#{userController.userModel.password}" required="true"
 										 requiredMessage="Password require"
@@ -112,7 +112,7 @@
 			<p:commandButton name="cancel" id="cancel" ajax="false"
 			value="Cancel" action="home.xhtml" immediate="true" update="form"/><br></br><br></br>		
 					
-<strong>Create account ? </strong><a href="#{userController.requestSignup()}" class="loginhere-link">Sign Up</a>
+<strong style="color:white;">Create account ? <a href="#{userController.requestSignup()}" class="loginhere-link">Sign Up</a></strong>
 </h:form>
 	</div>
 	</section>
