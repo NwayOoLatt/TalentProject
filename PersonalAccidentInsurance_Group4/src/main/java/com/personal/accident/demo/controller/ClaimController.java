@@ -50,7 +50,7 @@ public class ClaimController {
 
 	List<ClaimModel> clist = new ArrayList<ClaimModel>();
 	List<Proposal> plist = new ArrayList<Proposal>();
-
+	
 	Boolean flag = false;
 	Boolean bflag = false;
 	Boolean cflag = false;
