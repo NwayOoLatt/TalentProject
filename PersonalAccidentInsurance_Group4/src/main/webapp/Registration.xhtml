@@ -98,7 +98,7 @@
 					<i class="fa fa-user" aria-hidden="true" style="color:white;"></i>&nbsp;
 					<p:inputText id="name" class="form-input"
 						value="#{userController.userModel.name}" required="true"
-						placeholder="Your Name" requiredMessage="Name is required!" style="width:270px;">
+						placeholder="Your Name" requiredMessage="Name is required!" style="width:270px;" validatorMessage="Name must be letter!">
 						<f:validateRegex pattern="^[a-zA-Z]+$" />
 					</p:inputText>
 					<div class="col">
