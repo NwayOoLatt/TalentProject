@@ -95,7 +95,7 @@
 			<div class="form-row">
 				<!-- <div class="col-2"></div> -->
 				<div class="col">
-					<i class="fa fa-user" aria-hidden="true"></i>&nbsp;
+					<i class="fa fa-user" aria-hidden="true" style="color:white;"></i>&nbsp;
 					<p:inputText id="name" class="form-input"
 						value="#{userController.userModel.name}" required="true"
 						placeholder="Your Name" requiredMessage="Name is required!" style="width:270px;">
@@ -109,7 +109,7 @@
 			<div class="form-row">
 				<!-- <div class="col-2"></div> -->
 				<div class="col">
-				<i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;
+				<i class="fa fa-envelope" aria-hidden="true" style="color:white;"></i>&nbsp;
 					<p:inputText class="form-input" name="email" id="email" placeholder="Your Email" value="#{userController.userModel.email}" required="true" requiredMessage="Email is required" validatorMessage="Email acount is invalid!" style="width:270px;">
                             <f:validateRegex pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]" />
                             </p:inputText>
@@ -122,7 +122,7 @@
 			<div class="form-row">
 				<!-- <div class="col-2"></div> -->
 				<div class="col">
-				<i class="fa fa-lock" aria-hidden="true"></i>&nbsp;
+				<i class="fa fa-lock" aria-hidden="true" style="color:white;"></i>&nbsp;
 				<p:password id="password" class="form-input" name="password" placeholder="Password"
 										value="#{userController.userModel.password}" required="true"
 										match="password1" requiredMessage="Password require"
@@ -140,7 +140,7 @@
 			<div class="form-row">
 				<!-- <div class="col-2"></div> -->
 				<div class="col">
-				<i class="fa fa-lock" aria-hidden="true"></i>&nbsp;
+				<i class="fa fa-lock" aria-hidden="true" style="color:white;"></i>&nbsp;
 				<p:password id="password1" class="form-input" name="re_password"
 										value="#{userController.userModel.repassword}" required="true"
 										requiredMessage="Comfirm Password require"
@@ -157,7 +157,7 @@
 				&nbsp;&nbsp;
 			<p:commandButton name="cancel" id="cancel" ajax="false"
 			value="Cancel" action="home.xhtml" immediate="true" update="form"/><br></br><br></br>
-			<strong>Have already account ? </strong><a href="#{userController.requestLogin()}" class="loginhere-link">Login</a>
+			<strong style="color:white;">Have already account ? <a href="#{userController.requestLogin()}" class="loginhere-link">Login</a></strong>
 				</h:form>
 	</div>
 	</section>
