@@ -28,16 +28,15 @@ public class PolicyServiceImpl implements PolicyService {
 	@Override
 	public List<Proposal> proposalList(int id) {
 		
-		DecimalFormat decimalFormat = new DecimalFormat("0.0");
+		
 		// TODO Auto-generated method stub
 	
 		Double pay=0.0;
 		List<PolicyHolder> plist=holderInfoRepository.getProposalApproved(id);
 		List<Proposal> prolist = new ArrayList<Proposal>();
 		DateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy");
-		/*
-		 * BeneficiaryModel bmodel=new BeneficiaryModel(); ContactModel contact;
-		 */
+		DecimalFormat decimalFormat = new DecimalFormat("0.0");
+		
 		
 		int c=0;
 		
@@ -97,6 +96,7 @@ public class PolicyServiceImpl implements PolicyService {
 						  cmodel.setAmount(plist.get(j).getClaim().get(i).getAmount());
 						  cmodel.setReason(plist.get(j).getClaim().get(i).getReason());
 						  cmodel.setPlace(plist.get(j).getClaim().get(i).getReason());
+						  cmodel.setClaimamount(decimalFormat.format(plist.get(j).getClaim().get(i).getAmount()));
 						  cmodel.setClaimCount(cc);
 						  pp.setClaimCount(cc);
 						  
