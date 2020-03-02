@@ -487,7 +487,7 @@ body .ui-widget, body .ui-widget .ui-widget {
 														<p:inputText class="form-control" id="phone"
 															value="#{proposalController.proposal.phone}"
 															required="true" placeholder="09*********"
-															requiredMessage="Phone number is required!">
+															requiredMessage="Phone number is required!" validatorMessage="Phone number is invalid">
 															<f:validateRegex pattern="^(09[0-9]{6,}|01[0-9]{9,})$" />
 														</p:inputText>
 														<br />
