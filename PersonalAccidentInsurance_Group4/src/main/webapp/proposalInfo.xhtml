@@ -323,7 +323,7 @@ body .ui-widget, body .ui-widget .ui-widget {
 															value="#{proposalController.proposal.nrc}"
 															required="true" requiredMessage="NRC is required!"
 															validatorMessage="Must be NRC format!"
-															placeholder="12/OuKaTA(Naing)079887">
+															placeholder="12/OuKaTa(Naing)079887">
 															<f:validateRegex
 																pattern="^([\d]{1,2})\/([A-Za-z]{6})\(Naing\)([\d]{6})$" />
 														</p:inputText>
@@ -363,7 +363,7 @@ body .ui-widget, body .ui-widget .ui-widget {
 														<p:outputLabel value="Martial Status"
 															style="font-weight:bold"></p:outputLabel>
 														<br />
-														<p:inputText class="form-control" id="status"
+														<!-- <p:inputText class="form-control" id="status"
 															value="#{proposalController.proposal.m_status}"
 															required="true"
 															requiredMessage="Martial Status is required!"
@@ -372,7 +372,21 @@ body .ui-widget, body .ui-widget .ui-widget {
 														</p:inputText>
 														&nbsp;<br />
 														<p:message for="status"
-															style="color:red;background-color:white;"></p:message>
+															style="color:red;background-color:white;"></p:message> -->
+													
+													
+													<h:selectOneMenu id="status"
+															value="#{proposalController.proposal.m_status}"
+															style="width:270px;height:35px;border-color:blue;" required="true" requiredMessage="Pls select Martidal Status!">
+															
+															<f:selectItem itemValue = "Single" itemLabel = "Single" /> 
+            												<f:selectItem itemValue = "Married" itemLabel = "Married" /> 
+															
+														</h:selectOneMenu> &nbsp;&nbsp;
+														<h:message for="status"
+															style="color:red;background-color:white;"></h:message>
+													
+													
 													</div>
 													<div class="col-sm-5">
 
@@ -386,7 +400,7 @@ body .ui-widget, body .ui-widget .ui-widget {
 															value="#{proposalController.proposal.dob}"
 															pattern="dd/MM/yyyy" yearNavigator="true"
 															yearRange="1950:3000" required="true"
-															requiredMessage="Date is required!" >
+															requiredMessage="Date is required!" placeholder="dd/mm/yyyy" >
 														<p:ajax event="dateSelect" update="age" listener="#{proposalController.getAge}" />  
 														</p:calendar>
 														<br />
@@ -472,9 +486,9 @@ body .ui-widget, body .ui-widget .ui-widget {
 
 														<p:inputText class="form-control" id="phone"
 															value="#{proposalController.proposal.phone}"
-															required="true"
+															required="true" placeholder="09*********"
 															requiredMessage="Phone number is required!">
-															<f:validateRegex pattern="^(09[0-9]{6,}|01[0-9]{6,})$" />
+															<f:validateRegex pattern="^(09[0-9]{6,}|01[0-9]{9,})$" />
 														</p:inputText>
 														<br />
 														<p:message for="phone"
@@ -496,7 +510,7 @@ body .ui-widget, body .ui-widget .ui-widget {
 														<p:inputText id="mail" class="form-control"
 															value="#{proposalController.proposal.email}"
 															required="true" requiredMessage="Email is required!"
-															validatorMessage="Must be email format!">
+															validatorMessage="Email acount is invalid!">
 															<f:validateRegex
 																pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]" />
 														</p:inputText>
@@ -514,7 +528,7 @@ body .ui-widget, body .ui-widget .ui-widget {
 														<p:inputText class="form-control" id="street"
 															value="#{proposalController.proposal.street}"
 															requiredMessage="Required!"
-															validatorMessage="Must be format!">
+															validatorMessage="Street is invalid!">
 															<f:validateRegex pattern="^\S[A-Za-z0-9/.,\s-]{2,35}$" />
 														</p:inputText>
 														<br />
@@ -536,10 +550,10 @@ body .ui-widget, body .ui-widget .ui-widget {
 														<br />
 														<p:inputText class="form-control" id="home"
 															value="#{proposalController.proposal.homeNo}"
-															required="true"
+															required="true" placeholder="No.1"
 															requiredMessage="Your Home Number is required!"
-															validatorMessage="Must be Home No. format! Example No.123!">
-															<f:validateRegex pattern="^No.[A-Za-z0-9/.,\s]{2,30}$" />
+															validatorMessage="Home No. is invalid Example No.123!">
+															<f:validateRegex pattern="^No.[A-Za-z0-9/.,\s]{1,30}$" />
 														</p:inputText>
 														<br />
 														<p:message for="home"
