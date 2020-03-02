@@ -77,6 +77,7 @@ public class ProposalController {
 	public String idGenerate() {
 
 		confirmflag = false;
+		flag=false;
 		proposal = new Proposal();
 		amount = 0.0;
 		premiumamount="";
@@ -164,9 +165,9 @@ public class ProposalController {
 	
 	public String holderInfo() {
 
-		System.out.println("-------save1-------");
+		System.out.println("-------save1-------"+proposal.getFirstName() + proposal.getLastName());
 		proposal.setName(proposal.getFirstName() + proposal.getLastName());
-
+		System.out.println("martial status"+proposal.getM_status());
 		Date d = proposal.getStart_date();
 		DateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy");
 		startdate = dateFormat.format(d);
