@@ -32,7 +32,6 @@ public class ProposalController {
 	@Autowired
 
 	private ProposalService proposalservice;
-
 	List<Proposal> plist = new ArrayList<Proposal>();
 
 	private Proposal proposal = new Proposal();
@@ -191,6 +190,32 @@ public class ProposalController {
 	}
 
 	public String holderPremium() {
+		
+		/* "#,##0.000" */
+		pflag = false;
+		premiumamount="0.0";
+		System.out.println("-------save2-------");
+		try {
+			total = Math.abs(proposal.getTotalamount());
+			System.out.println(total);
+			term = Integer.parseInt(proposal.getTerm());
+			System.out.println(term);
+			amount = (total * term) / 12;
+			System.out.println("----amount---" + decimalFormat.format(amount));
+			proposal.setPayamount(amount);
+			premiumamount=decimalFormat.format(amount); // invoke decimal format
+			siamount=decimalFormat.format(proposal.getTotalamount());
+			pflag = true;
+		} catch (NullPointerException e) {
+
+		}
+		System.out.println("flag" + flag);
+		return "premium.xhtml?faces-redirect=true";
+
+	}
+	
+	public String holderPremiumNext() {
+		
 		/* "#,##0.000" */
 		pflag = false;
 		
@@ -204,15 +229,17 @@ public class ProposalController {
 			System.out.println("----amount---" + decimalFormat.format(amount));
 			proposal.setPayamount(amount);
 			premiumamount=decimalFormat.format(amount); // invoke decimal format
-			
+			siamount=decimalFormat.format(proposal.getTotalamount());
 			pflag = true;
 		} catch (NullPointerException e) {
 
 		}
 		System.out.println("flag" + flag);
-		return "premium.xhtml?faces-redirect=true";
+		return "beneficiary.xhtml?faces-redirect=true";
 
 	}
+	
+	
 
 	public String benefit() {
 
