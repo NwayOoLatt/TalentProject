@@ -16,6 +16,7 @@ public class ClaimModel {
 	private String status;
 	private String today;
 	private int claimCount;
+	private String claimamount;
 	
 	public int getId() {
 		return id;
@@ -70,6 +71,12 @@ public class ClaimModel {
 	}
 	public void setClaimCount(int claimCount) {
 		this.claimCount = claimCount;
+	}
+	public String getClaimamount() {
+		return claimamount;
+	}
+	public void setClaimamount(String claimamount) {
+		this.claimamount = claimamount;
 	}
 	
 }
