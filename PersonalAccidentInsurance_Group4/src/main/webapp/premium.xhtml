@@ -272,7 +272,7 @@ body .ui-widget, body .ui-widget .ui-widget {
 														<h:selectOneMenu id="Year"
 															value="#{proposalController.proposal.year}"
 															style="width:270px;height:35px;border-color:blue;" required="true" requiredMessage="Pls select Year!">
-															<f:selectItem itemLabel="" itemValue=""
+															<f:selectItem itemLabel="select year" itemValue=""
 																noSelectionOption="true" />
 															<f:selectItem itemValue = "1" itemLabel = "1 Year" /> 
             	
@@ -362,7 +362,7 @@ body .ui-widget, body .ui-widget .ui-widget {
 														update="output" />
 													&nbsp;&nbsp;
 
-													<p:commandButton action="beneficiary.xhtml" value="Next"
+													<p:commandButton action="#{proposalController.holderPremiumNext()}" value="Next"
 														ajax="false" style="width:140px;border-radius:20px;"></p:commandButton>
 
 												</div>
