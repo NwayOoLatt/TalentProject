@@ -194,7 +194,8 @@ public class ProposalController {
 		/* "#,##0.000" */
 		pflag = false;
 		premiumamount="0.0";
-		System.out.println("-------save2-------");
+		System.out.println("-------premium-------");
+		
 		try {
 			total = Math.abs(proposal.getTotalamount());
 			System.out.println(total);
