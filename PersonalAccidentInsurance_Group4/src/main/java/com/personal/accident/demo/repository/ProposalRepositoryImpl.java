@@ -23,7 +23,7 @@ public class ProposalRepositoryImpl implements ProposalCustom{
 	EntityManager em;
 	
 	@Override
-	public List<PolicyHolder> getProposal(int id) {
+	public List<PolicyHolder> getProposal(int id) { // status check
 
 		// TODO Auto-generated method stub
 		CriteriaBuilder cb = em.getCriteriaBuilder();
@@ -31,7 +31,7 @@ public class ProposalRepositoryImpl implements ProposalCustom{
 		System.out.println("---------Repository1-------------");
 		Root<PolicyHolder> usrr = cq.from(PolicyHolder.class);
 		Predicate p = cb.equal(usrr.get("user"), id);
-		Predicate p2=cb.notEqual(usrr.get("status_checking"), "delete");
+		Predicate p2=cb.notEqual(usrr.get("reject"), "true");
 		
 		cq.where(cb.and(p,p2)).distinct(true);
 		
