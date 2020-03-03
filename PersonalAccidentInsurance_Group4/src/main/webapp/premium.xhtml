@@ -302,13 +302,14 @@ img {
 															validatorMessage="must be between 500000 and 20000000!">
 															<f:validateDoubleRange minimum="500000"
 																maximum="200000000" />
+																<p:ajax update="msgTotal" event="keyup" />  
 
 														</p:inputText>
 
 
 
 
-														<p:message for="total"
+														<p:message for="total" id="msgTotal"
 															style="color:red;background-color:white;"></p:message>
 
 													</div>
