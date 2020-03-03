@@ -181,7 +181,7 @@ public class ProposalServiceImpl implements ProposalService{
 			
 			holder.setReject("false");
 			
-			holder.setStatus_checking("Approved");
+			holder.setStatus_checking("pending");
 			System.out.println("After Approved");
 			holder.setUser(u);
 			holder.setPremium(premium);
