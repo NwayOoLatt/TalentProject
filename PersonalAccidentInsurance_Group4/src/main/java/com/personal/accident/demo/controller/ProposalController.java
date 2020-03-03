@@ -317,8 +317,9 @@ public class ProposalController {
 		confirmflag = true;
 		confirm="Editing your proposal is successful! ";
 		System.out.println("----------------" + proposal.getPolicyflag());
-
+		plist=new ArrayList<Proposal>();
 		try {
+			
 			plist = proposalservice.statusChecking(userID); // invoke status checking service
 			System.out.println("status checkkkkkkk"+userID);
 
