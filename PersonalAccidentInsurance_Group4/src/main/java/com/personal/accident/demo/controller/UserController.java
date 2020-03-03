@@ -64,13 +64,13 @@ public class UserController {
 	public String requestLogin() {
 		System.out.println("requestLoign");
 		infoflag = false;
-		return "/loginform.xhtml?faces-redirect=true";
+		return "loginform.xhtml?faces-redirect=true";
 	}
 	
 	public String requestSignup() {
 		
 		infoflag = false;
-		return "/Registration.xhtml?faces-redirect=true";
+		return "Registration.xhtml?faces-redirect=true";
 		
 	}
 	
@@ -92,7 +92,7 @@ public class UserController {
 			info="Create Account! User doesn't exit.";
 			
 			
-			return "/loginform.xhtml?faces-redirect=true";
+			return "loginform.xhtml?faces-redirect=true";
 		}
 
 		else if (usrList.get(0).getPassword().equals(userModel.getPassword())) {
@@ -115,14 +115,14 @@ public class UserController {
 			
 			userModel = new UserModel();
 			proposal.idGenerate();
-			return "/proposalInfo.xhtml?faces-redirect=true";
+			return "proposalInfo.xhtml?faces-redirect=true";
 
 		} else {
 			System.out.println("wrong password");
 			infoflag = true;
 			info="wrong password!";
 			
-			return "/loginform.xhtml?faces-redirect=true";
+			return "loginform.xhtml?faces-redirect=true";
 
 		}
 
@@ -142,7 +142,7 @@ public class UserController {
 		 * System.out.println("session fill"+e); }
 		 */
 		
-		return "/home.xhtml?faces-redirect=true";
+		return "home.xhtml?faces-redirect=true";
 	}
 	
 	
