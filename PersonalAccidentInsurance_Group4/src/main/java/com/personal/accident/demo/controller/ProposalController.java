@@ -355,7 +355,7 @@ public class ProposalController {
 			info = "Can't Update Your Proposal ! Your Proposal has been Approved";
 			return "checking.xhtml?faces-redirect=true";
 
-		} else if (pro.getStatus_checking().equalsIgnoreCase("delete")) {
+		} else if (pro.getStatus_checking().equalsIgnoreCase("Reject")) {
 
 			System.out.println("delete");
 			infoflag = true;
@@ -416,7 +416,7 @@ public class ProposalController {
 			infoflag = true;
 			info = "Can't delete! Your Proposal has been Approved.";
 			System.out.println("Approved");
-		} else if (p.getStatus_checking().equalsIgnoreCase("delete")) {
+		} else if (p.getStatus_checking().equalsIgnoreCase("Reject")) {
 			infoflag = true;
 			info = " Your Proposal has been Rejected!";
 			System.out.println("delete");
