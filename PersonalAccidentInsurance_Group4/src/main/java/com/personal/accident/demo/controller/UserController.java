@@ -129,20 +129,18 @@ public class UserController {
 	}
 	
 	public String userLogout() {
+		FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+		System.out.println("session logout");
 		
-		try {
-			  FacesContext fc = FacesContext.getCurrentInstance();
-			  HttpSession session =
-			  (HttpSession) fc.getExternalContext().getSession(true);
-			  session.removeAttribute("user");
-			  session.removeAttribute("id");
-				
-			  System.out.println("Logout"+session.getAttribute("user"));
-			  
-			}catch(ConcurrentModificationException e) {
-				
-				System.out.println("session fill"+e);
-			}
+		/*
+		 * try {
+		 * 
+		 * 
+		 * 
+		 * }catch(ConcurrentModificationException e) {
+		 * 
+		 * System.out.println("session fill"+e); }
+		 */
 		
 		return "/home.xhtml?faces-redirect=true";
 	}
