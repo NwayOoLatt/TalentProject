@@ -43,7 +43,7 @@ public class ClaimController {
 	PolicyService policyservice;
 
 	private HashMap<String, Integer> category;
-	private HashMap<String, Integer> categoryid;
+	private HashMap<Integer, Integer> categoryid;
 	
 	/* private ClaimModel cmodel = new ClaimModel(); */
 	private Proposal pmodel = new Proposal();
@@ -68,6 +68,7 @@ public class ClaimController {
 	String currentAmount1="0.0";
 	String total_claimAmount1="0.0";
 	String remainbalance1="0.0";
+	String type;
 	
 	DateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy"); // date format
 	DecimalFormat decimalFormat = new DecimalFormat("0.0"); // decimal format
@@ -78,15 +79,16 @@ public class ClaimController {
 	public void init() {
 
 		category = new HashMap<String, Integer>(); 
-		categoryid=new HashMap<String, Integer>();
+		categoryid=new HashMap<Integer, Integer>();
 		
 		List<CategoryModel> catList=new ArrayList<>();
 		catList=categoryservice.allCategory();
 		
 		for(int i=0;i<catList.size();i++) { // Get Claim Type and percent
 			
-			category.put(catList.get(i).getType(),catList.get(i).getPercentage());
-			categoryid.put(catList.get(i).getType(),catList.get(i).getId());
+			category.put(catList.get(i).getType(),catList.get(i).getId());
+			categoryid.put(catList.get(i).getId(),catList.get(i).getPercentage());
+			System.out.println(catList.get(i).getType()+"\t"+catList.get(i).getId());
 		}
 		
 	}
@@ -185,7 +187,14 @@ public class ClaimController {
 		System.out.println("**********claim*********");
 		try {
 			int c=0;
-		c = Integer.parseInt(pmodel.getType());
+		
+			/*
+			 * int id= Integer.parseInt(pmodel.getType()); c=getKey(categoryid, id);
+			 */
+		c=categoryid.get(Integer.parseInt(pmodel.getType()));
+		System.out.println("**claim type"+c);
+		System.out.println("**claim id"+pmodel.getType());
+		type=getKey(category, Integer.parseInt(pmodel.getType())); //get claim type category
 		
 		sumInsured = pmodel.getTotalamount(); // sum insured
 		currentAmount = sumInsured * (Math.abs(c * 0.01)); // request claim amount
@@ -195,8 +204,8 @@ public class ClaimController {
 		
 		
 		System.out.println(c);
-		pmodel.setType(getKey(category, c));
-		pmodel.setC_id(categoryid.get(pmodel.getType()));
+			/* pmodel.setType(getKey(category, c)); */
+		pmodel.setC_id(Integer.parseInt(pmodel.getType()));
 		
 		System.out.println("Claim ID"+pmodel.getC_id());
 		System.out.println("claim type:"+pmodel.getType());
@@ -229,7 +238,7 @@ public class ClaimController {
 				 * System.out.println("claim----" + c); System.out.println("Claim2----" +
 				 * getKey(category, c)); System.out.println("claimamount---" + currentAmount);
 				 */
-				if (pmodel.getType().equals("death")) {
+				if (type.equals("death")) {
 
 					System.out.println("------beneficiary--------");// show alert
 					pmodel.setAmount(currentAmount);
@@ -239,11 +248,13 @@ public class ClaimController {
 					claimservice.saveClaim(pmodel);
 					flag = false;
 					bflag = true;
+					
 				} else {
 
 					pmodel.setAmount(currentAmount);
 					remainbalance = pmodel.getTotalamount();
 					remainbalance1=decimalFormat.format(remainbalance);
+					total_claimAmount1="0.0";
 					System.out.println("claim"+pmodel.getType());
 					claimservice.saveClaim(pmodel);
 					flag = false;
@@ -253,9 +264,11 @@ public class ClaimController {
 			} else {
 
 				List<ClaimModel> clist = plist.get(0).getClaim(); // claim
-
+				System.out.println("claim pno"+plist.get(0).getP_no());
+				
 				total_claimAmount = 0.0;
-
+				total_claimAmount1 = "0.0";
+				
 				for (int i = 0; i < clist.size(); i++) {
 
 					total_claimAmount += clist.get(i).getAmount(); // spent amount
