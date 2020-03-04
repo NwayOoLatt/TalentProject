@@ -29,6 +29,7 @@ public class StatusCheckingController {
 		p.setPolicyflag(false);
 		
 		try {
+			
 		plist=proposalservice.statusChecking(1);
 	
 		}catch(IndexOutOfBoundsException e) {
