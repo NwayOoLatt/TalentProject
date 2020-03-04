@@ -21,7 +21,6 @@ public class ClaimForm {
 	private String date;
 	private String place;
 	private Double amount;
-	private String status;
 	
 	@ManyToOne
 	private Category category;
@@ -44,8 +43,6 @@ public class ClaimForm {
 	public void setId(int id) {
 		this.id = id;
 	}
-
-	
 
 	public String getReason() {
 		return reason;
@@ -79,14 +76,7 @@ public class ClaimForm {
 		this.policyholder = policyholder;
 	}
 	
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
+	
 	@Override
 	public String toString() {
 		return "ClaimForm [id=" + id + ", reason=" + reason + ", date=" + date + ", place=" + place
