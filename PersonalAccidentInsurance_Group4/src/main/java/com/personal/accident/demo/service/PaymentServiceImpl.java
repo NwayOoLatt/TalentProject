@@ -43,6 +43,7 @@ public class PaymentServiceImpl implements PaymentService{
 		paymentrepository.save(payment);	
 		return true;
 	}
+	
 	@Override
 	public Boolean completeProposal(PaymentModel p) {
 		// TODO Auto-generated method stub
