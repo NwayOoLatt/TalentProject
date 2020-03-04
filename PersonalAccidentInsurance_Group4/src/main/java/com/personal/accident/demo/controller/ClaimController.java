@@ -135,7 +135,6 @@ public class ClaimController {
 		flag=false;
 		policyflag=false;
 		pmodel=new Proposal();
-		
 		return "claimform.xhtml?faces-redirect=true";
 	}
 	public String claimRequest() {
