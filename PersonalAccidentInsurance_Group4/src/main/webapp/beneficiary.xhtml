@@ -346,9 +346,9 @@ img {
 
 															<p:inputText class="form-control" id="phone"
 																value="#{proposalController.proposal.b_phone}"
-																 placeholder="09*********"  required="true" style="width:270px;"
-																requiredMessage="Phone number is required!" validatorMessage="Phone Number is invalid!">
-																<f:validateRegex pattern="^(09[0-9]{6,}|01[0-9]{9,})$" />
+																required="true" style="width:270px;"
+																requiredMessage="Phone number is required!" validatorMessage="Phone Number is invalid!(eg.09967945673)">
+																<f:validateRegex pattern="^(09[0-9]{9,}|01[0-9]{9,})$" />
 															</p:inputText>
 															<br />
 															<p:message for="phone"
