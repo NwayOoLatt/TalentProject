@@ -134,7 +134,7 @@ public class ClaimServiceImpl implements ClaimService {
 		claim.setPolicyholder(pholder);
 		claim.setCategory(cat);
 		
-		claim.setStatus("true");
+		/* claim.setStatus("true"); */
 		System.out.println("Claim to save");
 		crepository.save(claim);
 
