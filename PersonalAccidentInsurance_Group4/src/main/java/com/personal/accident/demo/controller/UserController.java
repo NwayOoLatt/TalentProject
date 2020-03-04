@@ -52,7 +52,7 @@ public class UserController {
 			
 		userservice.saveUser(userModel);
 		infoflag = true;
-		info="Successfully Registeration!";
+		info="Your Registration is successful!";
 		FacesContext.getCurrentInstance().addMessage(null,
 				new FacesMessage(FacesMessage.SEVERITY_INFO, "Successfully Registeration!", "info Messages"));
 		}
