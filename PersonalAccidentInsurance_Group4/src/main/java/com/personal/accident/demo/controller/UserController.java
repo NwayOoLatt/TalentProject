@@ -39,20 +39,24 @@ public class UserController {
 		System.out.println("--------Name-----------" + userModel.getName());
 
 		/* userModel.setUserId(userID); */
-		Boolean flag=userservice.findMail(userModel);
+		Boolean flag=userservice.findMail(userModel); // check duplicate mail;
+		
 		if(flag==true) {
 			
 			System.out.println("duplicate record");
 			infoflag = true;
 			info="Your Email account has been used!";
+			
 			FacesContext.getCurrentInstance().addMessage(null,
 					new FacesMessage(FacesMessage.SEVERITY_INFO, "Your Email account has been used!", "info Messages"));
 		}
 		else {
 			
-		userservice.saveUser(userModel);
+		userservice.saveUser(userModel); // save user
+		
 		infoflag = true;
 		info="Your Registration is successful!";
+		
 		FacesContext.getCurrentInstance().addMessage(null,
 				new FacesMessage(FacesMessage.SEVERITY_INFO, "Successfully Registeration!", "info Messages"));
 		}
