@@ -187,9 +187,7 @@ public class ClaimController {
 		try {
 			int c=0;
 		
-			/*
-			 * int id= Integer.parseInt(pmodel.getType()); c=getKey(categoryid, id);
-			 */
+		
 		c=categoryid.get(Integer.parseInt(pmodel.getType()));
 		System.out.println("**claim type"+c);
 		System.out.println("**claim id"+pmodel.getType());
@@ -200,7 +198,6 @@ public class ClaimController {
 		
 		sumInsured1 = decimalFormat.format(pmodel.getTotalamount()); // sum insured
 		currentAmount1 = decimalFormat.format(sumInsured * (Math.abs(c * 0.01))); // request claim amount
-		
 		
 		System.out.println(c);
 			/* pmodel.setType(getKey(category, c)); */
