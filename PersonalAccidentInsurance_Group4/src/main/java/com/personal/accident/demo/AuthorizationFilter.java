@@ -28,10 +28,14 @@ public class AuthorizationFilter implements Filter {
         HttpSession session = request.getSession(false);
         String loginURL = request.getContextPath() + "/loginform.xhtml";
         String registerURL = request.getContextPath() + "/Registration.xhtml";
+        String homeURL = request.getContextPath() + "/home.xhtml";
+        
 
         boolean loggedIn = (session != null) && (session.getAttribute("user") != null);
         boolean loginRequest = request.getRequestURI().equals(loginURL);
         boolean registerRequest = request.getRequestURI().equals(registerURL);
+        boolean homeRequest = request.getRequestURI().equals(homeURL);
+        
         boolean resourceRequest = request.getRequestURI().startsWith(request.getContextPath() + ResourceHandler.RESOURCE_IDENTIFIER);
         boolean isStaticResource = request.getRequestURI().endsWith(".html");
         boolean isStaticResourceCss = request.getRequestURI().endsWith(".css");
@@ -39,7 +43,7 @@ public class AuthorizationFilter implements Filter {
         boolean isStaticResourceJs = request.getRequestURI().endsWith(".js");
         boolean ajaxRequest = "partial/ajax".equals(request.getHeader("Faces-Request"));
 
-        if (loggedIn || loginRequest || resourceRequest ||registerRequest||isStaticResource||isStaticResourceCss||isStaticResourceJs||isStaticResourceImages) {
+        if (loggedIn || loginRequest || resourceRequest ||registerRequest||isStaticResource||isStaticResourceCss||isStaticResourceJs||isStaticResourceImages||homeRequest) {
             if (!resourceRequest) { // Prevent browser from caching restricted resources. See also https://stackoverflow.com/q/4194207/157882
                 response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
                 response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
