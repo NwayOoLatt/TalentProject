@@ -17,11 +17,10 @@ public class Payment {
 	private int id;
 	private String paytype;
 	private Double amount;
-	private String status;
+	
 	
 	@ManyToOne
 	private PolicyHolder policyholder;
-	
 
 	
 	public PolicyHolder getPolicyholder() {
@@ -47,12 +46,6 @@ public class Payment {
 	}
 	public void setAmount(Double amount) {
 		this.amount = amount;
-	}
-	public String getStatus() {
-		return status;
-	}
-	public void setStatus(String status) {
-		this.status = status;
 	}
 	
 
