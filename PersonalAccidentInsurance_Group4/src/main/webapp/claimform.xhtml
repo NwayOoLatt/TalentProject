@@ -474,7 +474,7 @@ img {
 										<div class="row">
 
 											<div class="card bg-light text-dark text-center"
-												style="border: solid 3px #FF8C00; width: 500px; height: 150px; background-color: #F8F8FF; box-shadow: 1px 2px 4px rgba(0, 0, 0, .8); font-family: sans-serif;">
+												style="border: solid 3px #FF8C00; width: 500px; height: 100px; background-color: #F8F8FF; box-shadow: 1px 2px 4px rgba(0, 0, 0, .9); font-family: sans-serif;">
 												<div class="card-body">
 													<h3 style="color: red">Your Proposal is Expired!</h3>
 
@@ -501,12 +501,12 @@ img {
 													<hr></hr>
 													<p>
 														Remain Balance :
-														<p:outputLabel value="#{claimController.remainbalance1}"></p:outputLabel>
+														<p:outputLabel value="#{claimController.remainbalance1} MMK" style="color:red"></p:outputLabel>
 														<br></br> request claim amount :
-														<p:outputLabel value="#{claimController.currentAmount1}"></p:outputLabel>
+														<p:outputLabel value="#{claimController.currentAmount1} MMK" style="color:red"></p:outputLabel>
 														<br></br> Previous Total Claim amount :
 														<p:outputLabel
-															value="#{claimController.total_claimAmount1}"></p:outputLabel>
+															value="#{claimController.total_claimAmount1} MMK" style="color:red"></p:outputLabel>
 														<br></br>
 
 													</p>
@@ -528,15 +528,15 @@ img {
 														<h3 style="color: blue">Your Claim Request is
 															Successful</h3>
 														<hr></hr>
-														<h4>Your remain balance is low!</h4>
+														<h4>Your Balance is insufficient for your claim!</h4><br></br>
 														<p>
 															Remain Balance :
-															<p:outputLabel value="#{claimController.remainbalance1}"></p:outputLabel>
+															<p:outputLabel value="#{claimController.remainbalance1} MMK" style="color:red"></p:outputLabel>
 															<br></br>request claim amount :
-															<p:outputLabel value="#{claimController.currentAmount1}"></p:outputLabel>
+															<p:outputLabel value="#{claimController.currentAmount1} MMK" style="color:red"></p:outputLabel>
 															<br></br>Previous Total Claim amount :
 															<p:outputLabel
-																value="#{claimController.total_claimAmount1}"></p:outputLabel>
+																value="#{claimController.total_claimAmount1} MMK" style="color:red"></p:outputLabel>
 															<br></br>
 
 														</p>
@@ -563,12 +563,12 @@ img {
 														<hr></hr>
 														<p>
 															Remain Balance :
-															<p:outputLabel value="#{claimController.remainbalance1}"></p:outputLabel>
+															<p:outputLabel value="#{claimController.remainbalance1} MMK" style="color:red"></p:outputLabel>
 															<br></br> Request Claim amount :
-															<p:outputLabel value="#{claimController.currentAmount1}"></p:outputLabel>
+															<p:outputLabel value="#{claimController.currentAmount1} MMK" style="color:red"></p:outputLabel>
 															<br></br> Previous Total Claim amount :
 															<p:outputLabel
-																value="#{claimController.total_claimAmount1}"></p:outputLabel>
+																value="#{claimController.total_claimAmount1} MMK" style="color:red"></p:outputLabel>
 															<br></br>
 
 														</p>
