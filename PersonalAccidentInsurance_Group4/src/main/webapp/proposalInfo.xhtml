@@ -373,28 +373,19 @@ img {
 														<p:outputLabel value="Martial Status"
 															style="font-weight:bold"></p:outputLabel>
 														<br />
-														<!-- <p:inputText class="form-control" id="status"
-															value="#{proposalController.proposal.m_status}"
-															required="true"
-															requiredMessage="Martial Status is required!"
-															validatorMessage="Must be Single or Married!">
-															<f:validateRegex pattern="^[Single]{6}|[Married]{7}$" />
-														</p:inputText>
-														&nbsp;<br />
-														<p:message for="status"
-															style="color:red;background-color:white;"></p:message> -->
-													
+														
 													
 													<h:selectOneMenu id="status"
 															value="#{proposalController.proposal.m_status}"
 															style="width:270px;height:35px;border-color:blue;" required="true" requiredMessage="Pls select Martidal Status!">
-															
+															<f:selectItem itemLabel="" itemValue=""
+																noSelectionOption="true" />
 															<f:selectItem itemValue = "Single" itemLabel = "Single" /> 
             												<f:selectItem itemValue = "Married" itemLabel = "Married" /> 
 															
-														</h:selectOneMenu> &nbsp;&nbsp;
-														<h:message for="status"
-															style="color:red;background-color:white;"></h:message>
+														</h:selectOneMenu> &nbsp;&nbsp;<br></br>
+														<p:message for="status"
+															style="color:red;background-color:white;"></p:message>
 													
 													
 													</div>
@@ -496,9 +487,9 @@ img {
 
 														<p:inputText class="form-control" id="phone"
 															value="#{proposalController.proposal.phone}"
-															required="true" placeholder="09*********"
-															requiredMessage="Phone number is required!" validatorMessage="Phone number is invalid">
-															<f:validateRegex pattern="^(09[0-9]{6,}|01[0-9]{9,})$" />
+															required="true"
+															requiredMessage="Phone number is required!" validatorMessage="Phone number is invalid(eg.09967945673)">
+															<f:validateRegex pattern="^(09[0-9]{9,}|01[0-9]{9,})$" />
 														</p:inputText>
 														<br />
 														<p:message for="phone"
@@ -537,7 +528,8 @@ img {
 
 														<p:inputText class="form-control" id="street"
 															value="#{proposalController.proposal.street}"
-															requiredMessage="Required!"
+															required="true"
+															requiredMessage="Street is Required!"
 															validatorMessage="Street is invalid!">
 															<f:validateRegex pattern="^\S[A-Za-z0-9/.,\s-]{2,35}$" />
 														</p:inputText>
@@ -573,14 +565,14 @@ img {
 
 
 
-														<p:outputLabel value="State " style="font-weight:bold" />
+														<p:outputLabel value="City " style="font-weight:bold" />
 														&nbsp;<br />
 
 														<p:inputText class="form-control" id="state"
 															value="#{proposalController.proposal.state}"
 															required="true" requiredMessage="Your State is required!"
-															validatorMessage="Must be street Format!">
-															<f:validateRegex pattern="^\S[A-Za-z0-9/.,\s]{2,30}$" />
+															validatorMessage="city must be letter!">
+															<f:validateRegex pattern="^\S[A-Za-z/.,\s]{2,30}$" />
 														</p:inputText>
 														<br />
 														<p:message for="state"
