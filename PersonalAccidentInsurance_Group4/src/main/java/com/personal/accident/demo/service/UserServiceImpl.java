@@ -75,8 +75,11 @@ public class UserServiceImpl implements UserService {
 		User u=new User();
 		u.setEmail(user.getEmail());
 		List<User> userlist=new ArrayList<User>();
+		
 		userlist=userrespository.findMail(u);
+		
 		System.out.println("userlist"+userlist);
+		
 		if(userlist.isEmpty()) {
 			flag=false;
 		}
