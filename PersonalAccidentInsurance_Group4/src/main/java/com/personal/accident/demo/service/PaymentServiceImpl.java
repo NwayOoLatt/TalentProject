@@ -33,10 +33,10 @@ public class PaymentServiceImpl implements PaymentService{
 		PolicyHolder holder = new PolicyHolder();
 		Payment payment=new Payment();
 		holder.setP_no(paymentmodel.getP_no());
+		
 		payment.setId(paymentmodel.getId());
 		payment.setAmount(paymentmodel.getAmount());
-		payment.setPaytype(paymentmodel.getPaytype());
-		payment.setStatus("active"); 
+		payment.setPaytype(paymentmodel.getPaytype()); 
 		
 		payment.setPolicyholder(holder);
 		System.out.println("pnooooo"+payment.getPolicyholder()); 
