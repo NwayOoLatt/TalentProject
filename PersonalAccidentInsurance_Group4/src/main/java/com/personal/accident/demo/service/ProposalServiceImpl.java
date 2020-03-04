@@ -63,7 +63,6 @@ public class ProposalServiceImpl implements ProposalService{
 		premium.setStatus("active");
 
 		premiumRepository.save(premium);
-
 		
 		System.out.println("------Benefit-------");
 		Beneficiary benefit = new Beneficiary();
@@ -143,7 +142,7 @@ public class ProposalServiceImpl implements ProposalService{
 			premium.setTerm(p.getTerm());
 			premium.setYear(p.getYear());
 			premium.setPayamount(p.getPayamount());
-			premium.setStatus("active");
+			premium.setStatus("true");
 
 			premiumRepository.save(premium);
 
