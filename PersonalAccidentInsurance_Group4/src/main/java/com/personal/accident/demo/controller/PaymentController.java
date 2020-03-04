@@ -42,6 +42,7 @@ public class PaymentController {
 			}
 		return "paymentform.xhtml?faces-redirect=true";
 	}
+	
 	public String addPayment(Proposal pro) {
 		
 		try {
@@ -81,7 +82,7 @@ public class PaymentController {
 		System.out.println("pno"+paymodel.getP_no());
 		paymodel.setAmount(Double.parseDouble(premiumamount));
 		
-		Boolean flag=payservice.savePayment(paymodel);
+		Boolean flag=payservice.savePayment(paymodel); // save payment
 		
 		if(flag==true) {
 			
